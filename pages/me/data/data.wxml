@@ -1,0 +1,64 @@
+<!--pages/me/data/data.wxml-->
+<view class="main" hidden="{{user==null}}">
+  <text class="user-time">注册时间：{{user.createTime}}</text>
+  <view class="user-items">
+    <view class="user-item">
+      <text class="user-item-left">头像</text>
+      <image class="user-item-image" src="{{user.avatar}}" mode="aspectFill" bindtap="bindSelectImage"></image>
+    </view>
+    <view class="line"></view>
+    <view class="user-item">
+      <text class="user-item-left">账号</text>
+      <text class="user-item-right">{{user.mobile}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="user-item">
+      <text class="user-item-left">推荐人</text>
+      <text class="user-item-right">{{user.pName}}({{user.pMobile}})</text>
+    </view>
+    <view class="line"></view>
+    <view class="user-item">
+      <text class="user-item-left">会员等级</text>
+      <text class="user-item-right">{{user.levelName}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="user-item">
+      <text class="user-item-left">用户昵称</text>
+      <text class="user-item-right">{{user.name}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="user-item">
+      <text class="user-item-left">生日</text>
+      <view class="user-item-row">
+        <image src="../../../image/img_arrow_right.png" mode="aspectFill" style="width:15px; height:15px; margin-left:5px;"></image>
+        <picker mode="date" class="user-item-right" bindchange="bindDateChange" value="{{user.birthday}}">
+          <block wx:if="{{user.birthday==null}}">请选择</block>
+          <block wx:if="{{user.birthday!=null}}">{{user.birthday}}</block>
+        </picker>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="user-item">
+      <text class="user-item-left">性别</text>
+      <view class="user-item-row" bindtap="bindGenderSelect">
+        <image src="../../../image/img_arrow_right.png" mode="aspectFill" style="width:15px; height:15px; margin-left:5px;"></image>
+        <text class="user-item-right">
+          <block wx:if="{{user.gender==0}}">保密</block>
+          <block wx:if="{{user.gender==1}}">男</block>
+          <block wx:if="{{user.gender==2}}">女</block>
+        </text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="user-item">
+      <text class="user-item-left">所在地</text>
+      <view class="user-item-row">
+        <image src="../../../image/img_arrow_right.png" mode="aspectFill" style="width:15px; height:15px; margin-left:5px;"></image>
+        <picker mode="region" class="user-item-right" bindchange="bindRegionChange" value="{{user.address}}">
+          <block wx:if="{{user.address==null}}">请选择</block>
+          <block wx:if="{{user.address!=null}}">{{user.address}}</block>
+        </picker>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+/* pages/copyright/copyright.wxss */
+.copyrightItem{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.image{
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+}
+.text{
+  margin-left: 3px;
+  font-size: 10px;
+  color: #999999;
+  text-align: center;
+  letter-spacing: 2px;
+}

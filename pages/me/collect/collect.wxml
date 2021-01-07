@@ -1,0 +1,31 @@
+<!--pages/me/collect/collect.wxml-->
+<view class="main" wx:if="{{goodsItem.length>0}}">
+  <view class="item" wx:for="{{goodsItem}}" wx:key="goodsItem" bindtap="startGoodsDetail" data-id="{{item.id}}">
+    <view class="goodsItem">
+      <image class='item-cover' src="{{item.cover}}" mode="aspectFill"></image>
+      <view class="item-text">
+        <text class='item-title'>{{item.title}}</text>
+        <text class='item-content'>{{item.subTitle}}</text>
+        <view class="item-row">
+          <text class='item-price'>¥{{item.price/100}}</text>
+          <view wx:if="{{item.isCollect}}" class="item-collect-on" catchtap="updateCollect" data-index="{{index}}">
+            <image class="item-collect-image" src="../../../image/img_collect_on.png" mode="aspectFill"></image>
+            <text class='item-collect-text-on'>已收藏</text>
+          </view>
+          <view wx:if="{{!item.isCollect}}" class="item-collect-off" catchtap="updateCollect" data-index="{{index}}">
+            <image class="item-collect-image" src="../../../image/img_collect_off.png" mode="aspectFill"></image>
+            <text class='item-collect-text-off'>收藏</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+  </view>
+</view>
+<block wx:if="{{goodsItem.length<=0}}">
+  <view class="no-data">
+    <text>暂无记录</text>
+  </view>
+</block>
+
+

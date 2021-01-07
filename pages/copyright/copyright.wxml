@@ -1,0 +1,7 @@
+<!--pages/copyright/copyright.wxml-->
+<template name="copyright">
+  <view class="copyrightItem">
+    <image class="image" src="../../image/img_logo.png"></image>
+    <text class="text">美丽蔷薇提供技术支持</text>
+  </view>
+</template>

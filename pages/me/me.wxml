@@ -1,0 +1,145 @@
+<!--pages/me/me.wxml-->
+<import src="/pages/copyright/copyright.wxml"/>
+<view>
+  <view class="header">
+    <image class="imgBg" src="../../image/img_me_bg.png"></image>
+    <block wx:if="{{isLogin}}">
+      <view class="top" bindtap="startMeData">
+        <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
+        <view class="user">
+          <text class="userName">{{userEntity.name}}</text>
+          <text class="userCode">邀请码：{{userEntity.mobile}}</text>
+          <view class="userItem">
+            <text class="userTag">积分:{{userEntity.point}}</text>
+            <text class="userTag">{{userEntity.levelStore}}</text>
+            <text class="userTag">{{userEntity.levelName}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{!isLogin}}">
+      <view class="top">
+        <image class="imgHeader" src="../../image/img_header_normal.png" mode="aspectFill"></image>
+        <view class="userLogin" bindtap="startLogin">
+          <text class="userName">登录/注册</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="grid">
+    <view class="gridTop">
+      <text class="menuTitle">我的订单</text>
+      <view class="orderMore">
+        <text class="menuMore" bindtap="startOrderList" data-state="-1">全部订单</text>
+        <image src="../../image/img_arrow_right_mini.png" mode="aspectFill" style="width:15px; height:15px"></image>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="menuTab">
+      <view class="menuItem" bindtap="startOrderList" data-state="0">
+        <image class="orderImg" src="../../image/img_order_dzf.png" mode="aspectFill"></image>
+        <text class="menuText">待支付</text>
+      </view>
+      <view class="menuItem" bindtap="startOrderList" data-state="1">
+        <image class="orderImg" src="../../image/img_order_dfh.png" mode="aspectFill"></image>
+        <text class="menuText">待发货</text>
+      </view>
+      <view class="menuItem" bindtap="startOrderList" data-state="2">
+        <image class="orderImg" src="../../image/img_order_dsh.png" mode="aspectFill"></image>
+        <text class="menuText">待收货</text>
+      </view>
+      <view class="menuItem" bindtap="startOrderList" data-state="3">
+        <image class="orderImg" src="../../image/img_order_ysh.png" mode="aspectFill"></image>
+        <text class="menuText">已收货</text>
+      </view>
+      <view class="menuItem" bindtap="startOrderList" data-state="9">
+        <image class="orderImg" src="../../image/img_order_shtk.png" mode="aspectFill"></image>
+        <text class="menuText">售后/退款</text>
+      </view>
+    </view>
+  </view>
+  <view class="grid">
+    <view class="menuTab">
+      <view class="menuItem" bindtap="startMeData">
+        <image class="menuImg" src="../../image/img_more_edit.png" mode="aspectFit"></image>
+        <text class="menuText">个人资料</text>
+      </view>
+      <view class="menuItem" bindtap="startMeAddress">
+        <image class="menuImg" src="../../image/img_more_addr.png" mode="aspectFit"></image>
+        <text class="menuText">收货地址</text>
+      </view>
+      <view class="menuItem" bindtap="startMeCollect">
+        <image class="menuImg" src="../../image/img_more_like.png" mode="aspectFit"></image>
+        <text class="menuText">我的收藏</text>
+      </view>
+      <button class="menuItem" open-type='contact' session-from=''>
+        <image class="menuImg" src="../../image/img_more_service.png" mode="aspectFit"></image>
+        <text class="menuText">联系客服</text>
+      </button>
+    </view>
+  </view>
+  <view class="grid">
+    <view class="gridTop">
+      <text class="menuTitle">我的服务</text>
+      <text class="menuMore"></text>
+    </view>
+    <view class="line"></view>
+    <view class="menuTabs">
+      <view class="menuTab">
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_coupon.png" mode="aspectFill"></image>
+          <text class="menuText">优惠券</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_wallet.png" mode="aspectFill"></image>
+          <text class="menuText">消费余额</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_cash.png" mode="aspectFill"></image>
+          <text class="menuText">佣金提现</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_integral.png" mode="aspectFill"></image>
+          <text class="menuText">积分商城</text>
+        </view>
+      </view>
+      <view class="menuTab">
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_account.png" mode="aspectFill"></image>
+          <text class="menuText">会员权益</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_cloud.png" mode="aspectFill"></image>
+          <text class="menuText">云仓提货</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_cloud_order.png" mode="aspectFill"></image>
+          <text class="menuText">云仓提货单</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_statistic.png" mode="aspectFill"></image>
+          <text class="menuText">业绩统计</text>
+        </view>
+      </view>
+      <view class="menuTab">
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_gift.png" mode="aspectFill"></image>
+          <text class="menuText">我的赠品</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_team.png" mode="aspectFill"></image>
+          <text class="menuText">团队成员</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_upgrade.png" mode="aspectFill"></image>
+          <text class="menuText">我要升级</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_invit.png" mode="aspectFill"></image>
+          <text class="menuText">邀请好友</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="copyright"></template>
+</view>

@@ -1,0 +1,208 @@
+/* pages/order/list/list.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.swiper-tab{
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  margin-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.swiper-tab-text{  
+  height: 30px;
+  color: #666666;
+  font-size: 14px;
+  font-weight: normal;
+  display: inline-block;
+}
+.swiper-tab-text-on{
+  height: 30px;
+  color: #ffb11c;
+  font-size: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid #ffb11c;
+  border-radius: 2px;
+}
+.swiper-box{
+  width: 100%;
+  display: block; 
+}
+.goodsStoreItem{
+  background-color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.storeItem{
+  display: flex;
+  flex-direction: row;
+  padding: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.storeImage{
+  width: 20px;
+  height: 20px;
+}
+.storeText{
+  font-size: 15px;
+  color: black;
+  margin-left: 5px;
+  margin-right: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.deliveryType{
+  font-size: 12px;
+  color: black;
+  margin-right: 10px;
+}
+.goodsStoreItem .storeItem .right .orderState-0, .goodsStoreItem .storeItem .right .orderState-1,.goodsStoreItem .storeItem .right .orderState-2{
+  width: 55px;
+  height: 22px;
+  font-size: 11px;
+  color: #ffb11c;
+  border-radius: 2px;
+  border: 1px solid #ffb11c;
+  text-align: center;
+  line-height: 22px;
+}
+.goodsStoreItem .storeItem .right .orderState-3, .goodsStoreItem .storeItem .right .orderState-4, .goodsStoreItem .storeItem .right .orderState-5{
+  width: 55px;
+  height: 22px;
+  font-size: 11px;
+  color: #999999;
+  border-radius: 2px;
+  border: 1px solid #999999;
+  text-align: center;
+  line-height: 22px;
+}
+.goodsCartItem{
+  background-color: white;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goodsItem{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goodsTabImg{
+  display: flex;
+  margin-left: 12px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goodsCheck{
+  align-self: center;
+  size: 10px;
+}
+.goodsTabItem-cover{
+  width: 70px;
+  height: 70px;
+  background-color: #F4F4F4;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.goodsTabText{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 8px;
+  margin-right: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.goodsTabItem-title{
+  color: black;
+  font-size: 13px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goodsTabCart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goodsTabItem-price{
+  color: #FFBF47;
+  font-size: 13px;
+}
+.goodsTabItem-count{
+  color: black;
+  font-size: 13px;
+  margin-bottom: 5px;
+  margin-right: 15px;
+  text-align: right;
+  float: right;
+}
+.bottom{
+  padding: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  color: black;
+  font-size: 14px;
+}
+
+.operation{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.goodsStoreItem .operation .orderOperation-0{
+  width: 80px;
+  height: 28px;
+  font-size: 12px;
+  color: white;
+  background-color: #ffb11c;
+  border-radius: 2px;
+  border: 1px solid #ffb11c;
+  text-align: center;
+  line-height: 28px;
+}
+.goodsStoreItem .operation .orderOperation-1,  
+.goodsStoreItem .operation .orderOperation-2, 
+.goodsStoreItem .operation .orderOperation-3, 
+.goodsStoreItem .operation .orderOperation-4,  
+.goodsStoreItem .operation .orderOperation-5{
+  width: 80px;
+  height: 28px;
+  font-size: 12px;
+  color:  #2a2a2a;
+  border-radius: 2px;
+  border: 1px solid #999999;
+  text-align: center;
+  line-height: 28px;
+}

@@ -1,0 +1,32 @@
+<!--pages/search/search.wxml-->
+<view class="main">
+  <view class="search">
+    <input placeholder="请输入搜索关键词" confirm-type="search" bindinput="bindKeywordInput" bindconfirm="bindKeywordSearch" value="{{keyword}}" focus="true"></input>
+  </view>
+  <block wx:if="{{goodsItem.length>0}}">
+    <view class="item" wx:for="{{goodsItem}}" wx:key="goodsItem" bindtap="startGoodsDetail" data-id="{{item.id}}">
+      <view class="goodsItem">
+        <image class='item-cover' src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="item-text">
+          <text class='item-title'>{{item.title}}</text>
+          <text class='item-content'>{{item.subTitle}}</text>
+          <view class="item-row">
+            <text class='item-price'>¥{{item.price/100}}</text>
+            <block wx:if="{{item.stock > 0}}">
+              <text class='goodsTabItem-buy'>选 购</text>
+            </block>
+            <block wx:if="{{item.stock <= 0}}">
+              <text class='goodsTabItem-buy-off'>售 罄</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="line"></view>
+    </view>
+  </block>
+</view>
+<block wx:if="{{goodsItem.length<=0}}">
+  <view class="no-data">
+    <text>暂无记录</text>
+  </view>
+</block>

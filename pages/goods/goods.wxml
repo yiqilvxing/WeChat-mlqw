@@ -1,0 +1,128 @@
+<!--pages/goods/goods.wxml-->
+<import src="/pages/copyright/copyright.wxml"/>
+<view class="main" hidden="{{hidden}}">
+  <swiper class="banner" indicator-dots="true" indicator-active-color="#fff" autoplay="true" duration="500">
+    <block wx:for="{{bannerItem}}" wx:key='bannerItem'>
+      <swiper-item>
+        <image class="bannerImg" src="{{item}}" mode="aspectFill" bindtap="previewBanner"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="goodsBasic">
+    <text class="goodsTitle">{{goodsEntity.title}}</text>
+    <text class="goodsTag">{{goodsEntity.subTitle}}</text>
+    <view class="goodsItem">
+      <view class="goodsPriceItem">
+        <text class="goodsRMB">¥</text>
+        <text class="goodsPrice">{{goodsEntity.price / 100}}</text>
+      </view>
+      <view class="goodsOptionItem">
+        <button open-type='share' style="width: 50px;  display: flex;  background-color: white;  font-size: 11px;  color: #999999;font-weight: normal;padding: 0;justify-content: center;">
+          <view class="goodsOption">
+            <image class="goodsOptionImg" src="../../image/img_share.png" mode="aspectFill"></image>
+            <text class="goodsOptionText">分享</text>
+          </view>
+        </button>
+        <view class="goodsOption" bindtap="goodsCollect">
+          <block wx:if="{{goodsEntity.isCollection==true}}">
+            <image class="goodsOptionImg" src="../../image/img_like_on.png" mode="aspectFill"></image>
+          </block>
+          <block wx:if="{{goodsEntity.isCollection==false}}">
+            <image class="goodsOptionImg" src="../../image/img_like_off.png" mode="aspectFill"></image>
+          </block>
+          <text class="goodsOptionText">收藏</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="space"></view>
+  <view class="storeItem" bindtap="startStore" data-id="{{goodsEntity.storeId}}">
+    <image class="storeImg" src="{{storeEntity.logo}}" mode="aspectFill"></image>
+    <text class="storeText">{{storeEntity.name}}</text>
+  </view>
+  <view class="line"></view>
+  <view class="goodDetail">
+    <text class="goodDetailText">商品详情</text>
+    <rich-text nodes="{{goodsDetailRich}}" bindtap="previewRichImage"></rich-text>
+    <template is="copyright"></template>
+  </view>
+  <view class="bottom">
+    <view class="bottomLeft">
+      <button class="proItem" open-type='contact' session-from=''>
+        <image class="proImg" src="../../image/img_pro_service.png"></image>
+        <text class="proText">客服</text>
+      </button>
+      <view class="proItem" bindtap="startCart">
+        <image class="proImg" src="../../image/img_pro_cart.png"></image>
+        <text class="proText">购物车</text>
+      </view>
+    </view>
+    <view class="bottomRight">
+      <text class="addBuy" data-type="1" bindtap="showCartWindow">立即购买</text>
+      <text class="addCart" data-type="0" bindtap="showCartWindow">加入购物车</text>
+    </view>
+  </view>
+  <image catchtap="pageBack" style="width:30px; height:30px; margin-left:15px; position:fixed; top:{{statusBarHeight+5}}px;" src="../../image/img_detail_back.png"></image>
+</view>
+<!-- 加入购物车 -->
+<view class="public-window joinShopVehicle-wrap" hidden="{{joinWrapState}}">
+  <view class='window-bj' bindtap='closeWindow'></view>
+  <view class="window-main" animation="{{animationData}}">
+    <view class="close">
+      <image bindtap='closeWindow' src="../../image/img_close.png"></image>
+    </view>
+    <view class="cart-item">
+      <view class="cart-item-msg">
+        <image class="cart-item-image" src="{{cartShowGoodsEntity.cover}}" mode="aspectFit"></image>
+        <view class="cart-item-text">
+          <text>{{goodsEntity.title}}</text>
+          <view class="cart-item-price">
+            <text class="goodsRMB">¥</text>
+            <text class="goodsPrice">{{cartShowGoodsEntity.price / 100}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="cart-item-specs" wx:for="{{goodsSpecs}}" wx:key="goodsSpecs" wx:for-item="item" wx:for-index="index">
+        <text class="cart-item-spec-title">{{item.title}}</text>
+        <view class="cart-item-spec-value">
+          <block wx:for="{{item.items}}" wx:key="goodsSpecsItems" wx:for-item="item2" wx:for-index="index2">
+            <text class="{{item2.state==true ? 'cart-item-spec-value-on' : 'cart-item-spec-value-off'}}" bindtap="switchGoodsSpec" data-state="{{item2.state}}" data-index="{{index}}" data-index2="{{index2}}">{{item2.value}}</text>
+          </block>
+        </view>
+      </view>
+      <view class="cart-item-count">
+        <text class="cart-item-count-title">数量</text>
+        <view class="stepper">  
+          <!-- 减号 -->  
+          <text class="normal" catchtap="bindMinus">-</text>  
+          <!-- 数值 -->  
+          <text class="input" catchtap="bindClick">{{goodsNum}}</text> 
+          <!-- 加号 -->  
+          <text class="normal" catchtap="bindPlus">+</text>
+        </view>
+      </view>
+      <view>
+        <block wx:if="{{cartShowGoodsEntity.saleable}}">
+          <block wx:if="{{cartShowGoodsEntity.stock > 0}}">
+            <block wx:if="{{showWindowType==0}}">
+              <view class="cart-item-btn" wx:if="{{!isSwitchSpec}}" bindtap="onCartWindowConfirm" data-type="0">加入购物车</view>
+              <view class="cart-item-btn-off" wx:if="{{isSwitchSpec}}"><i class="qz-loading"></i></view>
+            </block>
+            <block wx:if="{{showWindowType==1}}">
+              <view class="cart-item-btn" wx:if="{{!isSwitchSpec}}" bindtap="onCartWindowConfirm" data-type="1">立即购买</view>
+              <view class="cart-item-btn-off" wx:if="{{isSwitchSpec}}"><i class="qz-loading"></i></view>
+            </block>
+          </block>
+          <block wx:if="{{cartShowGoodsEntity.stock <= 0}}">
+            <view class="cart-item-btn-off" wx:if="{{!isSwitchSpec}}">已售罄</view>
+            <view class="cart-item-btn-off" wx:if="{{isSwitchSpec}}"><i class="qz-loading"></i></view>
+          </block>
+        </block>
+        <block wx:if="{{!cartShowGoodsEntity.saleable}}">
+          <view class="cart-item-btn-off" wx:if="{{!isSwitchSpec}}">已下架</view>
+          <view class="cart-item-btn-off" wx:if="{{isSwitchSpec}}"><i class="qz-loading"></i></view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

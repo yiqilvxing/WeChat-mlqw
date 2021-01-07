@@ -1,0 +1,140 @@
+/**app.wxss**/
+@import "/pages/copyright/copyright.wxss";
+page{
+  background-color: #F9F9F9;
+  height: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.main{
+  background-color: white;
+  overflow: hidden;
+}
+.space{
+  height: 10px;
+  width: 100%;
+  background-color: #F9F9F9;
+} 
+.line{
+  height: 0.5px;
+  width: 100%;
+  background-color: #EEEEEE;
+}
+.mainText{
+  font-size: 14px;
+  color: #2A2A2A;
+}
+.copyright{
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #999999;
+  font-size: 10px;
+  text-align: center;
+}
+/*购物车加减组件*/
+.stepper { 
+  display: flex; 
+  width: 80px;  
+  height: 22px;  
+  border: 1px solid #ccc;  
+  border-radius: 2px;  
+  margin: 0 auto;
+}  
+/*加号和减号*/  
+.stepper text {  
+  width: 20px;  
+  line-height: 22px;  
+  text-align: center;  
+  float: left;  
+}  
+/*数值*/  
+.stepper .input {  
+  width: 38px;  
+  height: 22px;  
+  float: left;  
+  margin: 0 auto;  
+  text-align: center;  
+  font-size: 12px;  
+  /*给中间的input设置左右边框即可*/  
+  border-left: 1px solid #ccc;  
+  border-right: 1px solid #ccc;  
+}  
+/*普通样式*/  
+.stepper .normal{  
+  color: black;  
+}  
+/*禁用样式*/  
+.stepper .disabled{  
+  color: #ccc;  
+}
+.public-window{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.public-window .window-bj {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.window-main {
+  background: #fff;
+  position: absolute;
+  min-height: 30vh;
+  bottom: -5000px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.window-main .close{
+  display: flex;
+  justify-content: flex-end;
+  height: 40px;
+}
+.window-main .close image{
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+  padding-top: 10px;
+  position: relative;
+  z-index: 10;
+}
+.qz-loading{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  animation: uploader-spinner 1s steps(12) infinite;
+  background: transparent url(https://quanzinw.oss-cn-shenzhen.aliyuncs.com/applets/qz-loading.svg) no-repeat;
+  background-size: 100%;
+}
+.no-data{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+  color: #999999;
+  text-align: center;
+  background-color: white;
+}
+
+

@@ -1,0 +1,215 @@
+/* pages/cart/cart.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.goodStoreItem{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.storeItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  padding: 12px;
+}
+.storeImage{
+  width: 20px;
+  height: 20px;
+}
+.storeText{
+  flex: 1;
+  font-size: 15px;
+  color: black;
+  margin-left: 5px;
+  margin-right: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.goodsStoreItem{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goodsCartItem{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.touch-move-active .goodsItem, .touch-move-active .deleteItem{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.goodsItem{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transform: translateX(60px);
+	transform: translateX(60px);
+  margin-left: -60px;
+  margin-right: 0;
+}
+.deleteItem {
+  background-color: #FF5A5A;
+  width: 60px;
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  color: #fff;
+  font-size: 16px;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transform: translateX(60px);
+  transform: translateX(60px);
+  position: absolute;
+  right: -60px;
+  height: 100%;
+}
+.goodsTabImg{
+  display: flex;
+  margin-left: 12px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goodsCheck{
+  align-self: center;
+  size: 10px;
+}
+.goodsTabItem-cover{
+  width: 100px;
+  height: 100px;
+  background-color: #F4F4F4;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.goodsTabText{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 8px;
+  margin-right: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.goodsTabItem-title{
+  color: #2A2A2A;
+  font-size: 14px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goodsTabCart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goodsTabItem-price{
+  color: #FFBF47;
+  font-size: 15px;
+}
+.bottom{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 51px;
+}
+.bottomItem{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+}
+.bottomRadio{
+  color: #2A2A2A ;
+  font-size: 14px;
+  margin-left: 12px;
+  margin-right: 12px;
+  align-self: center;
+}
+.bottomTotal{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: right;
+}
+.bottomGoods{
+  color: #999999;
+  font-size: 12px;
+}
+.bottomPrice{
+  color: #FFB11C;
+  font-size: 15px;
+}
+.bootomSubmit{
+  display: flex;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  flex-direction: row;
+}
+.bottomConfirm{
+  width: 120px;
+  height: 50px;
+  color: white;
+  font-size: 15px;
+  border-radius: 0px;
+  background-color: #FFB11C;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+.item-tips{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.item-tips-img{
+  width: 190px;
+  height: 154px;
+}
+.item-tips-text{
+  font-size: 15px;
+  color: #999999;
+  margin: 15px;
+}
+.item-tips-btn{
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+  align-self: center;
+  background-color: #FFB11C;
+  border-radius: 40px;
+  text-align: center;
+  vertical-align: middle;
+  line-height:40px;
+  margin: 15px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+}
+

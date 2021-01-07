@@ -1,0 +1,75 @@
+<!--pages/order/confirm/confirm.wxml-->
+<view class="main" style="margin-bottom:100px;">
+  <view class="layoutItem">
+    <view class="itemTitle">
+      <image src="../../../image/img_red_star.png" mode="aspectFill" style="width:10px; height:10px"></image>
+      <text class="title" style="margin-left:5px">配送方式</text>
+    </view>
+    <view class="layoutItemContent" bindtap="selectDeliveryType">
+      <image src="../../../image/img_arrow_right.png" mode="aspectFill" style="width:15px; height:15px; margin-left:5px;"></image>
+      <text class="content">
+        <block wx:if="{{deliveryType==0}}">物流快递</block>
+        <block wx:if="{{deliveryType==1}}">门店自提</block>
+      </text>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="layoutItem">
+    <view class="itemTitle">
+      <image src="../../../image/img_red_star.png" mode="aspectFill" style="width:10px; height:10px"></image>
+      <text class="title" style="margin-left:5px">
+        <block wx:if="{{deliveryType==0}}">收货地址</block>
+        <block wx:if="{{deliveryType==1}}">门店地址</block>
+      </text>
+    </view>
+    <view class="layoutItemContent" bindtap="selectAddress">
+      <image src="../../../image/img_arrow_right.png" mode="aspectFill" style="width:15px; height:15px; margin-left:5px;"></image>
+      <view class="layoutItemColumn">
+        <text class="content">
+          <block wx:if="{{deliveryType==0}}">{{orderAddress.consignee}}    {{orderAddress.mobile}}</block>
+          <block wx:if="{{deliveryType==1}}">{{orderStore.name}}</block>
+        </text>
+        <text class="describe">
+          <block wx:if="{{deliveryType==0}}">{{orderAddress.address}} {{orderAddress.addr}}</block>
+          <block wx:if="{{deliveryType==1}}">{{orderStore.address}} {{orderStore.addr}}</block>
+        </text>
+      </view>
+    </view>
+  </view>
+  <view class="goodsStoreItem" wx:for="{{goodsStoreItem}}" wx:key='goodsStoreItem'>
+    <view class="space"></view>
+    <view class="storeItem">
+      <image class="storeImage" data-index="{{index}}" src="../../../image/img_cart_store.png" mode="aspectFit"></image>
+      <text class="storeText" data-index="{{index}}">{{item.name}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="goodsStoreItem" wx:for="{{item.items}}" wx:key='goodsItems' wx:for-item="item2" wx:for-index="index2">
+      <view class="goodsItem">
+        <view class="goodsTabImg">
+          <image class='goodsTabItem-cover' src="{{item2.cover}}" mode="aspectFill" ></image>
+        </view>
+        <view class="goodsTabText">
+          <text class='goodsTabItem-title'>{{item2.title}}</text>
+          <view class="goodsTabCart">
+            <text class='goodsTabItem-price'>¥{{item2.price/100}}</text>
+            <text class='goodsTabItem-count'>×{{item2.num}}</text>
+          </view> 
+        </view>
+      </view>
+      <view class="line" style="margin-left:12px; margin-right:12px;"></view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="line"></view>
+    <view class="bottomItem">
+      <view class="bootomSubmit">
+        <view class="bottomTotal">
+          <text class="bottomPrice">¥{{goodsPriceTotal}}</text>
+          <text class="bottomGoods">共{{goodsCountTotal}}件商品</text>
+        </view>
+        <text class="bottomConfirm" bindtap="submitOrder">提交订单</text>
+      </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,88 @@
+/* pages/me/collect/collect.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+}
+.goodsItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+.item-cover{
+  width: 100px;
+  height: 100px;
+  background-color: #F4F4F4;
+  border-radius: 5px;
+}
+.item-text{
+  flex: 1;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.item-title{
+  color: black;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item-content{
+  color: #999999;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item-row{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-price{
+  color: #FFBF47;
+  font-size: 15px;
+}
+.item-collect-on{
+  height: 23px;
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF8E9;
+  border-radius: 25px;
+  border: 1px solid #FFF8E9;
+}
+.item-collect-off{
+  height: 23px;
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  border: 1px solid #999999;
+}
+.item-collect-text-on{
+  font-size: 12px;
+  color: #FFB11C;
+}
+.item-collect-text-off{
+  font-size: 12px;
+  color: #999999;
+}
+.item-collect-image{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}

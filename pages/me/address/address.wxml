@@ -1,0 +1,37 @@
+<!--pages/me/address/address.wxml-->
+<view class="main" wx:if="{{address.length>0}}" style="margin-bottom:100px">
+  <view wx:for="{{address}}" wx:key="address" bindtap="selectAddress" data-item="{{item}}" data-id="{{item.id}}">
+    <view class="space"></view>
+    <view class="item">
+      <view class="item-row">
+        <text class="item-name">{{item.consignee}}</text>
+        <text class="item-mobile">{{item.mobileShow}}</text>
+      </view>
+      <text class="item-address">{{item.address}} {{item.addr}}</text>
+      <view class="line"></view>
+      <view class="item-row">
+        <view class="item-radio" wx:if="{{item.isDefault==true}}">
+          <image class="item-radio-img" src="../../../image/img_check_on.png" mode="aspectFit"></image>
+          <text>默认地址</text>
+        </view>
+        <view class="item-radio" wx:if="{{item.isDefault==false}}" catchtap="requestAddressEdit" data-index="{{index}}">
+          <image class="item-radio-img" src="../../../image/img_check_off.png" mode="aspectFit"></image>
+          <text>设为默认</text>
+        </view>
+        <view class="item-row">
+          <text class="item-edit" catchtap="startAddressEdit" data-index="{{index}}">编辑</text>
+          <text class="item-edit" catchtap="requestAddressDelete" data-index="{{index}}">删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{address.length<=0}}">
+  <view class="no-data">
+    <text>暂无记录</text>
+  </view>
+</block>
+<view class="bottom">
+  <view class="bottom-confirm" bindtap="addAddress">新增地址</view>
+</view>
+

@@ -1,0 +1,152 @@
+/* pages/me/me.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.imgBg{
+  width: 100%;
+  height: 180px;
+}
+.top{
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  margin-top: -110px;
+}
+.imgHeader{
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+.user{
+  height: 70px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.userLogin{
+  height: 70px;
+  color: white;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.userName{
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  margin-right: 50px;
+}
+.userCode{
+  font-size: 12px;
+}
+.userItem{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+.userTag{
+  height: 20px;
+  min-width: 30px;
+  max-width: 100px;
+  font-size: 11px;
+  border-radius: 18px;
+  background-color: #C2583B;
+  margin-right: 5px;
+  text-align: center;
+  vertical-align: middle;
+  line-height:20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.grid{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+  display: flex;
+  flex-direction: column;
+}
+.gridTop{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  text-align: center;
+  vertical-align: middle;
+  margin: 10px;
+}
+.orderMore{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.orderImg{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-self: center;
+}
+.menuTabs{
+  display: flex;
+  flex-flow: column;
+}
+.menuTab{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.menuItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  background: white;
+  font-weight: initial;
+  align-items: center;
+  padding: 0;
+}
+.menuTitle{
+  font-size: 14px;
+  color: #424242;
+  font-weight: bold;
+  float: left;
+}
+.menuMore{
+  font-size: 12px;
+  color: #666666;
+  float: right;
+}
+.menuImg{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-self: center;
+}
+.menuText{
+  font-size: 12px;
+  color: #424242;
+  margin-top: 5px;
+  max-lines: 1;
+  display: flex;
+  align-self: center;
+}
+

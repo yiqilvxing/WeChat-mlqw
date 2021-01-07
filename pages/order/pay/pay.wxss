@@ -1,0 +1,92 @@
+/* pages/order/pay/pay.wxss */
+page{
+  font-family: MicrosoftYaHei;
+  background-color: #F9F9F9;
+}
+.itemPrice{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  align-items: baseline;
+  background-color: white;
+}
+.itemPriceRMB{
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  padding-right: 2px;
+  padding-bottom: 5px;
+}
+.itemPriceTotal{
+  font-size: 32px;
+  color: black;
+  font-weight: bold;
+}
+.itemBalance{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.itemBalanceText{
+  color: #FFB11C;
+  font-size: 14px;
+  flex: 1;
+}
+.balanceTips{
+  color: #00CC00;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.payType{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.payTypeTitle{
+  padding: 15px;
+  font-size: 13px;
+  color: #2A2A2A;
+}
+.payTypeItem{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  background-color: white;
+  padding: 15px;
+  justify-content: space-between;
+}
+.payTypeImg{
+  width: 20px;
+  height: 20px;
+}
+.payTypeText{
+  font-size: 14px;
+  color: #2A2A2A;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex: 1;
+}
+.payConfirm{
+  position: fixed;
+  height: 40px;
+  bottom: 20px;
+  left: 40px;
+  right: 40px;
+  background-color: #FFB11C;
+  border-radius: 2px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

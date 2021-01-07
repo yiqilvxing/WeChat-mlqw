@@ -1,0 +1,151 @@
+/* pages/login/login.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.imgBg{
+  width: 100%;
+  height: 180px;
+}
+.login-tips{
+  margin-top: -80px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.login-image{
+  margin-top: 70px;
+  width: 75px;
+  height: 75px;
+}
+.login-text{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #2a2a2a;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.loginItem{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin: 30px;
+}
+.login-content{
+  color: #FB654B;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.login-mobile{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.login-input{
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  color: #2a2a2a;
+  font-size: 15px;
+  background-color: #F2F2F2;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.login-code{
+  background-color: white;
+  height: 38px;
+  line-height: 38px;
+  color: #FFB11C;
+  font-size: 12px;
+  border-radius: 2px;
+  border: 1px solid #FFB11C;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.login-button{
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  background-color: #07C160;
+  border-radius: 5px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+}
+.regist-button{
+  margin-left: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  background-color: #FC9E52;
+  border-radius: 2px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+}
+.login-auth-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-auth-item{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 15px;
+}
+.login-auth-cancle{
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #CCCCCC;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.login-auth{
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #07C160;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.login-auth-image{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.login-auth-text{
+  font-size: 14px;
+  color: #999999;
+  text-align: center;
+  align-self: center;
+}

@@ -1,0 +1,38 @@
+<!--pages/login/login.wxml-->
+<view class="main">
+  <image class="imgBg" src="../../image/img_me_bg.png"></image>
+  <view class="login">
+    <text class="login-tips">欢迎来到美丽蔷薇~</text>
+    <image class="login-image" src="../../image/img_logo.png" mode="aspectFill"></image>
+    <text class="login-text">美丽蔷薇</text>
+    <view class="loginItem" wx:if="{{isRegister}}">
+      <text class="login-content">请先注册再进行登录哦！</text>
+      <view class="login-mobile">
+        <input class="login-input" bindinput="bindMobileInput" placeholder="请输入手机号码" maxlength="11" type="number"></input>
+        <view class="regist-button" bindtap="startReister">注册</view>
+      </view>
+      <view class="login-button" bindtap="onKeyStartLogin">微信手机号码一键登录</view>
+    </view>
+  </view>
+  <image catchtap="pageBack" style="width:25px; height:25px; margin-left:15px; position:fixed; top:{{statusBarHeight+5}}px;" src="../../image/img_back_white.png"></image>
+</view>
+<view class="public-window joinShopVehicle-wrap" hidden="{{joinWrapState}}">
+  <view class='window-bj' bindtap='closeWindow'></view>
+  <view class="window-main" animation="{{animationData}}">
+    <view class="close">
+      <image bindtap='closeWindow' src="../../image/img_close.png"></image>
+    </view>
+    <view class="login-auth-title">
+      <text class="login-auth-text">登录前需要获取您的用户信息，请选择</text>
+      <text class="login-auth-text">微信授权登录哦~</text>
+    </view>
+    <view class="login-auth-item">
+      <button class="login-auth-cancle" bindtap='closeWindow'>取消授权</button>
+      <view style="width:15px"></view>
+      <button class="login-auth" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+        <image class="login-auth-image" src="https://quanzinw.oss-cn-shenzhen.aliyuncs.com/applets/login/wechat-icon.png" mode="aspectFit"></image>
+        <view>微信授权登录</view>
+      </button>
+    </view>
+  </view>
+</view>
