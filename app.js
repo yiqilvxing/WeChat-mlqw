@@ -31,8 +31,8 @@ App({
 
   // 全局数据
   globalData: {
-    // http_base: "https://api.quanzilife.com.cn",// 正式环境
-    http_base: "http://192.168.7.147:8300",// 测试环境
+    http_base: "https://api.quanzilife.com.cn",// 正式环境
+    // http_base: "http://192.168.7.147:8300",// 测试环境
     http_ok: 100,
     http_header: {
       'Content-Type': 'application/json',

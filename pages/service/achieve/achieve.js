@@ -56,10 +56,11 @@ Page({
 })
 
 // 初始化图表
-function initChart(canvas, width, height){
+function initChart(canvas, width, height, dpr){
   const chart = echarts.init(canvas, null, {
     width: width,
-    height: height
+    height: height,
+    devicePixelRatio: dpr //解决小程序视图模糊的问题
   });
   canvas.setChart(chart);
   var option = {
