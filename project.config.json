@@ -37,7 +37,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.14.1",
   "appid": "wx89df97274311879a",
-  "projectname": "WeChat-qzlife",
+  "projectname": "WeChat-mlqw",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -111,6 +111,24 @@
           "name": "订单详情",
           "pathName": "pages/order/detail/detail",
           "query": "orderId=75697178809323520",
+          "scene": null
+        },
+        {
+          "name": "休息一下",
+          "pathName": "pages/service/girls/girls",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的钱包",
+          "pathName": "pages/service/wallet/wallet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "业绩统计",
+          "pathName": "pages/service/achieve/achieve",
+          "query": "",
           "scene": null
         }
       ]

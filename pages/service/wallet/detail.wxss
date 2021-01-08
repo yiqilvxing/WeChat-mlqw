@@ -1,0 +1,26 @@
+/* pages/service/wallet/detail.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px;
+}
+.item-left{
+  width: 100px;
+  height: auto;
+  font-size: 14px;
+  color: #999999;
+  align-content: center;
+  text-align: left;
+}
+.item-right{
+  font-size: 14px;
+  color: black;
+  align-content: center;
+  text-align: right;
+}

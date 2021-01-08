@@ -78,6 +78,40 @@ Page({
     });
   },
 
+  // 我的钱包
+  startWallet: function(e){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../service/wallet/wallet'
+      });
+    });
+  },
+
+  // 会员权益
+  startVip: function(){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../service/vip/vip'
+      });
+    });
+  },
+
+  // 业绩统计
+  startAchieve: function(){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../service/achieve/achieve'
+      });
+    });
+  },
+
+  // 休息一下
+  startGirls: function(e){
+    wx.navigateTo({
+      url: '../service/girls/girls'
+    });
+  },
+
 })
 /**
  * 获取用户信息

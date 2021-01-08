@@ -83,20 +83,19 @@
       <text class="menuTitle">我的服务</text>
       <text class="menuMore"></text>
     </view>
-    <view class="line"></view>
     <view class="menuTabs">
       <view class="menuTab">
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_coupon.png" mode="aspectFill"></image>
-          <text class="menuText">优惠券</text>
-        </view>
-        <view class="menuItem">
+        <view class="menuItem" bindtap="startWallet">
           <image class="menuImg" src="../../image/img_sv_wallet.png" mode="aspectFill"></image>
-          <text class="menuText">消费余额</text>
+          <text class="menuText">我的钱包</text>
+        </view>
+        <view class="menuItem" bindtap="startVip">
+          <image class="menuImg" src="../../image/img_sv_account.png" mode="aspectFill"></image>
+          <text class="menuText">会员权益</text>
         </view>
         <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_cash.png" mode="aspectFill"></image>
-          <text class="menuText">佣金提现</text>
+          <image class="menuImg" src="../../image/img_sv_team.png" mode="aspectFill"></image>
+          <text class="menuText">团队成员</text>
         </view>
         <view class="menuItem">
           <image class="menuImg" src="../../image/img_sv_integral.png" mode="aspectFill"></image>
@@ -105,30 +104,12 @@
       </view>
       <view class="menuTab">
         <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_account.png" mode="aspectFill"></image>
-          <text class="menuText">会员权益</text>
+          <image class="menuImg" src="../../image/img_sv_coupon.png" mode="aspectFill"></image>
+          <text class="menuText">优惠券</text>
         </view>
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_cloud.png" mode="aspectFill"></image>
-          <text class="menuText">云仓提货</text>
-        </view>
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_cloud_order.png" mode="aspectFill"></image>
-          <text class="menuText">云仓提货单</text>
-        </view>
-        <view class="menuItem">
+        <view class="menuItem" bindtap="startAchieve">
           <image class="menuImg" src="../../image/img_sv_statistic.png" mode="aspectFill"></image>
           <text class="menuText">业绩统计</text>
-        </view>
-      </view>
-      <view class="menuTab">
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_gift.png" mode="aspectFill"></image>
-          <text class="menuText">我的赠品</text>
-        </view>
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_team.png" mode="aspectFill"></image>
-          <text class="menuText">团队成员</text>
         </view>
         <view class="menuItem">
           <image class="menuImg" src="../../image/img_sv_upgrade.png" mode="aspectFill"></image>
@@ -137,6 +118,32 @@
         <view class="menuItem">
           <image class="menuImg" src="../../image/img_sv_invit.png" mode="aspectFill"></image>
           <text class="menuText">邀请好友</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="grid">
+    <view class="gridTop">
+      <text class="menuTitle">辅助工具</text>
+      <text class="menuMore"></text>
+    </view>
+    <view class="menuTabs">
+      <view class="menuTab">
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_ut_cash.png" mode="aspectFill"></image>
+          <text class="menuText">零钱提现</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_ut_scan.png" mode="aspectFill"></image>
+          <text class="menuText">店主工具</text>
+        </view>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_ut_cloud.png" mode="aspectFill"></image>
+          <text class="menuText">云仓提货</text>
+        </view>
+        <view class="menuItem" bindtap="startGirls">
+          <image class="menuImg" src="../../image/img_ut_girls.png" mode="aspectFill"></image>
+          <text class="menuText">休息一下</text>
         </view>
       </view>
     </view>

@@ -1,0 +1,30 @@
+<!--pages/service/achieve/achieve.wxml-->
+<view class="main">
+  <view class="basic">
+    <view class="item-column">
+      <text class="item-title">总业绩(元)</text>
+      <text class="item-money">5623.00</text>
+    </view>
+    <view class="item-line"></view>
+    <view class="item-column">
+      <text class="item-title">待结算(元)</text>
+      <text class="item-money">666.00</text>
+    </view>
+  </view>
+  <view class="space"></view>
+  <view class="item-row">
+    <text class="item-row-left">每月业绩</text>
+    <view class="item-calendar" bindtap="selectYear">
+      <text class="item-calendar-text">{{currentYear}}年</text>
+      <view class="item-calendar-line"></view>
+      <image class="item-calendar-image" src="../../../image/img_calendar.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="chart">
+    <ec-canvas id="mychart" canvas-id="mychart" ec="{{ec}}"></ec-canvas>
+  </view>
+  <view class="item-option">
+    <text class="item-option-text">查看业绩明细</text>
+    <text class="item-option-text">我的团队成员</text>
+  </view>
+</view>

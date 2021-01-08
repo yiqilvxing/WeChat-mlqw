@@ -86,8 +86,13 @@ function requestGetTabMenu(_this){
       if (res != null && res.data != null) {
         var result = res.data;
         if (result != null && result.code == app.globalData.http_ok) {
+          var maxsize = result.data.length > 5 ? 5 : result.data.length;
+          var data = [];
+          for(var i=0; i<maxsize; i++){
+            data.push(result.data[i]);
+          }
           _this.setData({
-            tabMenuItem: result.data
+            tabMenuItem: data
           });
         }
       }

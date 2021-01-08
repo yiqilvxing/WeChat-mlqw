@@ -1,0 +1,26 @@
+<!--pages/service/wallet/detail.wxml-->
+<view class="main">
+  <view class="item">
+    <text class="item-left">ID</text>
+    <text class="item-right">{{item.id}}</text>
+  </view>
+  <view class="item">
+    <text class="item-left">时间</text>
+    <text class="item-right">{{item.createTime}}</text>
+  </view>
+  <view class="item">
+    <text class="item-left">金额（元）</text>
+    <text class="item-right">¥{{item.num/100}}</text>
+  </view>
+  <view class="item">
+    <text class="item-left">类型</text>
+    <text class="item-right">
+      <block wx:if="{{item.isIncome}}">收入</block>
+      <block wx:if="{{!item.isIncome}}">支出</block>
+    </text>
+  </view>
+  <view class="item">
+    <text class="item-left">明细</text>
+    <text class="item-right">{{item.mark}}</text>
+  </view>
+</view>

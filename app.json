@@ -16,7 +16,13 @@
     "pages/me/data/data",
     "pages/me/address/address",
     "pages/me/collect/collect",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/service/girls/girls",
+    "pages/service/wallet/wallet",
+    "pages/service/wallet/list",
+    "pages/service/wallet/detail",
+    "pages/service/vip/vip",
+    "pages/service/achieve/achieve"
   ],
   "window": {
     "backgroundTextStyle": "light",

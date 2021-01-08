@@ -1,0 +1,30 @@
+<!--pages/service/wallet/list.wxml-->
+<view class="main">
+  <view class="swiper-tab">
+    <block wx:for="{{tabItem}}" wx:key='tabItem'>
+      <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
+    </block>
+  </view>
+  <view class="item-detail" wx:if="{{detailItem.length>0}}">
+    <block wx:for="{{detailItem}}" wx:key='detailItem'>
+      <view class="item-detail-bg" bindtap="startDetail" data-index="{{index}}">
+        <view class="item-detail-column">
+          <text class="item-detail-date">{{item.createTime}}</text>
+          <text class="item-detail-content">{{item.mark}}</text>
+        </view>
+        <text class="item-detail-price">
+          <block wx:if="{{item.isIncome}}">+{{item.num/100}}</block>
+          <block wx:if="{{!item.isIncome}}">-{{item.num/100}}</block>
+        </text>
+      </view>
+    </block>
+  </view>
+</view>
+<block wx:if="{{detailItem.length<=0}}">
+  <view class="no-data">
+    <text>暂无记录</text>
+  </view>
+</block>
+
+
+

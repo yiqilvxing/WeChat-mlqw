@@ -1,0 +1,7 @@
+<!--pages/service/girls/girls.wxml-->
+<view class="main">
+  <view class="item" wx:for="{{items}}" wx:key="items">
+    <image class="item-image" src="{{item.url}}" mode="widthFix"></image>
+    <view class="item-text">{{item.desc}}</view>
+  </view>
+</view>

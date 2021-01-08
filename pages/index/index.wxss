@@ -98,7 +98,8 @@
   letter-spacing: 1px;
 }
 .goodsList{
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   min-height: 50px;
   display: flex;
   flex-direction: row;

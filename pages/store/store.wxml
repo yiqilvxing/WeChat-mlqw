@@ -23,7 +23,7 @@
     </view>
   </view>
   <view class="space" />
-  <view class="tab">
+  <view class="tab" wx:if="{{tabMenuItem.length>0}}">
     <block wx:for="{{tabMenuItem}}" wx:key="tabMenuItem">
       <view class="tabMenu" bindtap="startGoodsDetail" data-bid="{{item.bid}}" data-type="{{item.type}}">
         <image class="tabImg" src="{{item.icon}}" mode="aspectFill"></image>

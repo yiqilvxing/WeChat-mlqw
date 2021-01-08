@@ -14,8 +14,9 @@ page{
   box-sizing: border-box;
 }
 .main{
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  overflow: hidden;
 }
 .space{
   height: 10px;
@@ -130,7 +131,7 @@ page{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  align-content: center;
   font-size: 13px;
   color: #999999;
   text-align: center;

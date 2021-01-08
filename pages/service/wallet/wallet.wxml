@@ -1,0 +1,52 @@
+<!--pages/service/wallet/wallet.wxml-->
+<view class="main">
+  <view class="header">
+    <image class="imgBg" src="../../../image/img_holder_bg.png"></image>
+    <view class="item-total">
+      <text class="item-total-title">
+        <block wx:if="{{currentTab==0}}">小金库 (元)</block>
+        <block wx:if="{{currentTab==1}}">余额 (元)</block>
+      </text>
+      <text class="item-total-money">{{money/100}}</text>
+      <text class="item-total-option" bindtap="startFuck">
+        <block wx:if="{{currentTab==0}}">去提现</block>
+        <block wx:if="{{currentTab==1}}">去消费</block>
+      </text>
+    </view>
+  </view>
+  <view style="display:flex; flex-direction:row; margin-left:15px; position:fixed; top:{{statusBarHeight+8}}px;">
+    <image catchtap="pageBack" style="width:25px; height:25px;" src="../../../image/img_back_white.png"></image>
+  </view>
+  <view style="width:100%; display:flex; flex-direction:row; margin-left:15px; position:fixed; top:{{statusBarHeight+8}}px;">
+    <view class="swiper-tab">
+      <block wx:for="{{tabItem}}" wx:key='tabItem'>
+        <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="item-row">
+    <text class="item-row-left">收支明细</text>
+    <text class="item-row-right" bindtap="selectAllList">查看全部</text>
+  </view>
+  <scroll-view scroll-y="true" class="item-detail" wx:if="{{detailItem.length>0}}">
+    <block wx:for="{{detailItem}}" wx:key='detailItem'>
+      <view class="item-detail-bg" bindtap="startDetail" data-index="{{index}}">
+        <view class="item-detail-column">
+          <text class="item-detail-date">{{item.createTime}}</text>
+          <text class="item-detail-content">{{item.mark}}</text>
+        </view>
+        <text class="item-detail-price">
+          <block wx:if="{{item.isIncome}}">+{{item.num/100}}</block>
+          <block wx:if="{{!item.isIncome}}">-{{item.num/100}}</block>
+        </text>
+      </view>
+    </block>
+  </scroll-view>
+  <block wx:if="{{detailItem.length<=0}}">
+    <view class="no-data">
+      <text>暂无记录</text>
+    </view>
+  </block>
+</view>
+
+
