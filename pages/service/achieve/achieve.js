@@ -27,14 +27,14 @@ Page({
   onLoad: function (options) {
     var timestamp = Date.parse(new Date());
     var date = new Date(timestamp);
-    var year =date.getFullYear();
+    var year = date.getFullYear();
     var years = [];
     if(year>2019){
       for(var i=0; i<=year-2019; i++){
         years[i] = (2019+i)+'年';
       };
       this.setData({
-        currentYear: year,
+        currentYear: year+'年',
         years: years
       });
     }
@@ -46,8 +46,10 @@ Page({
     wx.showActionSheet({
       itemList: _this.data.years,
       success(res) {
+        console.log(res);
+        var currentYear = _this.data.years[res.tapIndex];
         _this.setData({
-          
+          currentYear: currentYear
         })
       }
     });

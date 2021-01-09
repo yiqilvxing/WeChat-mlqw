@@ -15,13 +15,23 @@ Page({
     currentPage: 1,
     maxPage: 1,
   },
+  
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      currentPage: 1,
+      tabImageSize: (wx.getSystemInfoSync().windowWidth - 40) / 2
+    });
+  },
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
     this.setData({
       currentPage: 1,
-      tabImageSize: (wx.getSystemInfoSync().windowWidth - 40) / 2
     });
     requestGetBanner(this);
     requestGetTabMenu(this);

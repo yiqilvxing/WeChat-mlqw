@@ -2,7 +2,7 @@
 <import src="/pages/copyright/copyright.wxml"/>
 <view>
   <view class="header">
-    <image class="imgBg" src="../../image/img_me_bg.png"></image>
+    <image class="imgBg" src="../../image/img_me_bg.png" mode="aspectFill"></image>
     <block wx:if="{{isLogin}}">
       <view class="top" bindtap="startMeData">
         <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
@@ -93,11 +93,11 @@
           <image class="menuImg" src="../../image/img_sv_account.png" mode="aspectFill"></image>
           <text class="menuText">会员权益</text>
         </view>
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_team.png" mode="aspectFill"></image>
-          <text class="menuText">团队成员</text>
+        <view class="menuItem" bindtap="startAchieve">
+          <image class="menuImg" src="../../image/img_sv_statistic.png" mode="aspectFill"></image>
+          <text class="menuText">业绩统计</text>
         </view>
-        <view class="menuItem">
+        <view class="menuItem" bindtap="startIntegral">
           <image class="menuImg" src="../../image/img_sv_integral.png" mode="aspectFill"></image>
           <text class="menuText">积分商城</text>
         </view>
@@ -107,9 +107,9 @@
           <image class="menuImg" src="../../image/img_sv_coupon.png" mode="aspectFill"></image>
           <text class="menuText">优惠券</text>
         </view>
-        <view class="menuItem" bindtap="startAchieve">
-          <image class="menuImg" src="../../image/img_sv_statistic.png" mode="aspectFill"></image>
-          <text class="menuText">业绩统计</text>
+        <view class="menuItem">
+          <image class="menuImg" src="../../image/img_sv_team.png" mode="aspectFill"></image>
+          <text class="menuText">团队成员</text>
         </view>
         <view class="menuItem">
           <image class="menuImg" src="../../image/img_sv_upgrade.png" mode="aspectFill"></image>

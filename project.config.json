@@ -130,6 +130,12 @@
           "pathName": "pages/service/achieve/achieve",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "积分商城",
+          "pathName": "pages/service/integral/mall",
+          "query": "",
+          "scene": null
         }
       ]
     }

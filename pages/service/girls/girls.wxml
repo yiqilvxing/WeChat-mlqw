@@ -1,7 +1,12 @@
 <!--pages/service/girls/girls.wxml-->
 <view class="main">
-  <view class="item" wx:for="{{items}}" wx:key="items">
+  <view wx:if="{{items.length>0}}" class="item" wx:for="{{items}}" wx:key="items">
     <image class="item-image" src="{{item.url}}" mode="widthFix"></image>
     <view class="item-text">{{item.desc}}</view>
   </view>
 </view>
+<block wx:if="{{items.length<=0}}">
+  <view class="no-data">
+    <text>暂无记录</text>
+  </view>
+</block>

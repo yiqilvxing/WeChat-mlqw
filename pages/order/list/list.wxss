@@ -26,7 +26,7 @@ page{
   font-size: 15px;
   font-weight: bold;
   border-bottom: 2px solid #ffb11c;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 .swiper-box{
   width: 100%;

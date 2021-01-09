@@ -105,6 +105,15 @@ Page({
     });
   },
 
+  // 积分商城
+  startIntegral: function(){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../service/integral/mall'
+      });
+    });
+  },
+
   // 休息一下
   startGirls: function(e){
     wx.navigateTo({

@@ -15,7 +15,7 @@
   <view class="item-row">
     <text class="item-row-left">每月业绩</text>
     <view class="item-calendar" bindtap="selectYear">
-      <text class="item-calendar-text">{{currentYear}}年</text>
+      <text class="item-calendar-text">{{currentYear}}</text>
       <view class="item-calendar-line"></view>
       <image class="item-calendar-image" src="../../../image/img_calendar.png" mode="aspectFit"></image>
     </view>

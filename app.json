@@ -22,7 +22,9 @@
     "pages/service/wallet/list",
     "pages/service/wallet/detail",
     "pages/service/vip/vip",
-    "pages/service/achieve/achieve"
+    "pages/service/achieve/achieve",
+    "pages/service/integral/mall",
+    "pages/service/integral/goods"
   ],
   "window": {
     "backgroundTextStyle": "light",

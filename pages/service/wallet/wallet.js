@@ -37,7 +37,7 @@ Page({
   },
 
   // 页面返回
-  pageBack: function(){
+  pageBack: function() {
     wx.navigateBack();
   },
 
