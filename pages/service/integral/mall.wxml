@@ -1,0 +1,55 @@
+<!--pages/service/integral/mall.wxml-->
+<view class="main">
+  <view class="top"></view>
+  <view class="top-item">
+    <image class="top-image" mode="aspectFill" src="{{basic.url}}"></image>
+    <view class="item-row">
+      <view class="item-column">
+        <image class="item-row-image" src="../../../image/img_point_p.png" mode="aspectFit"></image>
+        <text class="item-row-point">积分{{basic.point}}</text>
+      </view>
+      <view class="item-line"></view>
+      <view class="item-column">
+        <image class="item-row-image" src="../../../image/img_point_d.png" mode="aspectFit"></image>
+        <text class="item-row-text">积分明细</text>
+      </view>
+      <view class="item-line"></view>
+      <view class="item-column">
+        <image class="item-row-image" src="../../../image/img_point_e.png" mode="aspectFit"></image>
+        <text class="item-row-text">积分订单</text>
+      </view>
+    </view>
+  </view>
+  <view class="space"></view>
+  <view class="item-more" bindtap="startGoods">
+    <view class="item-more-left">
+      <view class="item-more-dot"></view>
+      <text>积分兑换</text>
+    </view>
+    <image class="item-row-image" src="../../../image/img_arrow_right_mini.png" mode="aspectFit"></image>
+  </view>
+  <view class="line"></view>
+  <view class="goodsTab" wx:if="{{goodsItem.length>0}}">
+    <view class='goodsTabItem' style="width:{{tabImageSize}}px;"  wx:for="{{goodsItem}}" wx:key='goodsItem' bindtap="startGoodsDetail" data-id="{{item.skuId}}">
+      <image class='goodsTabItem-cover' style="width:{{tabImageSize}}px; height:{{tabImageSize}}px" src="{{item.cover}}" mode="aspectFill"></image>
+      <text class='goodsTabItem-title'>{{item.title}}</text>
+      <view class="goodsTabItem-row">
+        <text class='goodsTabItem-money'>{{item.money/100}}+{{item.point}}</text>
+        <text class='goodsTabItem-point'>积分</text>
+      </view>
+      <block wx:if="{{item.stock>0}}">
+        <text class="goodTabItem-buy">立即兑换</text>
+      </block>
+      <block wx:if="{{item.stock<=0}}">
+        <text class="goodTabItem-buy-off">已售罄</text>
+      </block>
+    </view>
+  </view>
+  <block wx:if="{{goodsItem.length<=0}}">
+    <view class="no-data">
+      <text>暂无商品</text>
+    </view>
+  </block>
+</view>
+
+

@@ -1,0 +1,47 @@
+<!--pages/service/coupon/detail.wxml-->
+<view class="main">
+  <view class="item" hidden="{{item==null}}">
+    <text class="item-store">{{item.storeName}}</text>
+    <view class="item-top">
+      <view class="item-row">
+        <text class="item-row-rmb">¥</text>
+        <text class="item-row-money">{{item.num1/100}}</text>
+      </view>
+      <text class="item-name">{{item.name}}</text>
+      <text class="item-use" bindtap="startIndex">立即使用</text>
+    </view>
+    <image class="item-line" src="../../../image/img_coupon_line.png" mode="aspectFill"></image>
+    <view class="item-bottom">
+      <view class="item-dec">
+        <view class="item-dec-row">
+          <image class="item-dec-image" src="../../../image/img_coupon_dot.png" mode="aspectFit"></image>
+          <view class="item-dec-coulmn">
+            <text class="item-dec-title">使用条件</text>
+            <text class="item-dec-content">消费满{{item.num2/100}}可用</text>
+          </view>
+        </view>
+        <view class="item-dec-row">
+          <image class="item-dec-image" src="../../../image/img_coupon_dot.png" mode="aspectFit"></image>
+          <view class="item-dec-coulmn">
+            <text class="item-dec-title">使用范围</text>
+            <text class="item-dec-content">全店通用</text>
+          </view>
+        </view>
+        <view class="item-dec-row">
+          <image class="item-dec-image" src="../../../image/img_coupon_dot.png" mode="aspectFit"></image>
+          <view class="item-dec-coulmn">
+            <text class="item-dec-title">有效期</text>
+            <text class="item-dec-content">{{item.beginTime}} ~ {{item.endTime}}</text>
+          </view>
+        </view>
+        <view class="item-dec-row">
+          <image class="item-dec-image" src="../../../image/img_coupon_dot.png" mode="aspectFit"></image>
+          <view class="item-dec-coulmn">
+            <text class="item-dec-title">使用须知</text>
+            <text class="item-dec-content">优惠范围在美丽蔷薇小程序中的所有商品</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

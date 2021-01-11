@@ -136,6 +136,11 @@
           "pathName": "pages/service/integral/mall",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "优惠券",
+          "pathName": "pages/service/coupon/list",
+          "scene": null
         }
       ]
     }

@@ -103,7 +103,7 @@
         </view>
       </view>
       <view class="menuTab">
-        <view class="menuItem">
+        <view class="menuItem" bindtap="startCoupon">
           <image class="menuImg" src="../../image/img_sv_coupon.png" mode="aspectFill"></image>
           <text class="menuText">优惠券</text>
         </view>

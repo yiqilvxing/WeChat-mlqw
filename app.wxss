@@ -27,6 +27,7 @@ page{
   height: 0.5px;
   width: 100%;
   background-color: #EEEEEE;
+  flex: none;
 }
 .mainText{
   font-size: 14px;
@@ -135,7 +136,6 @@ page{
   font-size: 13px;
   color: #999999;
   text-align: center;
-  background-color: white;
 }
 
 

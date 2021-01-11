@@ -1,0 +1,46 @@
+<!--pages/service/coupon/list.wxml-->
+<view class="main">
+  <view class="swiper-tab" style="scroll-x:true">
+    <block wx:for="{{tabItem}}" wx:key='tabItem'>
+      <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
+    </block>
+  </view>
+  <swiper class="swiper-box" style="min-height:{{winHeight}}px" bindchange="onSwiperChange">
+    <block wx:for="{{tabItem}}" wx:key='tabItem'>
+      <swiper-item data-id="{{item.id}}">
+        <view wx:if="{{couponItems.length>0}}" class="couponItems" wx:for="{{couponItems}}" wx:key='couponItems' bindtap="startDetail" data-id="{{item.id}}">
+          <view style="background-color: {{item.color}};" class="{{currentTab==0?'item':'item-off'}}" bindtap="startDetail" data-id="{{item.id}}">
+            <view class="{{currentTab==0?'item-left':'item-left-off'}}">
+              <view class="item-row">
+                <text class="item-left-rmb" style="color: {{item.color}};" >¥</text>
+                <text class="item-left-money" style="color: {{item.color}};" >{{item.num1/100}}</text>
+              </view>
+              <text class="item-left-type">
+                <block wx:if="{{item.type==0}}">代金券</block>
+                <block wx:if="{{item.type==1}}">折扣券</block>
+              </text>
+            </view>
+            <view class="item-line">
+              <view class="item-line-line"></view>
+            </view>
+            <view class="item-center">
+              <text class="item-center-name">{{item.name}}</text>
+              <text class="item-center-date">{{item.beginTime}} ~ {{item.endTime}}</text>
+              <text class="item-center-store">{{item.storeName}}</text>
+            </view>
+            <image class="item-line-bg" src="../../../image/img_coupon_bg.png"></image>
+            <view class="item-right" catchtap="startIndex" data-id="{{item.id}}">
+              <text>立即使用</text>
+            </view>
+          </view>
+        </view>
+        <block wx:if="{{couponItems.length<=0}}">
+          <view class="no-data">
+            <text>暂无记录</text>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+

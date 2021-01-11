@@ -114,6 +114,15 @@ Page({
     });
   },
 
+  // 优惠券
+  startCoupon: function(){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../service/coupon/list'
+      });
+    });
+  },
+
   // 休息一下
   startGirls: function(e){
     wx.navigateTo({

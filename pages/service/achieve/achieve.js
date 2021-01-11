@@ -2,9 +2,10 @@
 //获取应用实例
 const app = getApp()
 import * as echarts from '../../../ec-canvas/echarts';
+var chart;
 
 Page({
-
+  
   /**
    * 页面的初始数据
    */
@@ -46,11 +47,13 @@ Page({
     wx.showActionSheet({
       itemList: _this.data.years,
       success(res) {
-        console.log(res);
         var currentYear = _this.data.years[res.tapIndex];
         _this.setData({
           currentYear: currentYear
         })
+        var data = [Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+                    Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100];
+        refreshChart(data);
       }
     });
   },
@@ -59,12 +62,19 @@ Page({
 
 // 初始化图表
 function initChart(canvas, width, height, dpr){
-  const chart = echarts.init(canvas, null, {
+   chart = echarts.init(canvas, null, {
     width: width,
     height: height,
     devicePixelRatio: dpr //解决小程序视图模糊的问题
   });
   canvas.setChart(chart);
+  var data = [Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+              Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100];
+  refreshChart(data);
+  return chart;
+}
+// 刷新图表数据
+function refreshChart(data){
   var option = {
         color: ['#F3C438'],
         tooltip: {
@@ -113,7 +123,7 @@ function initChart(canvas, width, height, dpr){
                 name: '业绩',
                 type: 'bar',
                 barWidth: 10,
-                data: [100, 90, 20, 90, 150, 70, 210, 0, 20, 50, 100, 90,],
+                data: data,
                 itemStyle: {
                     normal: {
                         barBorderRadius: 5
@@ -123,5 +133,4 @@ function initChart(canvas, width, height, dpr){
         };
 
   chart.setOption(option);
-  return chart;
 }

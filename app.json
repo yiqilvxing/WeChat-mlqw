@@ -24,7 +24,9 @@
     "pages/service/vip/vip",
     "pages/service/achieve/achieve",
     "pages/service/integral/mall",
-    "pages/service/integral/goods"
+    "pages/service/integral/goods",
+    "pages/service/coupon/list",
+    "pages/service/coupon/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
