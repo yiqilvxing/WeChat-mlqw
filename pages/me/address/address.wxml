@@ -18,10 +18,7 @@
           <image class="item-radio-img" src="../../../image/img_check_off.png" mode="aspectFit"></image>
           <text>设为默认</text>
         </view>
-        <view class="item-row">
-          <text class="item-edit" catchtap="startAddressEdit" data-index="{{index}}">编辑</text>
-          <text class="item-edit" catchtap="requestAddressDelete" data-index="{{index}}">删除</text>
-        </view>
+        <text class="item-edit" catchtap="requestAddressDelete" data-index="{{index}}">删除</text>
       </view>
     </view>
   </view>

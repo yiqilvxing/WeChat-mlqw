@@ -1,0 +1,17 @@
+<!--pages/service/invite/invite.wxml-->
+<import src="../../../pages/copyright/copyright.wxml"/>
+<view class="main">
+  <view class="item-top">
+    <text class="item-scan">微信扫一扫，使用小程序</text>
+    <image class="item-image" src="https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/gh_fd66f5435419_860.jpg" mode="aspectFill"></image>
+    <text class="item-poster" bindtap="startPoster">生成邀请海报</text>
+  </view>
+  <view class="item-bottom">
+    <text class="rule">邀请规则</text>
+    <text class="rule-item">1、把二维码分享给微信好友时，好友通过您的二维码进入小程序注册，即成为您的成员。</text>
+    <text class="rule-item">2、以上的绑定仅限新会员注册。</text>
+  </view>
+  <template is="copyright"></template>
+</view>
+
+

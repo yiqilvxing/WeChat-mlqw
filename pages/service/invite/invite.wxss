@@ -1,0 +1,57 @@
+/* pages/service/invite/invite.wxss */
+.main{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+}
+.item-top{
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+  padding: 20px;
+}
+.item-scan{
+  color: #2a2a2a;
+  font-size: 16px;
+}
+.item-image{
+  width: 180px;
+  height: 180px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.item-poster{
+  width: 140px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  background-color: #FFB200;
+  border-radius: 35px;
+}
+.item-bottom{
+  margin-left: 12px;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+  padding: 15px;
+}
+.rule{
+  color: black;
+  font-size: 14px;
+}
+.rule-item{
+  margin-top: 6px;
+  color: #666666;
+  font-size: 12px;
+}

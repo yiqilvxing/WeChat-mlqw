@@ -1,6 +1,10 @@
 <!--pages/service/integral/mall.wxml-->
 <view class="main">
   <view class="top"></view>
+  <view class="top-sp-row">
+    <view class="top-sp-item"></view>
+    <view class="top-sp-item"></view>
+  </view>
   <view class="top-item">
     <image class="top-image" mode="aspectFill" src="{{basic.url}}"></image>
     <view class="item-row">

@@ -26,7 +26,10 @@
     "pages/service/integral/mall",
     "pages/service/integral/goods",
     "pages/service/coupon/list",
-    "pages/service/coupon/detail"
+    "pages/service/coupon/detail",
+    "pages/service/invite/invite",
+    "pages/service/invite/poster",
+    "pages/service/team/team"
   ],
   "window": {
     "backgroundTextStyle": "light",

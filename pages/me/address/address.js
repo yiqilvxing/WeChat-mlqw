@@ -55,14 +55,6 @@ Page({
   },
 
   /**
-   * 跳转到地址编辑
-   */
-  startAddressEdit: function(e){
-    var address = e.currentTarget.dataset.item;
-    
-  },
-
-  /**
    * 选择地址
    */
   selectAddress: function(e){
@@ -73,6 +65,47 @@ Page({
       orderAddress: address
      });
     wx.navigateBack();
+  },
+
+  // 新增地址 
+  addAddress: function(){
+    var _this = this;
+    wx.chooseAddress({
+      success (res) {
+        var data = {
+          consignee: res.userName,
+          mobile: res.telNumber,
+          province: 0,
+          city: 0,
+          area: 0,
+          address: res.provinceName+' '+res.cityName+' '+res.countyName,
+          addr: res.detailInfo,
+          isDefault: true,
+        };
+        wx.showLoading({
+          title: '正在保存...'
+        });
+        wx.request({
+          url: app.globalData.http_base + '/address',
+          method: 'POST',
+          data: data,
+          header: app.globalData.http_header,
+          success: function(res) {
+            console.log(res);
+            wx.hideLoading();
+            if (res != null && res.data != null) {
+              var result = res.data;
+              if (result != null && result.code == app.globalData.http_ok) {
+                _this.requestAddress();
+              }
+            }
+          },
+          fail: function(res){
+            wx.hideLoading();
+          },
+        });
+      }
+    })
   },
 
   /**

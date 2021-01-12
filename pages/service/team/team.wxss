@@ -1,0 +1,77 @@
+/* pages/service/team/team.wxss */
+.main{
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  height: 100%;
+}
+.item-bg{
+  display: flex; 
+  flex-direction: column;
+  background-size: 100% 100%; 
+  justify-content: flex-end;
+}
+.item-name{
+  margin: 15px;
+  font-size: 18px;
+  color: white;
+}
+.item-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+}
+.item-row-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.item-row-image{
+  width: 20px;
+  height: 20px;
+}
+.item-row-left{
+  margin-left: 10px;
+  font-size: 14px;
+  color: #2a2a2a;
+}
+.item-row-right{
+  font-size: 14px;
+  color: #666666;
+}
+.item-level-title{
+  margin: 15px;
+  font-size: 16px;
+  color: #2a2a2a;
+}
+.item-level{
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+}
+.item-level-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.item-level-image{
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+.item-level-left{
+  margin-left: 10px;
+  font-size: 14px;
+  color: #2a2a2a;
+}
+.item-level-right{
+  font-size: 14px;
+  color: #999999;
+}

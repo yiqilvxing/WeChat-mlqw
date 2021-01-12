@@ -1,0 +1,32 @@
+<!--pages/service/invite/poster.wxml-->
+<view class="main" wx:if="{{!showPoster}}">
+  <view class="item" wx:if="{{items.length>0}}">
+    <view class='item-tab' wx:for="{{items}}" wx:key='items' bindtap="showPoster" data-url="{{item.url}}">
+      <image class='item-tab-cover' style="width:{{tabImageSize}}px; height:auto" src="{{item.url}}" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+<view class="item-show" wx:if="{{showPoster}}" bindtap="closeShowPoster">
+  <view class="item-show-data" style="width:{{showImageSize}}px; height:{{showImageSize*1262/765}}px; background-image:url({{currentUrl}});">
+    <view class="item-show-user">
+      <view class="item-show-column">
+        <view class="item-show-row">
+          <image class="item-show-header" src="{{userInfo.avatar}}" mode="aspectFill"></image>
+          <view class="item-show-column">
+            <text class="item-show-column-text">邀请人 : {{userInfo.name}}</text>
+            <text class="item-show-column-text">邀请码 : {{userInfo.mobile}}</text>
+          </view>
+        </view>
+        <image class="item-show-column-image" src="../../../image/img_scan_code.png" mode="aspectFill"></image>
+      </view>
+      <image class='item-show-code' src="https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/gh_fd66f5435419_860.jpg" mode="aspectFill"></image>
+    </view>
+  </view>
+  <text class="item-save">保存图片</text>
+</view>
+<block wx:if="{{items.length<=0}}">
+  <view class="no-data">
+    <text>暂无记录</text>
+  </view>
+</block>
+

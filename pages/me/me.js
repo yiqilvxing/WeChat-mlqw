@@ -123,6 +123,24 @@ Page({
     });
   },
 
+  // 我的团队
+  startTeam: function(){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../service/team/team'
+      });
+    });
+  },
+
+  // 邀请好友
+  startInvite: function(){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../service/invite/invite'
+      });
+    });
+  },
+
   // 休息一下
   startGirls: function(e){
     wx.navigateTo({

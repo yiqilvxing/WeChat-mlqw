@@ -9,7 +9,7 @@
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
       <swiper-item data-id="{{item.id}}">
         <view wx:if="{{couponItems.length>0}}" class="couponItems" wx:for="{{couponItems}}" wx:key='couponItems' bindtap="startDetail" data-id="{{item.id}}">
-          <view style="background-color: {{item.color}};" class="{{currentTab==0?'item':'item-off'}}" bindtap="startDetail" data-id="{{item.id}}">
+          <view style="background-color: {{item.color}};" class="{{currentTab==0?'item':'item-off'}}">
             <view class="{{currentTab==0?'item-left':'item-left-off'}}">
               <view class="item-row">
                 <text class="item-left-rmb" style="color: {{item.color}};" >¥</text>

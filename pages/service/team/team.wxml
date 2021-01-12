@@ -1,0 +1,35 @@
+<!--pages/service/team/team.wxml-->
+<view class="main">
+  <image catchtap="pageBack" style="width:30px; height:30px; margin-left:15px; position:fixed; top:{{statusBarHeight+5}}px;" src="../../../image/img_detail_back.png"></image>
+  <view class="item-bg" style="width:{{bgSize}}px; height:{{bgSize}}px; background-image:url({{userInfo.avatar}});">
+    <text class="item-name">{{userInfo.name}}</text>
+  </view>
+  <view class="item-row">
+    <view class="item-row-row">
+      <image class="item-row-image" src="../../../image/img_team_shop.png"></image>
+      <text class="item-row-left">入口店铺</text>
+    </view>
+    <text class="item-row-right">{{userInfo.storeName}}</text>
+  </view>
+  <view class="line"></view>
+  <view class="item-row">
+    <view class="item-row-row">
+      <image class="item-row-image" src="../../../image/img_team_member.png"></image>
+      <text class="item-row-left">成员</text>
+    </view>
+    <text class="item-row-right">{{userInfo.subordinateCount}}人</text>
+  </view>
+  <text class="item-level-title">会员等级</text>
+  <block wx:for="{{levelItems}}" wx:key="levelItems">
+    <view class="item-level">
+      <view class="item-level-row">
+        <image class="item-level-image" src="{{item.storeLogo}}"></image>
+        <text class="item-level-left">{{item.storeName}}</text>
+      </view>
+      <text class="item-level-right">{{item.currentClassName}}</text>
+    </view>
+  </block>
+</view>
+
+
+
