@@ -1,7 +1,7 @@
 <!--pages/service/sales/confirm.wxml-->
 <view class="main">
-  <view style="margin-bottom: 100px">
-    <view class="goodsStoreItem" wx:if="{{salesEntiy!=null}}">
+  <view style="margin-bottom: 100px" wx:if="{{salesEntiy!=null}}">
+    <view class="goodsStoreItem">
       <view class="space"></view>
       <view class="userItem">
         <image class="userImage" src="{{salesEntiy.avatar}}" mode="aspectFit"/>
@@ -27,7 +27,7 @@
               <text class='goodsTabItem-count'>×{{item.num}}</text>
             </view>
             <view class="goodsTabCart">
-              <text>规格: {{item.spec}}</text>
+              <text>规格：{{item.spec}}</text>
             </view>
           </view>
         </view>

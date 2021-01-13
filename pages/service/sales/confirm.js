@@ -16,13 +16,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     var code = options.code;
-    console.log(code);
-    this.setData({
+    _this.setData({
       code: code
     });
     // 获取订单信息
-    this.requestOrderMessage(code);    
+    _this.requestOrderMessage(code);    
   },
 
   /**
@@ -45,8 +45,20 @@ Page({
         if (res != null && res.data != null) {
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
+            var items = result.data;
+            if(items != null && items.orderGoodItemList != null){
+              var goodsItem = items.orderGoodItemList;
+              for(var i=0;i<goodsItem.length; i++){
+                var goodsSpecsMap = JSON.parse(goodsItem[i].spec);
+                var specs = '';
+                for(var x in goodsSpecsMap){
+                  specs += goodsSpecsMap[x]+' ';
+                }
+                goodsItem[i].spec = specs;
+              }
+            }
             _this.setData({
-              salesEntiy: result.data,
+              salesEntiy: items,
             });
           }
         }

@@ -31,7 +31,6 @@ Page({
     wx.scanCode({
       success: (res) => {
         var code = res.result;
-        console.log(code);
         _this.setData({
           code: code,
         })

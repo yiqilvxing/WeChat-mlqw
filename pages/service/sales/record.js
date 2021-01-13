@@ -59,6 +59,17 @@ Page({
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
             var items = result.data.rows;
+            if(items != null && items.orderGoodItemList != null){
+              var goodsItem = items.orderGoodItemList;
+              for(var i=0;i<goodsItem.length; i++){
+                var goodsSpecsMap = JSON.parse(goodsItem[i].spec);
+                var specs = '';
+                for(var x in goodsSpecsMap){
+                  specs += goodsSpecsMap[x]+' ';
+                }
+                goodsItem[i].spec = specs;
+              }
+            }
             if(page == 1){
               _this.setData({
                 maxPage: result.data.pageSize,
