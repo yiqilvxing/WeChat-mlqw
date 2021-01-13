@@ -108,6 +108,7 @@ Page({
         url = '../service/invite/invite'
         break;
       case 'sales':// 订单核销
+        url = '../service/sales/sales'
         break;
       case 'cash':// 零钱提现
         break;

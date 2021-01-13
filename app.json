@@ -17,7 +17,6 @@
     "pages/me/address/address",
     "pages/me/collect/collect",
     "pages/search/search",
-    "pages/service/girls/girls",
     "pages/service/wallet/wallet",
     "pages/service/wallet/list",
     "pages/service/wallet/detail",
@@ -27,10 +26,14 @@
     "pages/service/integral/goods",
     "pages/service/coupon/list",
     "pages/service/coupon/detail",
+    "pages/service/team/team",
+    "pages/service/cloud/cloud",
     "pages/service/invite/invite",
     "pages/service/invite/poster",
-    "pages/service/team/team",
-    "pages/service/cloud/cloud"
+    "pages/service/girls/girls",
+    "pages/service/sales/sales",
+    "pages/service/sales/confirm",
+    "pages/service/sales/record"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -99,6 +99,7 @@ page{
   box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
 }
 .login-auth-title{
+  margin: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;

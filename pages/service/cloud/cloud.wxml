@@ -4,7 +4,7 @@
     <view class="goodsStoreItem" wx:for="{{goodsStoreItem}}" wx:key='goodsStoreItem' data-id="{{item.id}}">
       <view class="space"></view>
       <view class="storeItem">
-        <view class="left" catchtap="startStore" data-id="{{item.storeId}}">
+        <view class="left">
           <image class="storeImage" data-index="{{index}}" src="{{item.storeLogo}}" mode="aspectFit"/>
           <text class="storeText" data-index="{{index}}">{{item.storeName}}</text>
         </view>

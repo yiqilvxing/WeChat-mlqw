@@ -1,0 +1,110 @@
+/* pages/service/sales/sales.wxss */
+page{
+  background-color: white;
+}
+.main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.item-top{
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-top-input{
+  width: 200px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  align-self: center;
+  background-color: #F1F1F1;
+  border-radius: 45px;
+  font-size: 16px;
+  color: black;
+}
+.item-top-text{
+  margin-top: 15px;
+  width: 200px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 45px;
+  border: 1px solid #FFB11C;
+  font-size: 16px;
+  color: #FFB11C;
+}
+.item-bottom{
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.item-line{
+  width: 100%;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-line-line{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50%;
+  height: 0.5px;
+  background-color: #EEEEEE;
+}
+.item-line-text{
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+  color: #FFB11C;
+  font-weight: lighter;
+}
+.item-scan{
+  width: 135px;
+  height: 135px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 135px;
+  border: 5px solid #FFEBC3;
+  background-color: #FFB11C;
+}
+.item-scan-on{
+  width: 135px;
+  height: 135px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 135px;
+  border: 5px solid #FFEBC3;
+  background-color: #FF8500;
+}
+.item-scan-image{
+  width: 30px;
+  height: 30px;
+}
+.item-scan-text{
+  margin-top: 10px;
+  font-size: 16px;
+  color: white;
+}

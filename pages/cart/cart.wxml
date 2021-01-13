@@ -56,7 +56,7 @@
   <!-- 没数据 -->
   <block wx:if="{{!hasData}}">
     <view class="item-tips">
-      <image class="item-tips-img" src="../../image/img_cart_empty.png" mode="aspectFit"></image>
+      <image class="item-tips-img" src="../../image/img_cart_empty.png" mode="aspectFill"></image>
       <text class="item-tips-text">购物车还是空的哦~</text>
       <text class="item-tips-btn" bindtap="startIndex">去逛逛</text>
     </view>
@@ -65,7 +65,7 @@
 <!-- 未登录 -->
 <block wx:if="{{!isLogin}}">
   <view class="item-tips">
-    <image class="item-tips-img" src="../../image/img_cart_empty.png" mode="aspectFit"></image>
+    <image class="item-tips-img" src="../../image/img_cart_empty.png" mode="aspectFill"></image>
     <text class="item-tips-text">登录后才能看到商品哦~</text>
     <text class="item-tips-btn" bindtap="startLogin">去登录</text>
   </view>

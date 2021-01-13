@@ -1,6 +1,7 @@
 // pages/login/login.js
 //获取应用实例
 const app = getApp()
+
 Page({
 
   /**
@@ -156,10 +157,7 @@ Page({
     wx.showLoading({
       title: '正在登录...',
     })
-    // 正式环境
-    var qz_token = 'eyJhbGciOiJSUzI1NiJ9.eyJpZCI6ODg0LCJleHBpcmVUaW1lIjoxNjExODgyOTgzNjY2LCJpbmZvIjoie1wibW9iaWxlSW5mb1wiOlwibW9iaWxlSW5mb1wiLFwiZGV2aWNlSWRcIjpcImRldmljZUlkXCIsXCJ1c2VyX2FnZW50XCI6XCJVc2VyLUFnZW50XCIsXCJwbGF0Zm9ybVwiOlwicGxhdGZvcm1cIixcInZlcnNpb25Db2RlXCI6XCJ2ZXJzaW9uQ29kZVwifSIsImV4cCI6MTYxMTg4Mjk4M30.FtjI7oLSzrcdnvOQ1mJOHlttoCyaT1Ndzqvkpa2-02vsTOseB8sQC4FiKcYdoTMrjKlxDTOXICIvCpca6AFyXwdJrk98wFyGtTlgpIG4JvSHojHm6N4EHFSwD5lslIkXUhxTJe_--t2NFLhCkimnoN_ytRmYxXwzd-OSpWwnFYY';
-    // 测试环境
-    // var qz_token = 'eyJhbGciOiJSUzI1NiJ9.eyJpZCI6MTcsImV4cGlyZVRpbWUiOjE2MTI2MDQyNDAyODksImluZm8iOiJ7XCJtb2JpbGVJbmZvXCI6XCJtb2JpbGVJbmZvXCIsXCJkZXZpY2VJZFwiOlwiZGV2aWNlSWRcIixcInVzZXJfYWdlbnRcIjpcIlVzZXItQWdlbnRcIixcInBsYXRmb3JtXCI6XCJwbGF0Zm9ybVwiLFwidmVyc2lvbkNvZGVcIjpcInZlcnNpb25Db2RlXCJ9IiwiZXhwIjoxNjEyNjA0MjQwfQ.Lbb9MSA01Js8qc5Rh3vFthVcnZcJkhL6pDZWGqC3ligVQht0lBwPyiGs9OtESgQIqpK749PnaO6L8h6o5a6tVpC_pOdyTTRpclsNm5-9fZcg3foh8kcnAICwemFqOl-CdFGRSWBg7bZp-X0ha4HBWZv1e7CC6H9GzmcflaekGXQ';
+    var qz_token = app.globalData.qz_token;
     app.globalData.isLogin = true;
     app.globalData.http_header.qz_token = qz_token;
     app.globalData.wx_user_info = e.detail.userInfo;
