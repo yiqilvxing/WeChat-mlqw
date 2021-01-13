@@ -83,7 +83,7 @@ function requestWalletList(_this,page){
   var currentTab = _this.data.currentTab;
   if(page==1){
     wx.showLoading({
-      title: '正在加载...',
+      title: app.globalData.loading
     })
   }
   wx.request({

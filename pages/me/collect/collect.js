@@ -110,7 +110,7 @@ Page({
       skuId: _this.data.goodsItem[index].id
     };
     wx.showLoading({
-      title: '加载中...',
+      title: app.globalData.loading,
     });
     // 取消收藏
     if(isCollect){

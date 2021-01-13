@@ -78,74 +78,59 @@ Page({
     });
   },
 
-  // 我的钱包
-  startWallet: function(e){
-    app.checkUserLogin(function () {
-      wx.navigateTo({
-        url: '../service/wallet/wallet'
+  // 我的服务
+  startServicePage: function(e){
+    let key = e.currentTarget.dataset.key;
+    let url = null;
+    switch (key) {
+      case 'wallet':// 我的钱包
+        url = '../service/wallet/wallet'
+        break;
+      case 'vip':// 会员权益
+        url = '../service/vip/vip'
+        break;
+      case 'achieve':// 业绩统计
+        url = '../service/achieve/achieve'
+        break;
+      case 'integral':// 积分商城
+        url = '../service/integral/mall'
+        break;
+      case 'coupon':// 优惠券 
+        url = '../service/coupon/list'
+        break;
+      case 'team':// 我的团队
+        url = '../service/team/team'
+        break;
+      case 'cloud':// 云仓提货
+        url = '../service/cloud/cloud'
+        break;
+      case 'invite':// 邀请好友
+        url = '../service/invite/invite'
+        break;
+      case 'sales':// 订单核销
+        break;
+      case 'cash':// 零钱提现
+        break;
+      case 'upgrade':// 我要升级
+        break;
+      case 'girls':// 休息一下
+        url = '../service/girls/girls'
+        break;
+      default:
+        break;
+    }
+    if(url != null){
+      app.checkUserLogin(function () {
+        wx.navigateTo({
+          url: url
+        });
       });
-    });
-  },
-
-  // 会员权益
-  startVip: function(){
-    app.checkUserLogin(function () {
-      wx.navigateTo({
-        url: '../service/vip/vip'
-      });
-    });
-  },
-
-  // 业绩统计
-  startAchieve: function(){
-    app.checkUserLogin(function () {
-      wx.navigateTo({
-        url: '../service/achieve/achieve'
-      });
-    });
-  },
-
-  // 积分商城
-  startIntegral: function(){
-    app.checkUserLogin(function () {
-      wx.navigateTo({
-        url: '../service/integral/mall'
-      });
-    });
-  },
-
-  // 优惠券
-  startCoupon: function(){
-    app.checkUserLogin(function () {
-      wx.navigateTo({
-        url: '../service/coupon/list'
-      });
-    });
-  },
-
-  // 我的团队
-  startTeam: function(){
-    app.checkUserLogin(function () {
-      wx.navigateTo({
-        url: '../service/team/team'
-      });
-    });
-  },
-
-  // 邀请好友
-  startInvite: function(){
-    app.checkUserLogin(function () {
-      wx.navigateTo({
-        url: '../service/invite/invite'
-      });
-    });
-  },
-
-  // 休息一下
-  startGirls: function(e){
-    wx.navigateTo({
-      url: '../service/girls/girls'
-    });
+    }else{
+      wx.showModal({
+        title: '功能开发中',
+        content: '请耐心等待更新哦~',
+      })
+    }
   },
 
 })

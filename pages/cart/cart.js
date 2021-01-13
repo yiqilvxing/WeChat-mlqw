@@ -236,7 +236,6 @@ function requestGetCart(_this){
       }
     },
     fail: function(res) {
-      console.log(res);
     }
   });
 }

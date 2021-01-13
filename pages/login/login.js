@@ -132,7 +132,6 @@ Page({
       header: app.globalData.http_header,
       success: function(res) {
         if (res != null && res.data != null) {
-          console.log(res.data);
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
             app.globalData.isLogin = true;

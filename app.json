@@ -29,7 +29,8 @@
     "pages/service/coupon/detail",
     "pages/service/invite/invite",
     "pages/service/invite/poster",
-    "pages/service/team/team"
+    "pages/service/team/team",
+    "pages/service/cloud/cloud"
   ],
   "window": {
     "backgroundTextStyle": "light",

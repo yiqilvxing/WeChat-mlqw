@@ -60,7 +60,7 @@ Page({
  */
 function requestGetOrderDetail(_this,orderId){
   wx.showLoading({
-    title: '加载中...',
+    title: app.globalData.loading
   })
   wx.request({
     url: app.globalData.http_base + '/order/good/orderDetail?orderGoodId=' + orderId,
@@ -90,7 +90,7 @@ function requestReplacePay(_this,id){
     id: id
   }
   wx.showLoading({
-    title: '加载中...',
+    title: app.globalData.loading
   });
   wx.request({
     url: app.globalData.http_base + '/order/good/again',

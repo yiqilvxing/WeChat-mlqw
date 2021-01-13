@@ -142,7 +142,6 @@ function requestGetOrderList(_this,orderState){
       }
     },
     fail: function(res) {
-      console.log(res);
     }
   });
 }
@@ -155,7 +154,7 @@ function requestReplacePay(_this,id){
       id: id
     }
     wx.showLoading({
-      title: '加载中...',
+      title: app.globalData.loading
     });
     wx.request({
       url: app.globalData.http_base + '/order/good/again',
@@ -217,7 +216,6 @@ function requestOrderDelete(_this,id){
           },
           fail: function(res) {
             wx.hideLoading();
-            console.log(res);
           }
         });
       }else{
@@ -245,7 +243,6 @@ function requestOrderRevoke(_this,id){
           header: app.globalData.http_header,
           success: function(res) {
             wx.hideLoading();
-            console.log(res);
             if (res != null && res.data.code == app.globalData.http_ok) {
               requestGetOrderList(_this,_this.data.orderState);
               wx.showToast({
@@ -261,7 +258,6 @@ function requestOrderRevoke(_this,id){
           },
           fail: function(res) {
             wx.hideLoading();
-            console.log(res);
           }
         });
       }else{

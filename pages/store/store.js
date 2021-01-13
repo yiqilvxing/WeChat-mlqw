@@ -20,7 +20,6 @@ Page({
    */
   onLoad: function (options) {
     var storeId = options.storeId;
-    console.log(storeId);
     this.setData({
       storeId: storeId,
       tabImageSize: (wx.getSystemInfoSync().windowWidth - 40) / 2
@@ -168,7 +167,6 @@ function requestStoreMessage(_this){
       }
     },
     fail: function(res) {
-      console.log(res);
     }
   });
 }

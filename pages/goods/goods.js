@@ -160,7 +160,7 @@ Page({
     };
     if(type == 0){// 加入购物车
       wx.showLoading({
-        title: '加载中...',
+        title: app.globalData.loading,
       });
       wx.request({
         url: app.globalData.http_base + '/cart',
@@ -258,7 +258,7 @@ Page({
         skuId: goodsEntity.id
       }
       wx.showLoading({
-        title: '加载中...'
+        title: app.globalData.loading
       });
       wx.request({
         url: app.globalData.http_base + '/collection',
@@ -341,7 +341,6 @@ Page({
         }
       },
       fail: function(res) {
-        console.log(res);
         wx.hideLoading();
       }
     });
@@ -353,7 +352,7 @@ Page({
  */
 function requestGetGoodsDetail(_this,goodsId){
   wx.showLoading({
-    title: '加载中...',
+    title: app.globalData.loading
   })
   wx.request({
     url: app.globalData.http_base + '/good/goodDetails?skuId=' + goodsId,
@@ -398,7 +397,6 @@ function requestGetGoodsDetail(_this,goodsId){
       }
     },
     fail: function(res) {
-      console.log(res);
       wx.hideLoading();
     }
   });
@@ -422,7 +420,6 @@ function requestStoreMessage(_this,storeId){
       }
     },
     fail: function(res) {
-      console.log(res);
     }
   });
 }

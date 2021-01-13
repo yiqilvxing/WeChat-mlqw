@@ -1,0 +1,40 @@
+<!--pages/service/cloud/cloud.wxml-->
+<view class="main">
+  <view style="margin-bottom: 100px">
+    <view class="goodsStoreItem" wx:for="{{goodsStoreItem}}" wx:key='goodsStoreItem' data-id="{{item.id}}">
+      <view class="space"></view>
+      <view class="storeItem">
+        <view class="left" catchtap="startStore" data-id="{{item.storeId}}">
+          <image class="storeImage" data-index="{{index}}" src="{{item.storeLogo}}" mode="aspectFit"/>
+          <text class="storeText" data-index="{{index}}">{{item.storeName}}</text>
+        </view>
+      </view>
+      <view class="line"></view>
+      <view class="goodsCartItem" wx:for="{{item.skuCloudList}}" wx:key='goodsItems' wx:for-item="item2" wx:for-index="index2">
+        <view class="goodsItem">
+          <view class="goodsTabImg">
+            <image class='goodsTabItem-cover' src="{{item2.skuCover}}" mode="aspectFill"></image>
+          </view>
+          <view class="goodsTabText">
+            <text class='goodsTabItem-title'>{{item2.skuTitle}}</text>
+            <view class="goodsTabCart">
+              <text>库存：{{item2.stock}}{{item2.unit}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="line"></view>
+      <view class="bottom" catchtap="startCloudTake">
+        <text>申请提货</text>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{goodsStoreItem.length<=0}}">
+    <view class="no-data">
+      <text>暂无记录</text>
+    </view>
+  </block>
+  <view class="item-order" catchtap="startCloudOrder">
+    <text>云仓提货单</text>
+  </view>
+</view>

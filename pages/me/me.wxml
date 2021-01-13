@@ -85,64 +85,58 @@
     </view>
     <view class="menuTabs">
       <view class="menuTab">
-        <view class="menuItem" bindtap="startWallet">
+        <view class="menuItem" bindtap="startServicePage" data-key="wallet">
           <image class="menuImg" src="../../image/img_sv_wallet.png" mode="aspectFill"></image>
           <text class="menuText">我的钱包</text>
         </view>
-        <view class="menuItem" bindtap="startVip">
+        <view class="menuItem" bindtap="startServicePage" data-key="vip">
           <image class="menuImg" src="../../image/img_sv_account.png" mode="aspectFill"></image>
           <text class="menuText">会员权益</text>
         </view>
-        <view class="menuItem" bindtap="startAchieve">
+        <view class="menuItem" bindtap="startServicePage" data-key="achieve">
           <image class="menuImg" src="../../image/img_sv_statistic.png" mode="aspectFill"></image>
           <text class="menuText">业绩统计</text>
         </view>
-        <view class="menuItem" bindtap="startIntegral">
+        <view class="menuItem" bindtap="startServicePage" data-key="integral">
           <image class="menuImg" src="../../image/img_sv_integral.png" mode="aspectFill"></image>
           <text class="menuText">积分商城</text>
         </view>
       </view>
       <view class="menuTab">
-        <view class="menuItem" bindtap="startCoupon">
+        <view class="menuItem" bindtap="startServicePage" data-key="coupon">
           <image class="menuImg" src="../../image/img_sv_coupon.png" mode="aspectFill"></image>
           <text class="menuText">优惠券</text>
         </view>
-        <view class="menuItem" bindtap="startTeam">
+        <view class="menuItem" bindtap="startServicePage" data-key="team">
           <image class="menuImg" src="../../image/img_sv_team.png" mode="aspectFill"></image>
-          <text class="menuText">团队成员</text>
+          <text class="menuText">我的团队</text>
         </view>
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_sv_upgrade.png" mode="aspectFill"></image>
-          <text class="menuText">我要升级</text>
+        <view class="menuItem" bindtap="startServicePage" data-key="cloud">
+          <image class="menuImg" src="../../image/img_sv_cloud.png" mode="aspectFill"></image>
+          <text class="menuText">云仓提货</text>
         </view>
-        <view class="menuItem" bindtap="startInvite">
+        <view class="menuItem" bindtap="startServicePage" data-key="invite">
           <image class="menuImg" src="../../image/img_sv_invit.png" mode="aspectFill"></image>
           <text class="menuText">邀请好友</text>
         </view>
       </view>
     </view>
-  </view>
-  <view class="grid">
-    <view class="gridTop">
-      <text class="menuTitle">辅助工具</text>
-      <text class="menuMore"></text>
-    </view>
     <view class="menuTabs">
       <view class="menuTab">
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_ut_cash.png" mode="aspectFill"></image>
+        <view class="menuItem" bindtap="startServicePage" data-key="sales">
+          <image class="menuImg" src="../../image/img_sv_scan.png" mode="aspectFill"></image>
+          <text class="menuText">订单核销</text>
+        </view>
+        <view class="menuItem" bindtap="startServicePage" data-key="cash">
+          <image class="menuImg" src="../../image/img_sv_cash.png" mode="aspectFill"></image>
           <text class="menuText">零钱提现</text>
         </view>
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_ut_scan.png" mode="aspectFill"></image>
-          <text class="menuText">店主工具</text>
+        <view class="menuItem" bindtap="startServicePage" data-key="upgrade">
+          <image class="menuImg" src="../../image/img_sv_upgrade.png" mode="aspectFill"></image>
+          <text class="menuText">我要升级</text>
         </view>
-        <view class="menuItem">
-          <image class="menuImg" src="../../image/img_ut_cloud.png" mode="aspectFill"></image>
-          <text class="menuText">云仓提货</text>
-        </view>
-        <view class="menuItem" bindtap="startGirls">
-          <image class="menuImg" src="../../image/img_ut_girls.png" mode="aspectFill"></image>
+        <view class="menuItem" bindtap="startServicePage" data-key="girls">
+          <image class="menuImg" src="../../image/img_sv_girls.png" mode="aspectFill"></image>
           <text class="menuText">休息一下</text>
         </view>
       </view>

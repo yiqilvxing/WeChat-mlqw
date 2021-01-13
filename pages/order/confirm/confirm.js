@@ -43,9 +43,11 @@ Page({
   
   // 选择地址
   selectAddress: function(e){
-    wx.navigateTo({
-      url: '../../me/address/address',
-    })
+    if(this.data.deliveryType==0){
+      wx.navigateTo({
+        url: '../../me/address/address',
+      })
+    }
   },
 
   /**
@@ -130,7 +132,7 @@ function requestDefaultStore(_this){
  */
 function requestDefaultAddreess(_this){
   wx.showLoading({
-    title: '加载中...',
+    title: app.globalData.loading
   })
   wx.request({
     url: app.globalData.http_base + '/address/isDefault',

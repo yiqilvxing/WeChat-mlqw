@@ -43,6 +43,7 @@ App({
     wx_user_info: null,
     userInfo: null,
     isLogin: false,
+    loading: '正在加载...'
   },
 
 })

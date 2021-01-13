@@ -91,7 +91,6 @@ Page({
           data: data,
           header: app.globalData.http_header,
           success: function(res) {
-            console.log(res);
             wx.hideLoading();
             if (res != null && res.data != null) {
               var result = res.data;
@@ -148,7 +147,7 @@ Page({
     var id = _this.data.address[e.currentTarget.dataset.index].id;
     wx.showModal({
       title: '删除地址',
-      content: '是否确认删除该地址',
+      content: '是否确认删除该地址？',
       success(res){
         if (res.confirm) {
           wx.request({

@@ -68,11 +68,15 @@ Page({
   requestGoodsSearch: function(page){
     var _this = this;
     var keyword = _this.data.keyword;
+    wx.showLoading({
+      title: app.globalData.loading
+    })
     wx.request({
       url: app.globalData.http_base + '/good/goodList?storeId=+'+app.globalData.qz_store_id+'&pageNo='+page+'&length=20'+'&param='+keyword,
       method: 'GET',
       header: app.globalData.http_header,
       success: function(res) {
+        wx.hideLoading();
         if (res != null && res.data != null) {
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
@@ -90,6 +94,9 @@ Page({
             }
           }
         }
+      },
+      fail: function(res){
+        wx.hideLoading();
       }
     });
   },

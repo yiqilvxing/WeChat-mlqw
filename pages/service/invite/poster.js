@@ -48,7 +48,7 @@ Page({
    */
   requestPoster: function(){
     wx.showLoading({
-      title: '正在加载...'
+      title: app.globalData.loading
     })
     var _this = this;
     wx.request({

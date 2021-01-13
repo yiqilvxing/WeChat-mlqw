@@ -54,7 +54,7 @@ Page({
     var _this = this;
     if(page==1){
       wx.showLoading({
-        title: '正在加载...'
+        title: app.globalData.loading
       })
     }
     wx.request({

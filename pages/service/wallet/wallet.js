@@ -89,7 +89,7 @@ Page({
  */
 function requestWallet(_this){
   wx.showLoading({
-    title: '正在加载...',
+    title: app.globalData.loading
   })
   var type = _this.data.currentTab;
   wx.request({

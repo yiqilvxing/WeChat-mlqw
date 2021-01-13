@@ -11,16 +11,7 @@ Page({
     statusBarHeight: 20,
     bgSize: 375,
     userInfo: {},
-    levelItems: [{
-      "currentClassName": "VIP",
-      "storeName": "天酿",
-      "storeLogo": "https://yezhijian-image.oss-cn-hongkong.aliyuncs.com/app/comment.jpg"
-    },
-    {
-      "currentClassName": "水稻",
-      "storeName": "小米之家",
-      "storeLogo": "https://yezhijian-image.oss-cn-hongkong.aliyuncs.com/app/comment.jpg"
-    }],
+    levelItems: [],
   },
 
   // 页面返回
@@ -50,7 +41,7 @@ Page({
   // 获取团队信息
   requestTeamMessage: function(){
     wx.showLoading({
-      title: '正在加载...',
+      title: app.globalData.loading
     });
     var _this = this;
     wx.request({
