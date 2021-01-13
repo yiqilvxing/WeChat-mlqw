@@ -26,17 +26,11 @@ Page({
     wx.getSystemInfo({
       success: function(res) {
         _this.setData( {
-            winWidth: res.windowWidth,
-            winHeight: res.windowHeight
+           winWidth: res.windowWidth,
+           winHeight: res.windowHeight
         });
       }
     });
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     this.requestCoupon(this.data.currentPage);
   },
 
@@ -64,7 +58,7 @@ Page({
       currentTab: index,
       currentPage: 1
     });
-    _this.requestCoupon(_this.data.page);
+    _this.requestCoupon(_this.data.currentPage);
   },
 
    /**
@@ -77,7 +71,7 @@ Page({
       currentTab: index,
       currentPage: 1
     });
-    _this.requestCoupon(_this.data.page);
+    _this.requestCoupon(_this.data.currentPage);
   },
 
   // 查看详情
@@ -100,6 +94,8 @@ Page({
   requestCoupon: function(page){
     var _this = this;
     var state = _this.data.currentTab;
+    console.log('state='+state);
+    console.log('page='+page);
     wx.request({
       url: app.globalData.http_base + '/coupon/list/'+state+'?pageNo='+page+'&length=20',
       method: 'GET',

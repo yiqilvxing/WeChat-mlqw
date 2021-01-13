@@ -1,5 +1,10 @@
 <!--pages/service/sales/record.wxml-->
 <view class="main">
+  <block wx:if="{{items.length<=0}}">
+    <view class="no-data">
+      <text>暂无记录</text>
+    </view>
+  </block>
   <view style="margin-bottom: 100px" wx:if="{{items.length>0}}">
     <view class="goodsStoreItem" wx:for="{{items}}" wx:key="items">
       <view class="space"></view>
@@ -34,11 +39,6 @@
       </view>
     </view>
   </view>
-  <block wx:if="{{items.length<=0}}">
-    <view class="no-data">
-      <text>暂无记录</text>
-    </view>
-  </block>
 </view>
 
 

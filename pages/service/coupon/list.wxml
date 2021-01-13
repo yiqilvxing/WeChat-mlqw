@@ -8,6 +8,11 @@
   <swiper class="swiper-box" style="min-height:{{winHeight}}px" bindchange="onSwiperChange">
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
       <swiper-item data-id="{{item.id}}">
+        <block wx:if="{{couponItems.length<=0}}">
+          <view class="no-data">
+            <text>暂无记录</text>
+          </view>
+        </block>
         <view wx:if="{{couponItems.length>0}}" class="couponItems" wx:for="{{couponItems}}" wx:key='couponItems' bindtap="startDetail" data-id="{{item.id}}">
           <view style="background-color: {{item.color}};" class="{{currentTab==0?'item':'item-off'}}">
             <view class="{{currentTab==0?'item-left':'item-left-off'}}">
@@ -34,11 +39,6 @@
             </view>
           </view>
         </view>
-        <block wx:if="{{couponItems.length<=0}}">
-          <view class="no-data">
-            <text>暂无记录</text>
-          </view>
-        </block>
       </swiper-item>
     </block>
   </swiper>

@@ -9,7 +9,7 @@ page{
 .swiper-tab{
   height: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background-color: white;
