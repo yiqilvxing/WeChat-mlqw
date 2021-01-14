@@ -48,7 +48,7 @@ Page({
             var items = result.data;
             if(items != null && items.orderGoodItemList != null){
               var goodsItem = items.orderGoodItemList;
-              for(var i=0;i<goodsItem.length; i++){
+              for(var i=0; i<goodsItem.length; i++){
                 var goodsSpecsMap = JSON.parse(goodsItem[i].spec);
                 var specs = '';
                 for(var x in goodsSpecsMap){

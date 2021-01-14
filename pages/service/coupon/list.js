@@ -94,8 +94,6 @@ Page({
   requestCoupon: function(page){
     var _this = this;
     var state = _this.data.currentTab;
-    console.log('state='+state);
-    console.log('page='+page);
     wx.request({
       url: app.globalData.http_base + '/coupon/list/'+state+'?pageNo='+page+'&length=20',
       method: 'GET',

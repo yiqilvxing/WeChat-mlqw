@@ -73,7 +73,8 @@ page{
   text-align: center;
   font-size: 14px;
   color: white;
+  font-weight: lighter;
   background-color: #FFB11C;
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
 }

@@ -10,6 +10,7 @@ Page({
   data: {
     winWidth: 0,
     winHeight: 0,
+    scrollLeft: 0,
     tabItem: ['全部', '待支付', '待发货', '待收货', '已收货', '已完成', '已失效'],
     tabItemState: [-1, 0, 1, 2, 3, 4, 5],
     currentTab: 0,
@@ -35,18 +36,21 @@ Page({
     if(orderState == null){
       orderState = -1;
     }
-    let currentTab = 0;
     for(var i=0; i < tabItemState.length; i++){
       if(parseInt(orderState) == tabItemState[i]){
-        currentTab = i;
+        let index = i;
+        let scrollLeft = index>_this.data.currentTab ? 10*index : -10*index;
+        _this.setData({
+          scrollLeft: scrollLeft,
+          currentTab: index,
+          orderState: orderState
+        });
       }
-      _this.setData({
-        orderState: orderState,
-        currentTab: currentTab
-      })
     }
-    // 获取订单列表
+    if(_this.data.currentTab==0){
+      // 获取订单列表
     requestGetOrderList(_this, orderState);
+    }
   },
   /**
    * Tab滑动切换
@@ -55,7 +59,9 @@ Page({
     var _this = this;
     let index = e.detail.current;
     let orderState = _this.data.tabItemState[index];
+    let scrollLeft = index>_this.data.currentTab ? 10*index : -10*index;
     _this.setData({
+      scrollLeft: scrollLeft,
       currentTab: index,
       orderState: orderState
     });
@@ -70,12 +76,12 @@ Page({
     var _this = this;
     let index = e.currentTarget.dataset.index;
     let orderState = _this.data.tabItemState[index];
+    let scrollLeft = index>_this.data.currentTab ? 10*index : -10*index;
     _this.setData({
+      scrollLeft: scrollLeft,
       currentTab: index,
       orderState: orderState
     });
-    // 获取订单列表
-    requestGetOrderList(_this, orderState);
   },
 
   /**
@@ -85,9 +91,7 @@ Page({
     var _this = this;
     var goodsStoreItem = _this.data.goodsStoreItem;
     let index = e.currentTarget.dataset.index;
-    let index2 = e.currentTarget.dataset.index2;
     var orderItem = goodsStoreItem[index];
-    var orderItemGoods = goodsStoreItem[index].orderGoodItem[index2];
     var state = orderItem.state;
     switch(state){
       case 0:// 待支付
@@ -127,6 +131,7 @@ Page({
  * 获取订单列表
  */
 function requestGetOrderList(_this,orderState){
+  console.log('requestGetOrderList');
   wx.request({
     url: app.globalData.http_base + '/order/good/orderGoodList?type=1&pageNo=1&length=100' + '&orderState=' + orderState,
     method: 'GET',

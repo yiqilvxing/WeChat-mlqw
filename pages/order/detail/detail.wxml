@@ -2,7 +2,7 @@
 <view class="main" hidden="{{item==null}}">
   <view class="storeItem">
     <view class="left" catchtap="startStore" data-id="{{item.storeId}}">
-      <image class="storeImage" src="../../../image/img_cart_store.png" mode="aspectFit"/>
+      <image class="storeImage" src="{{item.storeLogo}}" mode="aspectFit"/>
       <text class="storeText">{{item.storeName}}</text>
       <image src="../../../image/img_arrow_right_mini.png" mode="aspectFill" style="width:15px; height:15px;"/>
     </view>

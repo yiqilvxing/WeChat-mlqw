@@ -65,7 +65,7 @@ page{
   margin-left: 10px;
   margin-right: 10px;
   width: 50%;
-  height: 0.5px;
+  height: 1px;
   background-color: #EEEEEE;
 }
 .item-line-text{
