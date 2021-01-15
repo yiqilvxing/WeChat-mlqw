@@ -24,7 +24,7 @@
     <ec-canvas id="mychart" canvas-id="mychart" ec="{{ec}}"></ec-canvas>
   </view>
   <view class="item-option">
-    <text class="item-option-text">查看业绩明细</text>
-    <text class="item-option-text">我的团队成员</text>
+    <text class="item-option-text" bindtap="startDetail">查看业绩明细</text>
+    <text class="item-option-text" bindtap="startTeamMember">我的团队成员</text>
   </view>
 </view>

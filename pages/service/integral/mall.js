@@ -58,6 +58,20 @@ Page({
     }
   },
 
+  // 积分明细
+  startDetail: function(){
+    wx.navigateTo({
+      url: '../integral/detail',
+    })
+  },
+
+  // 积分订单
+  startOrder: function(){
+    wx.navigateTo({
+      url: '../integral/order',
+    })
+  },
+
   // 跳转到积分商品列表
   startGoods: function(e){
     wx.navigateTo({

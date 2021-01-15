@@ -1,5 +1,10 @@
 <!--pages/service/cloud/cloud.wxml-->
 <view class="main">
+  <block wx:if="{{goodsStoreItem.length<=0}}">
+    <view class="no-data">
+      <text>暂无记录</text>
+    </view>
+  </block>
   <view style="margin-bottom: 100px">
     <view class="goodsStoreItem" wx:for="{{goodsStoreItem}}" wx:key='goodsStoreItem' data-id="{{item.id}}">
       <view class="space"></view>
@@ -29,12 +34,8 @@
       </view>
     </view>
   </view>
-  <block wx:if="{{goodsStoreItem.length<=0}}">
-    <view class="no-data">
-      <text>暂无记录</text>
-    </view>
-  </block>
   <view class="item-order" catchtap="startCloudOrder">
     <text>云仓提货单</text>
   </view>
 </view>
+

@@ -33,7 +33,14 @@
     "pages/service/girls/girls",
     "pages/service/sales/sales",
     "pages/service/sales/confirm",
-    "pages/service/sales/record"
+    "pages/service/sales/record",
+    "pages/service/cash/cash",
+    "pages/service/upgrade/upgrade",
+    "pages/service/cloud/order",
+    "pages/service/integral/detail",
+    "pages/service/integral/order",
+    "pages/service/team/member",
+    "pages/service/achieve/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

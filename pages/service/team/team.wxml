@@ -12,7 +12,7 @@
     <text class="item-row-right">{{userInfo.storeName}}</text>
   </view>
   <view class="line"></view>
-  <view class="item-row">
+  <view class="item-row" bindtap="startMember">
     <view class="item-row-row">
       <image class="item-row-image" src="../../../image/img_team_member.png"></image>
       <text class="item-row-left">成员</text>

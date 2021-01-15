@@ -44,8 +44,8 @@ Page({
   // 去提现、去消费
   startFuck: function(){
     if(this.data.currentTab==0){
-      wx.switchTab({
-        url: '../../me/me'
+      wx.navigateTo({
+        url: '../cash/cash'
       })
     }else{
       wx.switchTab({

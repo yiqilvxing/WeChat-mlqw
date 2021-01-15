@@ -41,6 +41,20 @@ Page({
     }
   },
 
+  // 查看业绩明细
+  startDetail: function(){
+    wx.navigateTo({
+      url: '../achieve/detail',
+    })
+  },
+
+  // 查看团队成员
+  startTeamMember: function(){
+    wx.navigateTo({
+      url: '../team/member',
+    })
+  },
+
   // 选择年份
   selectYear: function(){
     var _this = this;
@@ -75,6 +89,11 @@ function initChart(canvas, width, height, dpr){
 }
 // 刷新图表数据
 function refreshChart(data){
+  if(data != null && data.length>0){
+    for(var i=0; i<data.length; i++){
+      data[i] = parseInt(data[i]);
+    }
+  }
   var option = {
         color: ['#F3C438'],
         tooltip: {

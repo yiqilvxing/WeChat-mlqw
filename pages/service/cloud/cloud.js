@@ -19,6 +19,13 @@ Page({
     this.requestCloudGoods();
   },
 
+  // 云仓提货单
+  startCloudOrder: function(){
+    wx.navigateTo({
+      url: '../cloud/order',
+    })
+  },
+
   /**
    * 获取云仓商品
    */

@@ -1,0 +1,9 @@
+<!--pages/service/achieve/detail.wxml-->
+<view class="main">
+</view>
+<block wx:if="{{items.length<=0}}">
+  <view class="no-data">
+    <text>暂无记录</text>
+  </view>
+</block>
+

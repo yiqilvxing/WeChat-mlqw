@@ -38,6 +38,13 @@ Page({
     _this.requestTeamMessage();
   },
 
+  // 跳转到团队成员
+  startMember: function(){
+    wx.navigateTo({
+      url: '../team/member',
+    })
+  },
+
   // 获取团队信息
   requestTeamMessage: function(){
     wx.showLoading({

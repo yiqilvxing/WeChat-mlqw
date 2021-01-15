@@ -111,8 +111,10 @@ Page({
         url = '../service/sales/sales'
         break;
       case 'cash':// 零钱提现
+        url = '../service/cash/cash'
         break;
       case 'upgrade':// 我要升级
+        url = '../service/upgrade/upgrade'
         break;
       case 'girls':// 休息一下
         url = '../service/girls/girls'

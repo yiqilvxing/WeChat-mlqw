@@ -13,12 +13,12 @@
         <text class="item-row-point">积分{{basic.point}}</text>
       </view>
       <view class="item-line"></view>
-      <view class="item-column">
+      <view class="item-column" bindtap="startDetail">
         <image class="item-row-image" src="../../../image/img_point_d.png" mode="aspectFit"></image>
         <text class="item-row-text">积分明细</text>
       </view>
       <view class="item-line"></view>
-      <view class="item-column">
+      <view class="item-column" bindtap="startOrder">
         <image class="item-row-image" src="../../../image/img_point_e.png" mode="aspectFit"></image>
         <text class="item-row-text">积分订单</text>
       </view>
