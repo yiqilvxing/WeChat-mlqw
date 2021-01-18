@@ -1,8 +1,18 @@
 <!--pages/service/upgrade/upgrade.wxml-->
 <view class="main">
-</view>
-<block wx:if="{{items.length<=0}}">
-  <view class="no-data">
-    <text>暂无记录</text>
+  <view class="swiper-tab">
+    <block wx:for="{{tabTitle}}" wx:key="tabTitle">
+      <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
+    </block>
   </view>
-</block>
+  <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
+    <block wx:for="{{tabTitle}}" wx:key="tabTitle">
+      <swiper-item>
+        <view class="no-data">
+          <text>暂无记录</text>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+

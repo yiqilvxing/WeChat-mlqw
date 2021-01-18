@@ -6,7 +6,6 @@
     "pages/logs/logs",
     "pages/goods/goods",
     "pages/copyright/copyright",
-    "component/stepper/stepper",
     "pages/order/confirm/confirm",
     "pages/order/pay/pay",
     "pages/order/list/list",

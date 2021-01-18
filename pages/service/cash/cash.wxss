@@ -1,1 +1,108 @@
 /* pages/service/cash/cash.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  background-color: #F9F9F9;
+}
+.type{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+}
+.type-column{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.type-image{
+  width: 30px;
+  height: 30px;
+} 
+.type-column-text{
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+}
+.type-column-user{
+  font-size: 12px;
+  color: #999999;
+}
+.cash{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  background-color: white;
+}
+.cash-row{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cash-title{
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+}
+.cash-rmb{
+  font-size: 30px;
+  color: black;
+}
+.cash-money{
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  flex: 1;
+  font-size: 30px;
+  color: black;
+}
+.cash-all{
+  font-weight: bold;
+  font-size: 16px;
+  color: #FFB11C;
+}
+.cash-enable{
+  margin-top: 15px;
+  font-size: 13px;
+  color: #777777;
+}
+.cash-enable-error{
+  margin-top: 15px;
+  font-size: 13px;
+  color: red;
+}
+.commit{
+  height: 40px;
+  line-height: 40px;
+  margin: 30px;
+  font-size: 14px;
+  color: white;
+  font-weight: lighter;
+  text-align: center;
+  background-color: #FFB11C;
+  border-radius: 2px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+}
+.commit-off{
+  height: 40px;
+  line-height: 40px;
+  margin: 30px;
+  font-size: 14px;
+  color: white;
+  font-weight: lighter;
+  text-align: center;
+  background-color: #999999;
+  border-radius: 2px;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+}

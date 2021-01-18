@@ -1,17 +1,19 @@
 /* pages/service/wallet/list.wxss */
 page{
-  background-color: white;
+  background-color: #F9F9F9;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
 }
 .swiper-tab{
-  height: 40px;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: white;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 .swiper-tab-text{
   min-width: 50px;

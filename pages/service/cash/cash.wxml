@@ -1,8 +1,32 @@
 <!--pages/service/cash/cash.wxml-->
 <view class="main">
-</view>
-<block wx:if="{{items.length<=0}}">
-  <view class="no-data">
-    <text>暂无记录</text>
+  <view class="type">
+    <image class="type-image" src="../../../image/img_pay_wx.png" mode="aspectFill"></image>
+    <view class="type-column">
+      <text class="type-column-text">微信提现</text>
+      <text class="type-column-user">{{userInfo.name}}</text>
+    </view>
   </view>
-</block>
+  <view class="cash">
+    <text class="cash-title">提现金额</text>
+    <view class="cash-row">
+      <text class="cash-rmb">¥</text>
+      <input class="cash-money" bindinput="cashBindInupt" placeholder="0.00" value="{{currentMoney==0 ? '' : currentMoney}}" type="number"></input>
+      <text class="cash-all" bindtap="selectAll">全部提现</text>
+    </view>
+    <view class="line"></view>
+    <block wx:if="{{inputError==null}}">
+      <text class="cash-enable">当前可提现金额¥{{enableCash}}</text>
+    </block>
+    <block wx:if="{{inputError!=null}}">
+      <text class="cash-enable-error">{{inputError}}</text>
+    </block>
+  </view>
+  <block wx:if="{{currentMoney>0}}">
+    <text class="commit" bindtap="cashOutCommit">确认提现，24小时内到账</text>
+  </block>
+  <block wx:if="{{currentMoney<=0}}">
+    <text class="commit-off">确认提现，24小时内到账</text>
+  </block>
+</view>
+
