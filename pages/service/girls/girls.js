@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showLoading: true,
     items:[],
     currentPage: 1,
     loadmore: false,
@@ -52,16 +53,13 @@ Page({
   requestGirlsImage: function(page){
     var pageSize = 10;
     var _this = this;
-    if(page==1){
-      wx.showLoading({
-        title: app.globalData.loading
-      })
-    }
     wx.request({
       url: 'https://gank.io'+'/api/v2/data/category/Girl/type/Girl/page/'+page+'/count/'+pageSize,
       success: (result) => {
         wx.stopPullDownRefresh();
-        wx.hideLoading();
+        _this.setData({
+          showLoading: false
+        })
         var data = result.data.data;
         if(data!=null&&data.length>0){
           _this.setData({
@@ -84,7 +82,9 @@ Page({
       },
       fail: (res) => {
         wx.stopPullDownRefresh();
-        wx.hideLoading();
+        _this.setData({
+          showLoading: false
+        })
       },
     })
   },

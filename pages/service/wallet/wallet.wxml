@@ -1,7 +1,16 @@
 <!--pages/service/wallet/wallet.wxml-->
 <view class="main">
-  <view class="header">
-    <image class="imgBg" src="../../../image/img_holder_bg.png" mode="aspectFill"></image>
+  <view style="width:95%;display:flex; flex-direction:row; justify-content: space-between; align-items: center; position:fixed; top:{{statusBarHeight+8}}px;">
+    <image catchtap="pageBack" style="width:20px; height:20px; padding-left:10px;" src="../../../image/img_back_white.png" mode="aspectFill"></image>
+    <view style="display:flex; flex-direction:row; flex:1;">
+      <view class="swiper-tab">
+        <block wx:for="{{tabItem}}" wx:key='tabItem'>
+          <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" catchtap="onTabClick" data-index="{{index}}">{{item}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_holder_bg.png');">
     <view class="item-total">
       <text class="item-total-title">
         <block wx:if="{{currentTab==0}}">小金库 (元)</block>
@@ -12,16 +21,6 @@
         <block wx:if="{{currentTab==0}}">去提现</block>
         <block wx:if="{{currentTab==1}}">去消费</block>
       </text>
-    </view>
-  </view>
-  <view style="width:95%;display:flex; flex-direction:row; justify-content: space-between; align-items: center; position:fixed; top:{{statusBarHeight+8}}px;">
-    <image catchtap="pageBack" style="width:20px; height:20px; padding-left:10px;" src="../../../image/img_back_white.png"></image>
-    <view style="display:flex; flex-direction:row; flex:1;">
-      <view class="swiper-tab">
-        <block wx:for="{{tabItem}}" wx:key='tabItem'>
-          <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" catchtap="onTabClick" data-index="{{index}}">{{item}}</text>
-        </block>
-      </view>
     </view>
   </view>
   <view class="item-row">

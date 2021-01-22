@@ -1,4 +1,4 @@
-// pages/copyright/copyright.js
+// pages/template/a.js
 Page({
 
   /**

@@ -11,10 +11,9 @@ page{
 .header{
   display: flex;
   flex-direction: column;
-}
-.imgBg{
-  width: 100%;
+  padding: 15px;
   height: 180px;
+  background-size: 100% 100%; 
 }
 .swiper-tab{
   flex: 1;
@@ -47,10 +46,8 @@ page{
   align-items: center;
   align-content: center;
   text-align: center;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: -70px;
-  height: 175px;
+  margin-top: 80px;
+  padding: 15px;
   color: black;
   background-color: white;
   border-radius: 5px;
@@ -88,7 +85,7 @@ page{
   align-items: center;
   margin-left: 15px;
   margin-right: 15px;
-  margin-top: 15px;
+  margin-top: 80px;
   margin-bottom: 5px;
 }
 .item-row-left{

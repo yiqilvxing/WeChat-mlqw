@@ -23,7 +23,7 @@
   </view>
   <view class="space"></view>
   <view class="goodsCartItem" wx:for="{{item.orderGoodItem}}" wx:key='goodsItems' wx:for-item="item2" wx:for-index="index2">
-    <view class="goodsItem">
+    <view class="goodsItem" catchtap="startGoodsDetail" data-id="{{item2.skuId}}">
       <view class="goodsTabImg">
         <image class='goodsTabItem-cover' src="{{item2.cover}}" mode="aspectFill"></image>
       </view>

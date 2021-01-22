@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    selectAddress: false,
     address: []
   },
 
@@ -15,7 +16,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.selectAddress!=null){
+      this.setData({
+        selectAddress: options.selectAddress
+      });
+    }
   },
 
   /**
@@ -58,13 +63,15 @@ Page({
    * 选择地址
    */
   selectAddress: function(e){
-    var pages = getCurrentPages();
-    var prevPage = pages[pages.length - 2]; 
-    var address = e.currentTarget.dataset.item;
-    prevPage.setData({
-      orderAddress: address
-     });
-    wx.navigateBack();
+    if(this.data.selectAddress){
+      var pages = getCurrentPages();
+      var prevPage = pages[pages.length - 2]; 
+      var address = e.currentTarget.dataset.item;
+      prevPage.setData({
+        orderAddress: address
+       });
+      wx.navigateBack();
+    }
   },
 
   // 新增地址 

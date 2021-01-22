@@ -1,10 +1,9 @@
 <!--pages/me/me.wxml-->
-<import src="/pages/copyright/copyright.wxml"/>
-<view>
-  <view class="header">
-    <image class="imgBg" src="../../image/img_me_bg.png" mode="aspectFill"></image>
+<import src="/pages/template/copyright.wxml"/>
+<view class="main">
+  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_me_bg.png')">
     <block wx:if="{{isLogin}}">
-      <view class="top" bindtap="startMeData">
+      <view class="top-user" bindtap="startMeData">
         <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
         <view class="user">
           <text class="userName">{{userEntity.name}}</text>
@@ -39,22 +38,37 @@
       <view class="menuItem" bindtap="startOrderList" data-state="0">
         <image class="orderImg" src="../../image/img_order_dzf.png" mode="aspectFill"></image>
         <text class="menuText">待支付</text>
+        <block wx:if="{{orderCount != null && orderCount[0] != null && orderCount[0] > 0 }}">
+          <view class="cu-tag badge">{{orderCount[0]}}</view>
+        </block>
       </view>
       <view class="menuItem" bindtap="startOrderList" data-state="1">
         <image class="orderImg" src="../../image/img_order_dfh.png" mode="aspectFill"></image>
         <text class="menuText">待发货</text>
+        <block wx:if="{{orderCount != null && orderCount[1] != null && orderCount[1] > 0 }}">
+          <view class="cu-tag badge">{{orderCount[1]}}</view>
+        </block>
       </view>
       <view class="menuItem" bindtap="startOrderList" data-state="2">
         <image class="orderImg" src="../../image/img_order_dsh.png" mode="aspectFill"></image>
         <text class="menuText">待收货</text>
+        <block wx:if="{{orderCount != null && orderCount[2] != null && orderCount[2] > 0 }}">
+          <view class="cu-tag badge">{{orderCount[2]}}</view>
+        </block>
       </view>
       <view class="menuItem" bindtap="startOrderList" data-state="3">
         <image class="orderImg" src="../../image/img_order_ysh.png" mode="aspectFill"></image>
         <text class="menuText">已收货</text>
+        <block wx:if="{{orderCount != null && orderCount[3] != null && orderCount[3] > 0 }}">
+          <view class="cu-tag badge">{{orderCount[3]}}</view>
+        </block>
       </view>
       <view class="menuItem" bindtap="startOrderList" data-state="9">
         <image class="orderImg" src="../../image/img_order_shtk.png" mode="aspectFill"></image>
         <text class="menuText">售后/退款</text>
+        <block wx:if="{{orderCount != null && orderCount[9] != null && orderCount[9] > 0 }}">
+          <view class="cu-tag badge">{{orderCount[9]}}</view>
+        </block>
       </view>
     </view>
   </view>
@@ -83,6 +97,7 @@
       <text class="menuTitle">我的服务</text>
       <text class="menuMore"></text>
     </view>
+    <view class="line"></view>
     <view class="menuTabs">
       <view class="menuTab">
         <view class="menuItem" bindtap="startServicePage" data-key="wallet">

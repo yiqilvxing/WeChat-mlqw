@@ -5,23 +5,25 @@
       <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
     </block>
   </view>
-  <view class="item-detail" wx:if="{{detailItem.length>0}}">
-    <block wx:for="{{detailItem}}" wx:key='detailItem'>
-      <view class="item-detail-bg" bindtap="startDetail" data-index="{{index}}">
-        <view class="item-detail-column">
-          <text class="item-detail-date">{{item.createTime}}</text>
-          <text class="item-detail-content">{{item.mark}}</text>
+  <swiper class="swiper-box" style="min-height:{{winHeight}}px" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
+    <block wx:for="{{tabItem}}" wx:key='tabItem'>
+      <swiper-item data-id="{{item.id}}">
+        <view wx:if="{{detailItem.length>0}}" class="item-detail" wx:for="{{detailItem}}" wx:key='detailItem' bindtap="startDetail" data-index="{{index}}">
+          <view class="item-detail-column">
+            <text class="item-detail-date">{{item.createTime}}</text>
+            <text class="item-detail-content">{{item.mark}}</text>
+          </view>
+          <text class="item-detail-price">
+            <block wx:if="{{item.isIncome}}">+{{item.num/100}}</block>
+            <block wx:if="{{!item.isIncome}}">-{{item.num/100}}</block>
+          </text>
         </view>
-        <text class="item-detail-price">
-          <block wx:if="{{item.isIncome}}">+{{item.num/100}}</block>
-          <block wx:if="{{!item.isIncome}}">-{{item.num/100}}</block>
-        </text>
-      </view>
+        <block wx:if="{{detailItem.length<=0}}">
+          <view class="no-data">
+            <text>暂无记录</text>
+          </view>
+        </block>
+      </swiper-item>
     </block>
-  </view>
+  </swiper>
 </view>
-<block wx:if="{{detailItem.length<=0}}">
-  <view class="no-data">
-    <text>暂无记录</text>
-  </view>
-</block>

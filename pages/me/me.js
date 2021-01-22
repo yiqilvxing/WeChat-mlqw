@@ -10,6 +10,7 @@ Page({
   data: {
     isLogin: false,
     userEntity: {},
+    orderCount: {},
   },
 
   /**
@@ -32,6 +33,8 @@ Page({
     if(isLogin){
       // 获取用户信息
       requestUserMessage(this);
+      // 获取订单数量统计
+      requestOrderCount(this);
     }
   },
 
@@ -166,6 +169,28 @@ function requestUserMessage(_this){
           isLogin: true
         });
       }
+    }
+  });
+}
+/**
+ * 获取订单数量统计
+ */
+function requestOrderCount(_this){
+  wx.request({
+    url: app.globalData.http_base + '/order/good/orderGoodCount',
+    method: 'GET',
+    header: app.globalData.http_header,
+    success: function(res) {
+      if (res != null && res.data != null) {
+        var result = res.data;
+        if (result != null && result.code == app.globalData.http_ok) {
+          _this.setData({
+            orderCount: result.data,
+          });
+        }
+      }
+    },
+    fail: function(res) {
     }
   });
 }

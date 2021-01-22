@@ -20,7 +20,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       currentPage: 1,
-      tabImageSize: (wx.getSystemInfoSync().windowWidth - 62) / 2
+      tabImageSize: wx.getSystemInfoSync().windowWidth / 2
     });
     this.requestInteralGoods(this.data.currentPage);
   },

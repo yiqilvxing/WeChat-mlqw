@@ -8,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    statusBarHeight: 20,
     tabImageSize: 180,
-    basic: {},
+    basic: null,
     goodsItem: [],
     currentPage: 1,
     maxPage: 1,
@@ -19,9 +20,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
+    var _this = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        _this.setData({
+          statusBarHeight: res.statusBarHeight
+        });
+      }
+    })
+    _this.setData({
       currentPage: 1,
-      tabImageSize: (wx.getSystemInfoSync().windowWidth - 62) / 2
+      tabImageSize: wx.getSystemInfoSync().windowWidth / 2
     });
   },
 
@@ -56,6 +65,11 @@ Page({
       });
       this.requestInteralGoods(this.data.currentPage);
     }
+  },
+
+  // 页面返回
+  pageBack: function() {
+    wx.navigateBack();
   },
 
   // 积分明细

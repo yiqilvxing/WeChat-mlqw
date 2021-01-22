@@ -11,7 +11,8 @@ Page({
     hasData: false,
     goodsStoreItem: [],
     goodsPriceTotal: 0,
-    goodsCountTotal: 0
+    goodsCountTotal: 0,
+    checkedAll: true,
   },
   
   /**
@@ -118,10 +119,60 @@ Page({
 
   // 跳转到确认订单
   startOrderConfirm: function() {
-    var goodsStoreItem= JSON.stringify(this.data.goodsStoreItem);
+    var _this = this;
+    if(!_this.data.hasData){
+      return;
+    }
+    let hasSelect = false;
+    let intentData = [];
+    _this.data.goodsStoreItem.forEach(function(item,index){
+      let goodsArray = [];
+      item.items.forEach(function(item2,index2){
+        if(item2.checked){
+          goodsArray.push(item2);
+        }
+      })
+      if(goodsArray!=null && goodsArray.length>0){
+        hasSelect = true;
+        var storeItem = item;
+        storeItem.items = goodsArray;
+        intentData.push(storeItem);
+      }
+    });
+    if(!hasSelect || intentData.length<=0){
+      return;
+    }
     wx.navigateTo({
-      url: '../order/confirm/confirm?goodsStoreItem='+encodeURIComponent(goodsStoreItem)
+      url: '../order/confirm/confirm?goodsStoreItem='+encodeURIComponent(JSON.stringify(intentData))
     }) 
+  },
+
+  // 商品选择
+  goodsCheck: function(e){
+    var _this = this;
+    let index = e.currentTarget.dataset.index,
+    index2 = e.currentTarget.dataset.index2;
+    let goodsStoreItem = _this.data.goodsStoreItem;
+    goodsStoreItem[index].items[index2].checked = !goodsStoreItem[index].items[index2].checked;
+    _this.setData({
+      goodsStoreItem: goodsStoreItem
+    });
+  },
+  // 全选
+  checkedAll: function(){
+    var _this = this;
+    let goodsStoreItem = _this.data.goodsStoreItem;
+    if(_this.data.hasData){
+      goodsStoreItem.forEach(function(item,index){
+        item.items.forEach(function(item2,index2){
+          item2.checked = !_this.data.checkedAll;
+        })
+      });
+    }
+    _this.setData({
+      goodsStoreItem: goodsStoreItem,
+      checkedAll: !_this.data.checkedAll
+    });
   },
 
   //手指触摸动作开始 记录起点X坐标
@@ -225,8 +276,14 @@ function requestGetCart(_this){
           let hasData = false;
           if(result.data != null && result.data.length > 0){
             hasData = true;
+            result.data.forEach(function(item){
+              item.items.forEach(function(item2){
+                item2.checked = true;
+              })
+            });
           }
           _this.setData({
+            checkedAll: true,
             goodsStoreItem: result.data,
             hasData: hasData
           });

@@ -1,5 +1,5 @@
 <!--pages/goods/goods.wxml-->
-<import src="/pages/copyright/copyright.wxml"/>
+<import src="/pages/template/copyright.wxml"/>
 <view class="main" hidden="{{hidden}}">
   <swiper class="banner" indicator-dots="true" indicator-active-color="#fff" autoplay="true" duration="500">
     <block wx:for="{{bannerItem}}" wx:key='bannerItem'>

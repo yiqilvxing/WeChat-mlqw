@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
-<import src="/pages/copyright/copyright.wxml"/>
+<import src="/pages/template/copyright.wxml"/>
 <view class="main">
   <view class="search" bindtap="startSearch">
     <image class="searchImg" src="../../image/img_search.png" mode="aspectFit"></image>
@@ -49,6 +49,17 @@
       <text class='goodsSpecailItem-price'>¥{{item.price/100}}</text>
     </view>
   </scroll-view>
+  <view class="goods" wx:if="{{swiperList.length>0}}">
+    <text class="largeText">热门店铺</text>
+    <text class="smallText">SHOP RECOMMENDATION</text>
+  </view>
+  <swiper class="card-swiper round-dot" indicator-dots="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper">
+    <swiper-item wx:for="{{swiperList}}" wx:key="swiperList" class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item" catchtap="startStore" data-id="{{item.id}}">
+        <image src="{{item.hotImage}}" mode="aspectFill"></image>
+      </view>
+    </swiper-item>
+  </swiper>
   <view class="goods" wx:if="{{goodsHotItem.length>0}}">
     <text class="largeText">热门推荐</text>
     <text class="smallText">POPULAR RECOMMENDATION</text>

@@ -14,7 +14,9 @@
         <view class="goodsCartItem {{item2.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" data-index2="{{index2}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{item.items}}" wx:key='goodsItems' wx:for-item="item2" wx:for-index="index2">
           <view class="goodsItem" bindtap="startGoodsDetail" data-index="{{index}}" data-index2="{{index2}}" data-gid="{{item2.id}}">
             <view class="goodsTabImg">
-              <radio class="goodsCheck" color="#FFB11C" checked="true"></radio>
+              <view class="goodsCheck">
+                <radio class="yellow" checked="{{item2.checked}}" catchtap="goodsCheck" data-index="{{index}}" data-index2="{{index2}}"></radio>
+              </view>
               <image class='goodsTabItem-cover' src="{{item2.cover}}" mode="aspectFill" ></image>
             </view>
             <view class="goodsTabText">
@@ -41,13 +43,16 @@
       <view class="bottom">
         <view class="line"></view>
         <view class="bottomItem">
-          <radio class="bottomRadio" color="#FFB11C" checked="true">全选</radio>
+          <view class="cu-form-group" catchtap="checkedAll">
+            <checkbox class="round yellow" checked="{{checkedAll}}"></checkbox>
+            <view class="title" style="margin-left:5px">全选</view>
+          </view>
           <view class="bootomSubmit">
             <view class="bottomTotal">
               <text class="bottomPrice">¥{{goodsPriceTotal}}</text>
               <text class="bottomGoods">共{{goodsCountTotal}}件商品</text>
             </view>
-            <text class="bottomConfirm" bindtap="startOrderConfirm">立即购买</text>
+            <text class="bottomConfirm" catchtap="startOrderConfirm">立即购买</text>
           </view>
         </view>
       </view>

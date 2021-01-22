@@ -28,6 +28,20 @@ Page({
 
   },
 
+  // 跳转到店铺
+  startStore: function(e){
+    wx.navigateTo({
+      url: '../../store/store?storeId='+e.currentTarget.dataset.id
+    })
+  },
+
+  // 跳转到商品详情
+  startGoodsDetail: function(e){
+    wx.navigateTo({
+      url: '../../goods/goods?goodsId='+e.currentTarget.dataset.id
+    })
+  },
+
   /**
    * 操作栏
    */
@@ -74,6 +88,16 @@ function requestGetOrderDetail(_this,orderId){
           _this.setData({
             item: result.data
           });
+        }else{
+          wx.showModal({
+            title: '订单已被删除！',
+            content: '是否退出订单详情？',
+            success (res) {
+              if (res.confirm) {
+                wx.navigateBack();
+              }
+            }
+          })
         }
       }
     },

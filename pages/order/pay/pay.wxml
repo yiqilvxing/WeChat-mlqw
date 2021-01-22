@@ -8,16 +8,16 @@
   <view class="itemBalance">
     <text class="itemBalanceText">使用钱包余额：¥{{orderPayInfo.feeCurrency / 100}}</text>
     <view class="balanceTips" wx-if="{{switch1Checked}}">{{currencyText}}</view>
-    <switch class="right" checked="{{switch1Checked}}" color="#00CC00" bindchange="switch1Checked"/>
+    <switch checked="{{switch1Checked}}" bindchange="switch1Checked"/>
   </view>
   <view class="space"></view>
   <view class="payType">
     <text class="payTypeTitle">支付方式</text>
     <view class="line"></view>
     <view class="payTypeItem">
-      <image class="payTypeImg" src="../../../image/img_pay_wx_mini.png" mode="aspectFit"></image>
+      <image class="payTypeImg" src="../../../image/img_pay_wx_mini.png" mode="aspectFill"></image>
       <text class="payTypeText">微信支付</text>
-      <radio color="#FFB11C" checked="true"></radio>
+      <radio checked="true"></radio>
     </view>    
   </view>
   <view class="payConfirm" style="flex: 1" bindtap="submitPay">

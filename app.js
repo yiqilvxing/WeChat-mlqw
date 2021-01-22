@@ -2,6 +2,18 @@
 
 App({
   onLaunch: function () {
+    wx.getSystemInfo({
+      success: e => {
+        this.globalData.StatusBar = e.statusBarHeight;
+        let capsule = wx.getMenuButtonBoundingClientRect();
+        if (capsule) {
+          this.globalData.Custom = capsule;
+          this.globalData.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
+        } else {
+          this.globalData.CustomBar = e.statusBarHeight + 50;
+        }
+      }
+    })
     // wx.removeStorageSync('userInfo');
     // wx.removeStorageSync('qz_token');
 
@@ -47,7 +59,7 @@ App({
     wx_user_info: null,
     userInfo: null,
     isLogin: false,
-    loading: '正在加载...'
+    loading: '正在加载...',
   },
 
 })

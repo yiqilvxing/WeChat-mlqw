@@ -1,9 +1,11 @@
 <!--pages/service/integral/mall.wxml-->
+<import src="/pages/template/copyright.wxml"/>
 <view class="main">
-  <view class="top"></view>
-  <view class="top-sp-row">
-    <view class="top-sp-item"></view>
-    <view class="top-sp-item"></view>
+  <view style="width:100%;display:flex; flex-direction:row; justify-content: center; align-items: center; position:fixed; top:{{statusBarHeight+8}}px;">
+    <image catchtap="pageBack" style="width:20px; height:20px; padding-left:10px;" src="../../../image/img_back_white.png" mode="aspectFill"></image>
+    <text style="color:white; font-size:14px; flex:1; text-align: center; margin-right:30px">积分商城</text>
+  </view>
+  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_holder_bg.png');">
   </view>
   <view class="top-item">
     <image class="top-image" mode="aspectFill" src="{{basic.url}}"></image>
@@ -34,8 +36,8 @@
   </view>
   <view class="line"></view>
   <view class="goodsTab" wx:if="{{goodsItem.length>0}}">
-    <view class='goodsTabItem' style="width:{{tabImageSize}}px;"  wx:for="{{goodsItem}}" wx:key='goodsItem' bindtap="startGoodsDetail" data-id="{{item.skuId}}">
-      <image class='goodsTabItem-cover' style="width:{{tabImageSize}}px; height:{{tabImageSize}}px" src="{{item.cover}}" mode="aspectFill"></image>
+    <view class='goodsTabItem' style="width:{{tabImageSize}}px;" wx:for="{{goodsItem}}" wx:key='goodsItem' bindtap="startGoodsDetail" data-id="{{item.skuId}}">
+      <image class='goodsTabItem-cover' style="width:{{tabImageSize-30}}px; height:{{tabImageSize-30}}px" src="{{item.cover}}" mode="aspectFill"></image>
       <text class='goodsTabItem-title'>{{item.title}}</text>
       <view class="goodsTabItem-row">
         <text class='goodsTabItem-money'>{{item.money/100}}+{{item.point}}</text>
@@ -54,6 +56,7 @@
       <text>暂无商品</text>
     </view>
   </block>
+  <template is="copyright"></template>
 </view>
 
 

@@ -1,4 +1,6 @@
 <!--pages/service/girls/girls.wxml-->
+<import src="/pages/template/loading.wxml"/>
+<template is="loading" wx:if="{{showLoading}}"></template>
 <view class="main">
   <view wx:if="{{items.length>0}}" class="item" wx:for="{{items}}" wx:key="items">
     <image class="item-image" src="{{item.url}}" mode="widthFix"></image>

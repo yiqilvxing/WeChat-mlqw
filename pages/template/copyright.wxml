@@ -1,0 +1,7 @@
+<!--pages/template/copyright.wxml-->
+<template name="copyright">
+  <view class="copyright">
+    <image class="copyright-image" src="https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_logo.png"></image>
+    <text class="copyright-text">美丽蔷薇提供技术支持</text>
+  </view>
+</template>

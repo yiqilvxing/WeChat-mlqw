@@ -45,7 +45,7 @@ Page({
   selectAddress: function(e){
     if(this.data.deliveryType==0){
       wx.navigateTo({
-        url: '../../me/address/address',
+        url: '../../me/address/address?selectAddress=true',
       })
     }
   },

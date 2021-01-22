@@ -4,18 +4,15 @@ page{
 }
 .header{
   display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-}
-.imgBg{
-  width: 100%;
+  flex-direction: column-reverse;
+  padding: 15px;
   height: 180px;
+  background-size: 100% 100%; 
 }
-.top{
+.top-user{
   display: flex;
   flex-direction: row;
-  padding: 15px;
-  margin-top: -110px;
+  margin-bottom: 5px;
 }
 .imgHeader{
   width: 70px;
@@ -107,22 +104,25 @@ page{
   flex-flow: column;
 }
 .menuTab{
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 .menuItem{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  text-align: center;
   background: white;
   font-weight: initial;
   align-items: center;
   padding: 0;
+  margin: 5px;
 }
 .menuTitle{
   font-size: 14px;

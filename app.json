@@ -5,7 +5,6 @@
     "pages/me/me",
     "pages/logs/logs",
     "pages/goods/goods",
-    "pages/copyright/copyright",
     "pages/order/confirm/confirm",
     "pages/order/pay/pay",
     "pages/order/list/list",
@@ -39,7 +38,9 @@
     "pages/service/integral/detail",
     "pages/service/integral/order",
     "pages/service/team/member",
-    "pages/service/achieve/detail"
+    "pages/service/achieve/detail",
+    "pages/template/copyright",
+    "pages/template/loading"
   ],
   "window": {
     "backgroundTextStyle": "light",

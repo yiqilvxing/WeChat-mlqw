@@ -49,7 +49,7 @@ Page({
     }
     if(_this.data.currentTab==0){
       // 获取订单列表
-    requestGetOrderList(_this, orderState);
+      requestGetOrderList(_this, orderState);
     }
   },
   /**
@@ -131,7 +131,6 @@ Page({
  * 获取订单列表
  */
 function requestGetOrderList(_this,orderState){
-  console.log('requestGetOrderList');
   wx.request({
     url: app.globalData.http_base + '/order/good/orderGoodList?type=1&pageNo=1&length=100' + '&orderState=' + orderState,
     method: 'GET',

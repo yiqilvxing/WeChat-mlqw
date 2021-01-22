@@ -14,16 +14,78 @@ Page({
     goodsHotItem: [],
     currentPage: 1,
     maxPage: 1,
+    swiperList: [],
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.towerSwiper('swiperList');
     this.setData({
       currentPage: 1,
       tabImageSize: (wx.getSystemInfoSync().windowWidth - 40) / 2
     });
+  },
+
+  // cardSwiper
+  cardSwiper(e) {
+    this.setData({
+      cardCur: e.detail.current
+    })
+  },
+  // towerSwiper
+  towerSwiper(name) {
+    let list = this.data[name];
+    for (let i = 0; i < list.length; i++) {
+      list[i].zIndex = parseInt(list.length / 2) + 1 - Math.abs(i - parseInt(list.length / 2))
+      list[i].mLeft = i - parseInt(list.length / 2)
+    }
+    this.setData({
+      swiperList: list
+    })
+  },
+  // towerSwiper触摸开始
+  towerStart(e) {
+    this.setData({
+      towerStart: e.touches[0].pageX
+    })
+  },
+  // towerSwiper计算方向
+  towerMove(e) {
+    this.setData({
+      direction: e.touches[0].pageX - this.data.towerStart > 0 ? 'right' : 'left'
+    })
+  },
+  // towerSwiper计算滚动
+  towerEnd(e) {
+    let direction = this.data.direction;
+    let list = this.data.swiperList;
+    if (direction == 'right') {
+      let mLeft = list[0].mLeft;
+      let zIndex = list[0].zIndex;
+      for (let i = 1; i < list.length; i++) {
+        list[i - 1].mLeft = list[i].mLeft
+        list[i - 1].zIndex = list[i].zIndex
+      }
+      list[list.length - 1].mLeft = mLeft;
+      list[list.length - 1].zIndex = zIndex;
+      this.setData({
+        swiperList: list
+      })
+    } else {
+      let mLeft = list[list.length - 1].mLeft;
+      let zIndex = list[list.length - 1].zIndex;
+      for (let i = list.length - 1; i > 0; i--) {
+        list[i].mLeft = list[i - 1].mLeft
+        list[i].zIndex = list[i - 1].zIndex
+      }
+      list[0].mLeft = mLeft;
+      list[0].zIndex = zIndex;
+      this.setData({
+        swiperList: list
+      })
+    }
   },
 
   /**
@@ -36,6 +98,7 @@ Page({
     requestGetBanner(this);
     requestGetTabMenu(this);
     requestGetGoodsSpecial(this);
+    requestGetShopHot(this);
     requestGetGoodsHot(this,this.data.currentPage);
   },
 
@@ -49,6 +112,7 @@ Page({
     requestGetBanner(this);
     requestGetTabMenu(this);
     requestGetGoodsSpecial(this);
+    requestGetShopHot(this);
     requestGetGoodsHot(this,this.data.currentPage);
   },
 
@@ -70,6 +134,13 @@ Page({
   startSearch: function(e){
     wx.navigateTo({
       url: '../search/search'
+    }) 
+  },
+
+  // 跳转到店铺首页
+  startStore: function(e){
+    wx.navigateTo({
+      url: '../store/store?storeId='+e.currentTarget.dataset.id
     }) 
   },
 
@@ -127,7 +198,7 @@ function requestGetTabMenu(_this){
       if (res != null && res.data != null) {
         var result = res.data;
         if (result != null && result.code == app.globalData.http_ok) {
-          var maxsize = result.data.length > 5 ? 5 : result.data.length;
+          var maxsize = result.data.length > 4 ? 4 : result.data.length;
           var data = [];
           for(var i=0; i<maxsize; i++){
             data.push(result.data[i]);
@@ -189,6 +260,28 @@ function requestGetGoodsHot(_this,page){
     },
     fail: function(res) {
       wx.stopPullDownRefresh();
+    }
+  });
+}
+/**
+ * 获取热门店铺
+ */
+function requestGetShopHot(_this){
+  wx.request({
+    url: app.globalData.http_base + '/store/hotList',
+    method: 'GET',
+    header: app.globalData.http_header,
+    success: function(res) {
+      if (res != null && res.data != null) {
+        var result = res.data;
+        if (result != null && result.code == app.globalData.http_ok) {
+          _this.setData({
+            swiperList: result.data
+          });
+        }
+      }
+    },
+    fail: function(res) {
     }
   });
 }

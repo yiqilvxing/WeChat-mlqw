@@ -1,0 +1,6 @@
+<!--pages/template/loading.wxml-->
+<template name="loading">
+  <view class="loading-item">
+    <image src="../../../image/loading-white.gif" mode="heightFix" style="height:140px"></image>
+  </view>
+</template>

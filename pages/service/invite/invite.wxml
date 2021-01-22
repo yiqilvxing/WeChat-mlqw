@@ -1,5 +1,5 @@
 <!--pages/service/invite/invite.wxml-->
-<import src="../../../pages/copyright/copyright.wxml"/>
+<import src="../../../pages/template/copyright.wxml"/>
 <view class="main">
   <view class="item-top">
     <text class="item-scan">微信扫一扫，使用小程序</text>
@@ -13,5 +13,6 @@
   </view>
   <template is="copyright"></template>
 </view>
+
 
 

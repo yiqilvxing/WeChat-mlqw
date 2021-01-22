@@ -36,15 +36,12 @@ page{
   margin-left: 50px;
   margin-right: 50px;
 }
-.item-detail{
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  height: 100%;
-  margin: 10px;
+.swiper-box{
+  width: 100%;
+  display: block;
 }
-.item-detail-bg{
-  margin: 5px;
+.item-detail{
+  margin: 12px;
   padding: 15px;
   display: flex;
   flex-direction: row;
