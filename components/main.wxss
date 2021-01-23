@@ -900,9 +900,9 @@ button.icon.lg {
 	border-radius: 200rpx;
 	border: 1px solid #FFB11C;
 	position: absolute;
-	top: -8rpx;
-	right: 20rpx;
-	padding: 0rpx 6rpx;
+	top: 1rpx;
+	right: 15rpx;
+	padding: 0rpx 7rpx;
 	height: 28rpx;
 	font-size: 20rpx;
 	color: var(--yellow);
@@ -2634,7 +2634,7 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 	display: block;
 	height: 100%;
 	border-radius: 10rpx;
-	transform: scale(0.9);
+	transform: scale(0.85);
 	transition: all 0.2s ease-in 0s;
 	overflow: hidden;
 }

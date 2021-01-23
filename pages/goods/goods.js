@@ -20,7 +20,9 @@ Page({
     joinWrapState: true,
     showWindowType: 0,
     goodsSpecs: [],
-    goodsNum: 1
+    goodsNum: 1,
+    hide_good_box: true,
+    goodsCount: 0,
   },
   // 页面返回
   pageBack: function(){
@@ -86,11 +88,19 @@ Page({
   onLoad: function (options) {
     var _this = this;
     var goodsId = options.goodsId;
+    _this.setData({
+      goodsCount: wx.getStorageSync('cartCount')
+    })
     wx.getSystemInfo({
       success: function (res) {
         _this.setData({
-          statusBarHeight: res.statusBarHeight
+          statusBarHeight: res.statusBarHeight,
+          windowWidth: res.windowWidth,
+          windowHeight: res.windowHeight,
         });
+        _this.busPos = {};
+        _this.busPos['x'] = res.windowWidth * 0.35;
+        _this.busPos['y'] = res.windowHeight * 0.95;
       }
     })
     if(goodsId != null){
@@ -173,10 +183,7 @@ Page({
             var result = res.data;
             if (result != null && result.code == app.globalData.http_ok) {
               _this.closeWindow();
-              wx.showToast({
-                title: '添加成功',
-                icon: 'success'
-              })
+              _this.startAnimation();
             }else{
               wx.showToast({
                 title: '添加失败',
@@ -345,6 +352,128 @@ Page({
       }
     });
   },
+
+  // 打开关闭shake
+  toggleShake() {
+    var _this = this;
+    _this.setData({
+      animation: 'shake'
+    })
+    setTimeout(function() {
+      _this.setData({
+        animation: ''
+      })
+    }, 1000)
+  },
+
+  // 加入购物车抛物线动画
+  startAnimation: function() {
+    if (!this.data.hide_good_box) {
+      return;
+    };
+    this.finger = {};
+    var topPoint = {};
+    this.finger['x'] = 0;
+    this.finger['y'] = 150;
+    if (this.finger['y'] < this.busPos['y']) {
+      topPoint['y'] = this.finger['y'] - 150;
+    } else {
+      topPoint['y'] = this.busPos['y'] - 150;
+    }
+    if (this.finger['x'] < this.busPos['x']) {
+      topPoint['x'] = Math.abs(this.finger['x'] - this.busPos['x']) / 2 + this.finger['x'];
+    } else {
+      topPoint['x'] = this.busPos['x'];
+      this.finger['x'] = this.busPos['x']
+    }
+    var that = this;
+    that.linePos = that.bezier([that.finger, topPoint, that.busPos], 30);
+    var index = 0;
+    var bezier_points = that.linePos['bezier_points'];
+    that.setData({
+      hide_good_box: false,
+      bus_x: that.finger['x'],
+      bus_y: that.finger['y']
+    })
+    that.timer = setInterval(function() {
+        index++;
+        that.setData({
+          bus_x: bezier_points[index]['x'],
+          bus_y: bezier_points[index]['y']
+        })
+        if (index >= 28) {
+          let newCount = that.data.goodsCount + that.data.goodsNum;
+          clearInterval(that.timer);
+          that.setData({
+            hide_good_box: true,
+            goodsCount: newCount,
+          });
+          that.toggleShake();
+        }
+    }, 33);
+  },
+
+  // 贝塞尔曲线
+  bezier: function (points, times) {
+    // 0、以3个控制点为例，点A,B,C,AB上设置点D,BC上设置点E,DE连线上设置点F,则最终的贝塞尔曲线是点F的坐标轨迹。
+    // 1、计算相邻控制点间距。
+    // 2、根据完成时间,计算每次执行时D在AB方向上移动的距离，E在BC方向上移动的距离。
+    // 3、时间每递增100ms，则D,E在指定方向上发生位移, F在DE上的位移则可通过AD/AB = DF/DE得出。
+    // 4、根据DE的正余弦值和DE的值计算出F的坐标。
+    // 邻控制AB点间距
+    var bezier_points = [];
+    var points_D = [];
+    var points_E = [];
+    const DIST_AB = Math.sqrt(Math.pow(points[1]['x'] - points[0]['x'], 2) + Math.pow(points[1]['y'] - points[0]['y'], 2));
+    // 邻控制BC点间距
+    const DIST_BC = Math.sqrt(Math.pow(points[2]['x'] - points[1]['x'], 2) + Math.pow(points[2]['y'] - points[1]['y'], 2));
+    // D每次在AB方向上移动的距离
+    const EACH_MOVE_AD = DIST_AB / times;
+    // E每次在BC方向上移动的距离 
+    const EACH_MOVE_BE = DIST_BC / times;
+    // 点AB的正切
+    const TAN_AB = (points[1]['y'] - points[0]['y']) / (points[1]['x'] - points[0]['x']);
+    // 点BC的正切
+    const TAN_BC = (points[2]['y'] - points[1]['y']) / (points[2]['x'] - points[1]['x']);
+    // 点AB的弧度值
+    const RADIUS_AB = Math.atan(TAN_AB);
+    // 点BC的弧度值
+    const RADIUS_BC = Math.atan(TAN_BC);
+    // 每次执行
+    for (var i = 1; i <= times; i++) {
+      // AD的距离
+      var dist_AD = EACH_MOVE_AD * i;
+      // BE的距离
+      var dist_BE = EACH_MOVE_BE * i;
+      // D点的坐标
+      var point_D = {};
+      point_D['x'] = dist_AD * Math.cos(RADIUS_AB) + points[0]['x'];
+      point_D['y'] = dist_AD * Math.sin(RADIUS_AB) + points[0]['y'];
+      points_D.push(point_D);
+      // E点的坐标
+      var point_E = {};
+      point_E['x'] = dist_BE * Math.cos(RADIUS_BC) + points[1]['x'];
+      point_E['y'] = dist_BE * Math.sin(RADIUS_BC) + points[1]['y'];
+      points_E.push(point_E);
+      // 此时线段DE的正切值
+      var tan_DE = (point_E['y'] - point_D['y']) / (point_E['x'] - point_D['x']);
+      // tan_DE的弧度值
+      var radius_DE = Math.atan(tan_DE);
+      // 地市DE的间距
+      var dist_DE = Math.sqrt(Math.pow((point_E['x'] - point_D['x']), 2) + Math.pow((point_E['y'] - point_D['y']), 2));
+      // 此时DF的距离
+      var dist_DF = (dist_AD / DIST_AB) * dist_DE;
+      // 此时DF点的坐标
+      var point_F = {};
+      point_F['x'] = dist_DF * Math.cos(radius_DE) + point_D['x'];
+      point_F['y'] = dist_DF * Math.sin(radius_DE) + point_D['y'];
+      bezier_points.push(point_F);
+    }
+    return {
+      'bezier_points': bezier_points
+    };
+  },
+
 })
 
 /**

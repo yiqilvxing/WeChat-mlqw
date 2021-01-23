@@ -16,13 +16,11 @@ App({
     })
     // wx.removeStorageSync('userInfo');
     // wx.removeStorageSync('qz_token');
-
     var userInfo = wx.getStorageSync('userInfo');
     var qz_token = wx.getStorageSync('qz_token');
     
     this.globalData.userInfo = userInfo;
     this.globalData.http_header.qz_token = qz_token;
-
     if(userInfo || qz_token){
       this.globalData.isLogin = true;
     }

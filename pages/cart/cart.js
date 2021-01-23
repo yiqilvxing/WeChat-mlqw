@@ -273,15 +273,18 @@ function requestGetCart(_this){
       if (res != null && res.data != null) {
         var result = res.data;
         if (result != null && result.code == app.globalData.http_ok) {
-          let hasData = false;
+          var hasData = false;
+          var cartCount = 0;
           if(result.data != null && result.data.length > 0){
             hasData = true;
             result.data.forEach(function(item){
               item.items.forEach(function(item2){
                 item2.checked = true;
+                cartCount += item2.num;
               })
             });
-          }
+          };
+          wx.setStorageSync('cartCount', cartCount);
           _this.setData({
             checkedAll: true,
             goodsStoreItem: result.data,
