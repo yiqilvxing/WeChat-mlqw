@@ -15,6 +15,7 @@ Page({
     currentPage: 1,
     maxPage: 1,
     swiperList: [],
+    cardCur: 0,
   },
   
   /**
@@ -276,7 +277,7 @@ function requestGetShopHot(_this){
         var result = res.data;
         if (result != null && result.code == app.globalData.http_ok) {
           _this.setData({
-            swiperList: result.data
+            swiperList: result.data.concat(result.data)
           });
         }
       }

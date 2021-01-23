@@ -143,8 +143,6 @@ page{
   font-size: 14px;
   color: white;
   text-align: center;
-  font-weight: lighter;
-  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
 }
 .bottom-option-off{
   margin: 25px;
@@ -155,7 +153,5 @@ page{
   font-size: 14px;
   color: white;
   text-align: center;
-  font-weight: lighter;
-  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
 }
 

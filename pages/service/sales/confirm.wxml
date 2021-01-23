@@ -41,10 +41,10 @@
   </view>
   <view class="bottom">
     <block wx:if="{{salesEntiy!=null}}">
-      <text class="bottom-option" catchtap="requestWriteOff">核销</text>
+      <text class="bottom-option shadow-blur" catchtap="requestWriteOff">核销</text>
     </block>
     <block wx:if="{{salesEntiy==null}}">
-      <text class="bottom-option-off">核销</text>
+      <text class="bottom-option-off shadow-blur">核销</text>
     </block>
   </view>
 </view>

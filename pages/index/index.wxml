@@ -53,7 +53,7 @@
     <text class="largeText">热门店铺</text>
     <text class="smallText">SHOP RECOMMENDATION</text>
   </view>
-  <swiper class="card-swiper round-dot" indicator-dots="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper">
+  <swiper class="card-swiper" circular="true" bindchange="cardSwiper">
     <swiper-item wx:for="{{swiperList}}" wx:key="swiperList" class="{{cardCur==index?'cur':''}}">
       <view class="swiper-item" catchtap="startStore" data-id="{{item.id}}">
         <image src="{{item.hotImage}}" mode="aspectFill"></image>

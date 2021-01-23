@@ -1,6 +1,6 @@
 /* pages/me/me.wxss */
 page{
-  background-color: #F9F9F9;
+  background-color: white;
 }
 .header{
   display: flex;
@@ -104,8 +104,7 @@ page{
   flex-flow: column;
 }
 .menuTab{
-  margin-top: 7px;
-  margin-bottom: 7px;
+  height: 75px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -121,8 +120,7 @@ page{
   background: white;
   font-weight: initial;
   align-items: center;
-  padding: 0;
-  margin: 5px;
+  padding: 0px;
 }
 .menuTitle{
   font-size: 14px;

@@ -1,4 +1,7 @@
 /**index.wxss**/
+page{
+  background-color: white;
+}
 .search {
   margin-top: 10px;
   margin-left: 10px;
