@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "components/animation.wxss";
 @import "components/main.wxss";
 @import "components/icon.wxss";
 page{

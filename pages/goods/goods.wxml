@@ -2,7 +2,7 @@
 <import src="/pages/template/copyright.wxml"/>
  <!-- 加购物车时飞的图片 -->
 <view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;">
-  <image src="{{bannerItem[0]}}" mode="aspectFill"></image>
+  <image src="{{goodsEntity.cover}}" style="white:100%; height:100%" mode="aspectFit"></image>
 </view>
 <view class="main" hidden="{{hidden}}">
   <swiper class="banner" indicator-dots="true" indicator-active-color="#fff" autoplay="true" duration="500">
@@ -56,8 +56,8 @@
         <image class="proImg" src="../../image/img_pro_service.png"></image>
         <text class="proText">客服</text>
       </button>
-      <view class="proItem animation-{{animation==shake?shake:''}}" bindtap="startCart">
-        <image class="proImg" src="../../image/img_pro_cart.png"></image>
+      <view class="proItem" bindtap="startCart">
+        <image class="proImg animation-{{animation=='shake-v' ? 'shake-v' : ''}}" src="../../image/img_pro_cart.png"></image>
         <text class="proText">购物车</text>
         <block wx:if="{{goodsCount>0}}">
           <view class="cu-tag badge" style="margin-left:10px">{{goodsCount}}</view>

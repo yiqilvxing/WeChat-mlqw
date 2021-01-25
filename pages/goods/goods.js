@@ -99,8 +99,8 @@ Page({
           windowHeight: res.windowHeight,
         });
         _this.busPos = {};
-        _this.busPos['x'] = res.windowWidth * 0.35;
-        _this.busPos['y'] = res.windowHeight * 0.95;
+        _this.busPos['x'] = res.windowWidth * 0.5-50;
+        _this.busPos['y'] = res.windowHeight * 0.9;
       }
     })
     if(goodsId != null){
@@ -357,7 +357,7 @@ Page({
   toggleShake() {
     var _this = this;
     _this.setData({
-      animation: 'shake'
+      animation: 'shake-v'
     })
     setTimeout(function() {
       _this.setData({

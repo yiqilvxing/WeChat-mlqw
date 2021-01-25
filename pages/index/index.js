@@ -199,7 +199,7 @@ function requestGetTabMenu(_this){
       if (res != null && res.data != null) {
         var result = res.data;
         if (result != null && result.code == app.globalData.http_ok) {
-          var maxsize = result.data.length > 4 ? 4 : result.data.length;
+          var maxsize = result.data.length > 5 ? 5 : result.data.length;
           var data = [];
           for(var i=0; i<maxsize; i++){
             data.push(result.data[i]);
