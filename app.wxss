@@ -35,14 +35,6 @@ page{
   font-size: 14px;
   color: #2A2A2A;
 }
-.copyright{
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  color: #999999;
-  font-size: 10px;
-  text-align: center;
-}
 /*购物车加减组件*/
 .stepper { 
   display: flex; 
@@ -142,9 +134,9 @@ page{
   padding: 20px;
   display: flex;
   flex-direction: row;
-  color: white;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
+  text-align: center;
 }
 .copyright-image{
   width: 18px;
@@ -153,7 +145,6 @@ page{
 }
 .copyright-text{
   margin-left: 3px;
-  margin-bottom: 3px;
   font-size: 10px;
   color: #999999;
   text-align: center;

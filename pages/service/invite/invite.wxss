@@ -1,9 +1,9 @@
 /* pages/service/invite/invite.wxss */
 .main{
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;
-  height: 100%;
 }
 .item-top{
   margin: 12px;

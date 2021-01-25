@@ -1,4 +1,6 @@
 {
   "navigationStyle": "custom", 
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-badge": "weui-miniprogram/badge/badge"
+  }
 }

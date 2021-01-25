@@ -1,5 +1,4 @@
 <!--pages/service/integral/mall.wxml-->
-<import src="/pages/template/copyright.wxml"/>
 <view class="main">
   <view style="width:100%;display:flex; flex-direction:row; justify-content: center; align-items: center; position:fixed; top:{{statusBarHeight+8}}px;">
     <image catchtap="pageBack" style="width:20px; height:20px; padding-left:10px;" src="../../../image/img_back_white.png" mode="aspectFill"></image>
@@ -56,7 +55,7 @@
       <text>暂无商品</text>
     </view>
   </block>
-  <template is="copyright"></template>
+  <include src="../../template/copyright.wxml"></include>
 </view>
 
 

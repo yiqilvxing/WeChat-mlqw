@@ -1,5 +1,4 @@
 <!--pages/index/index.wxml-->
-<import src="/pages/template/copyright.wxml"/>
 <view class="main">
   <view class="search" bindtap="startSearch">
     <image class="searchImg" src="../../image/img_search.png" mode="aspectFit"></image>
@@ -82,5 +81,5 @@
       </view>
     </view>
   </view>
-  <template is="copyright"></template>
+  <include src="../template/copyright.wxml"></include>
 </view>

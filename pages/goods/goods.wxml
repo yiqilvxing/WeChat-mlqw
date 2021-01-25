@@ -1,5 +1,4 @@
 <!--pages/goods/goods.wxml-->
-<import src="/pages/template/copyright.wxml"/>
  <!-- 加购物车时飞的图片 -->
 <view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;">
   <image src="{{goodsEntity.cover}}" style="white:100%; height:100%" mode="aspectFit"></image>
@@ -48,7 +47,7 @@
   <view class="goodDetail">
     <text class="goodDetailText">商品详情</text>
     <rich-text nodes="{{goodsDetailRich}}" bindtap="previewRichImage"></rich-text>
-    <template is="copyright"></template>
+    <include src="../template/copyright.wxml"></include>
   </view>
   <view class="bottom">
     <view class="bottomLeft">

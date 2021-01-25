@@ -1,5 +1,4 @@
 <!--pages/me/me.wxml-->
-<import src="/pages/template/copyright.wxml"/>
 <view class="main">
   <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_me_bg.png')">
     <block wx:if="{{isLogin}}">
@@ -156,6 +155,7 @@
         </view>
       </view>
     </view>
+    
   </view>
-  <template is="copyright"></template>
+  <include src="../template/copyright.wxml"></include>
 </view>
