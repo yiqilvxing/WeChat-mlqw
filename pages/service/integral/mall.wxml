@@ -4,7 +4,7 @@
     <image catchtap="pageBack" style="width:20px; height:20px; padding-left:10px;" src="../../../image/img_back_white.png" mode="aspectFill"></image>
     <text style="color:white; font-size:14px; flex:1; text-align: center; margin-right:30px">积分商城</text>
   </view>
-  <view class="header" style="background-image:url('../../../image/img_holder_bg.png');">
+  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_holder_bg.png');">
   </view>
   <view class="top-item">
     <image class="top-image" mode="aspectFill" src="{{basic.url}}"></image>

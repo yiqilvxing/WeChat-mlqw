@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 <view class="main">
-  <image class="imgBg" src="../../image/img_me_bg.png"></image>
+  <image class="imgBg" src="https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_me_bg.png"></image>
   <view class="login">
     <text class="login-tips">欢迎来到美丽蔷薇~</text>
     <image class="login-image" src="../../image/img_logo.png" mode="aspectFill"></image>

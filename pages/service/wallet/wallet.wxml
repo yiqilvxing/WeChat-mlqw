@@ -10,7 +10,7 @@
       </view>
     </view>
   </view>
-  <view class="header" style="background-image:url('../../../image/img_holder_bg.png');">
+  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_holder_bg.png');">
     <view class="item-total">
       <text class="item-total-title">
         <block wx:if="{{currentTab==0}}">小金库 (元)</block>

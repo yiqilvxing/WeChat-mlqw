@@ -1,6 +1,6 @@
 <!--pages/me/me.wxml-->
 <view class="main">
-  <view class="header" style="background-image:url('../../image/img_me_bg.png')">
+  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_me_bg.png')">
     <block wx:if="{{isLogin}}">
       <view class="top-user" bindtap="startMeData">
         <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
@@ -16,7 +16,7 @@
       </view>
     </block>
     <block wx:if="{{!isLogin}}">
-      <view class="top">
+      <view class="top-user">
         <image class="imgHeader" src="../../image/img_header_normal.png" mode="aspectFill"></image>
         <view class="userLogin" bindtap="startLogin">
           <text class="userName">登录/注册</text>
