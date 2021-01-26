@@ -40,7 +40,10 @@
     "pages/service/team/member",
     "pages/service/achieve/detail",
     "pages/template/copyright",
-    "pages/template/loading"
+    "pages/template/loading",
+    "pages/order/after/list",
+    "pages/order/after/apply",
+    "pages/order/after/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

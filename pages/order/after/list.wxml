@@ -1,0 +1,31 @@
+<!--pages/order/after/list.wxml-->
+<view class="main">
+  <view class="items" wx:for="{{items}}" wx:key="items" bindtap="startDetail" data-index="{{index}}">
+    <view class="item-row">
+      <text class="item-no">售后订单号：{{item.id}}</text>
+      <text class="item-state" wx:if="{{item.state==0}}">待处理</text>
+      <text class="item-state" wx:if="{{item.state==1}}">处理中</text>
+      <text class="item-state-off" wx:if="{{item.state==2}}">已处理</text>
+    </view>
+    <view class="line"></view>
+    <view class="item-order">
+      <view class="item-column">
+        <text class="item-order-text">关联订单</text>
+        <text class="item-order-text">{{item.oid}}</text>
+      </view>
+      <view class="goods">
+        <image class="item-goods" src="{{item2.cover}}" mode="aspectFill" wx:for="{{item.orderGoodItem}}" wx:key="goods" wx:for-item="item2"></image>
+      </view>
+    </view>
+    <text class="item-dec">订单描述：</text>
+    <text class="item-dec-detail">{{item.resultDesc==null?'7天无理由退货':item.resultDesc}}</text>
+    <view class="images">
+      <image class="item-images" src="{{item3}}" mode="aspectFill" wx:for="{{item.images}}" wx:key="images" wx:for-item="item3"></image>
+    </view>
+    <view class="line"></view>
+    <view class="item-row">
+      <text class="item-date">{{item.modifyTime}}</text>
+      <text class="item-service">联系客服</text>
+    </view>
+  </view>  
+</view>

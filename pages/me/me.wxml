@@ -1,6 +1,6 @@
 <!--pages/me/me.wxml-->
 <view class="main">
-  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_me_bg.png')">
+  <view class="header" style="background-image:url('../../image/img_me_bg.png')">
     <block wx:if="{{isLogin}}">
       <view class="top-user" bindtap="startMeData">
         <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
@@ -62,7 +62,7 @@
           <view class="cu-tag badge">{{orderCount[3]}}</view>
         </block>
       </view>
-      <view class="menuItem" bindtap="startOrderList" data-state="9">
+      <view class="menuItem" bindtap="startOrderAfter" data-state="9">
         <image class="orderImg" src="../../image/img_order_shtk.png" mode="aspectFill"></image>
         <text class="menuText">售后/退款</text>
         <block wx:if="{{orderCount != null && orderCount[9] != null && orderCount[9] > 0 }}">
@@ -155,7 +155,6 @@
         </view>
       </view>
     </view>
-    
   </view>
   <include src="../template/copyright.wxml"></include>
 </view>

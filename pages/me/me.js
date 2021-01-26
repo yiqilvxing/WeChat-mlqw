@@ -54,6 +54,15 @@ Page({
     });
   },
 
+  // 售后/退款
+  startOrderAfter: function(e){
+    app.checkUserLogin(function () {
+      wx.navigateTo({
+        url: '../order/after/list'
+      });
+    });
+  },
+
   // 个人资料
   startMeData: function(e){
     app.checkUserLogin(function () {
