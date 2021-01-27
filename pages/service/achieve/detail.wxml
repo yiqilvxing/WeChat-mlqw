@@ -1,5 +1,15 @@
 <!--pages/service/achieve/detail.wxml-->
 <view class="main">
+  <view wx:if="{{items.length>0}}" class="item-detail"wx:for="{{items}}" wx:key='items'>
+    <view class="item-detail-column">
+      <text class="item-detail-date">{{item.time}}</text>
+      <text class="item-detail-content">{{item.remark}}</text>
+    </view>
+    <text class="item-detail-price">
+      <block wx:if="{{item.amount>=0}}">+{{item.amount}}</block>
+      <block wx:if="{{!item.amount<0}}">-{{item.amount}}</block>
+    </text>
+  </view>
 </view>
 <block wx:if="{{items.length<=0}}">
   <view class="no-data">

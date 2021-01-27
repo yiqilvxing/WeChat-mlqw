@@ -216,8 +216,11 @@ Page({
     } 
     //授权成功
     else if (e.detail.errMsg =="getUserInfo:ok"){
-      // this.startLogin(e);// 圈子你我
-      this.onKeyStartLogin(e);// 美丽蔷薇
+      if(app.globalData.debug_mode){
+        this.onKeyStartLogin(e);// 美丽蔷薇
+      }else{
+        this.startLogin(e);// 圈子你我
+      }
     }else{
       wx.showToast({
         title: '未知错误',

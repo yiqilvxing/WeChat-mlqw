@@ -22,7 +22,7 @@
             <text class="item-vip-update">升级进度条</text>
             <text class="item-vip-money">{{item.currentAmount/100}}/{{item.levelupCumulative/100}}</text>
           </view>
-          <progress class="item-vip-progress" percent="50" stroke-width="3"></progress>
+          <progress class="item-vip-progress" percent="{{item.percent}}" stroke-width="3"></progress>
           <text class="item-vip-tips">您和您的成员在本店的累计消费满{{item.levelupCumulative/100}}元，自动升级</text>
         </view>
       </view>

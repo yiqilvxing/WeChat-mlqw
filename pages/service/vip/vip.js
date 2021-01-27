@@ -42,8 +42,38 @@ Page({
         if (res != null && res.data != null) {
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
+            var items = result.data;
+            if(app.globalData.debug_mode){
+              items = [
+                {
+                  "currentAmount": 50000,
+                  "className": "钻石卡",
+                  "discount": 68,
+                  "levelupCumulative": 198000,
+                  "storeId": 111,
+                  "storeLogo": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1598420567647.png",
+                  "storeName": "魅力蔷薇",
+                  "backImage": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1599461485182.png",
+                  "canLevelUp": 1
+                },
+                {
+                  "currentAmount": 2999000,
+                  "className": "黑金卡",
+                  "discount": 88,
+                  "levelupCumulative": 5988000,
+                  "storeId": 106,
+                  "storeLogo": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1598239885160.png",
+                  "storeName": "天酿酒业",
+                  "backImage": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1599461485182.png",
+                  "canLevelUp": 1
+                }
+              ]
+            }
+            for(var i=0; i<items.length; i++){
+              items[i].percent = 100 * items[i].currentAmount / items[i].levelupCumulative;
+            }
             _this.setData({
-                items: result.data
+              items: items
             })
           }
         }

@@ -32,7 +32,7 @@
               <text class='goodsTabItem-count'>×{{item2.num}}</text>
             </view>
             <view class="goodsTabCart">
-              <text>规格: {{item.spec}}</text>
+              <text>规格: {{item2.spec}}</text>
             </view>
           </view>
         </view>

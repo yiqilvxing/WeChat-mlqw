@@ -43,8 +43,37 @@ Page({
         if (res != null && res.data != null) {
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
+            var goodsStoreItem  = result.data;
+            if(app.globalData.debug_mode){
+              goodsStoreItem = [
+                {
+                  "storeId":  106,
+                  "storeLogo": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1598239885160.png",
+                  "storeName": "天酿酒业",
+                  "skuCloudList": [
+                    {
+                      "id": 37,
+                      "skuCover": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1601285065370.png",
+                      "skuTitle": "陈酱九八七 | 天禧酱香型白酒 498元/瓶 6瓶/箱  整箱发货",
+                      "stock": 100,
+                      "unit": "箱",
+                      "isPickup": true,
+                      "expireTime": "2020-09-10 13:55:08"
+                    },{
+                      "id": 38,
+                      "skuCover": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1602205135645.png",
+                      "skuTitle": "陈酱九八七 | 猪年纪念酒 1199元/瓶 6瓶/箱 整箱发货",
+                      "stock": 200,
+                      "unit": "箱",
+                      "isPickup": true,
+                      "expireTime": "2020-10-15 14:15:23"
+                    }
+                  ] 
+                }
+              ];
+            }
             _this.setData({
-              goodsStoreItem: result.data,
+              goodsStoreItem: goodsStoreItem
             });
           }
         }

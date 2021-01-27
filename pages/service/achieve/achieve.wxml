@@ -3,12 +3,12 @@
   <view class="basic">
     <view class="item-column">
       <text class="item-title">总业绩(元)</text>
-      <text class="item-money">5623.00</text>
+      <text class="item-money">{{basic.totalPerformance}}</text>
     </view>
     <view class="item-line"></view>
     <view class="item-column">
       <text class="item-title">待结算(元)</text>
-      <text class="item-money">666.00</text>
+      <text class="item-money">{{basic.toBeSettled}}</text>
     </view>
   </view>
   <view class="space"></view>

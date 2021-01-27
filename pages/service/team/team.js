@@ -62,9 +62,24 @@ Page({
           if (result != null && result.code == app.globalData.http_ok) {
             var userInfo = result.data;
             userInfo.avatar = userInfo.avatar.replace('/132','/0');
+            var levelItems = userInfo.storeLevelList;
+            if(app.globalData.debug_mode){
+              levelItems = [
+                {
+                  "currentClassName": "钻石卡",
+                  "storeName": "魅力蔷薇",
+                  "storeLogo": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1598420567647.png"
+                },
+                {
+                  "currentClassName": "黑金卡",
+                  "storeName": "天酿酒业",
+                  "storeLogo": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1598239885160.png"
+                }
+              ];
+            }
             _this.setData({
               userInfo: userInfo,
-              levelItems: userInfo.storeLevelList
+              levelItems: levelItems
             });
           }
         }

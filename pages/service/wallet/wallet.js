@@ -103,6 +103,82 @@ function requestWallet(_this){
         if (result != null && result.code == app.globalData.http_ok) {
           var money = type==0 ? result.data.vault : result.data.currency;
           var detailItem = type==0 ? result.data.vaultList : result.data.currencyList;
+          if(app.globalData.debug_mode){
+            money = type==0 ? 656000: 1000000;
+            if(type == 0){
+              detailItem = [{
+                "id": 202055661111,
+                "type": 1,
+                "mark": "申请提现10元",
+                "num": 1000,
+                "isIncome": false,
+                "state": 1,
+                "createTime": "2020-07-09 12:02:22",
+              },{
+                "id": 202055661112,
+                "type": 1,
+                "mark": "申请提现20元",
+                "num": 2000,
+                "isIncome": false,
+                "state": 1,
+                "createTime": "2020-07-08 11:05:30",
+              },{
+                "id": 202055661113,
+                "type": 1,
+                "mark": "申请提现50元",
+                "num": 5000,
+                "isIncome": false,
+                "state": 1,
+                "createTime": "2020-07-06 10:05:56",
+              },{
+                "id": 202055661114,
+                "type": 1,
+                "mark": "申请提现30元",
+                "num": 3000,
+                "isIncome": false,
+                "state": 1,
+                "createTime": "2020-07-06 06:06:06",
+              },{
+                "id": 202055661115,
+                "type": 1,
+                "mark": "申请提现10元",
+                "num": 1000,
+                "isIncome": false,
+                "state": 1,
+                "createTime": "2020-07-01 11:11:11",
+              }]
+            }else{
+              detailItem = [{
+                "id": 12898092047208444,
+                "type": 0,
+                "mark": "后台余额充值:1000元",
+                "num": 100000,
+                "isIncome": true,
+                "createTime": "2020-07-15 09:04:51"
+              },{
+                "id": 12898092047208443,
+                "type": 0,
+                "mark": "后台余额充值:5000元",
+                "num": 500000,
+                "isIncome": true,
+                "createTime": "2020-07-14 10:04:52"
+              },{
+                "id": 12898092047208442,
+                "type": 0,
+                "mark": "后台余额充值:3000元",
+                "num": 300000,
+                "isIncome": true,
+                "createTime": "2020-07-12 16:04:51"
+              },{
+                "id": 12898092047208441,
+                "type": 0,
+                "mark": "后台余额充值:1000元",
+                "num": 100000,
+                "isIncome": true,
+                "createTime": "2020-07-11 11:11:11"
+              }]
+            }
+          }
           if(money==0){
             money = '0.00';
           }if(detailItem==null){

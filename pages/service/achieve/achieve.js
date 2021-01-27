@@ -10,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    basic: {},
     years: [2019,2020],
     currentYear: '',
     canvas: null,
@@ -26,6 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.requestAchieveBasic();
     var timestamp = Date.parse(new Date());
     var date = new Date(timestamp);
     var year = date.getFullYear();
@@ -65,30 +67,93 @@ Page({
         _this.setData({
           currentYear: currentYear
         })
-        var data = [Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
-                    Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100];
-        refreshChart(data);
+        currentYear = currentYear.replace('年','');
+        requestAchieveChatData(currentYear);
       }
     });
   },
-
+  
+  /**
+   * 获取业绩信息
+   */
+  requestAchieveBasic: function(){
+    var _this = this;
+    wx.request({
+      url: app.globalData.http_base + '/detailed/totalPerformance',
+      method: 'GET',
+      header: app.globalData.http_header,
+      success: function(res) {
+        if (res != null && res.data != null) {
+          var result = res.data;
+          if (result != null && result.code == app.globalData.http_ok) {
+            var basic = result.data;
+            if(app.globalData.debug_mode){
+              basic = {
+                totalPerformance: '5623.00',
+                toBeSettled: '666.00'
+              }
+            }
+            _this.setData({
+              basic: basic
+            });
+          }
+        }
+      }
+    });
+  },
+  
 })
+
+// 获取业绩图表信息
+function requestAchieveChatData(year){
+  wx.showLoading({
+    title: app.globalData.loading,
+  })
+  wx.request({
+    url: app.globalData.http_base + '/detailed/performanceChart/'+year,
+    method: 'GET',
+    header: app.globalData.http_header,
+    success: function(res) {
+      wx.hideLoading();
+      if (res != null && res.data != null) {
+        var result = res.data;
+        if (result != null && result.code == app.globalData.http_ok) {
+          var chartData = [];
+          for(var i=0; i<result.data.data.length; i++){
+            chartData.push(result.data.data[i].num);
+          }
+          refreshChart(chartData);
+        }
+      }
+    },
+    fail: function(res){
+      wx.hideLoading();
+    }
+  });
+}
 
 // 初始化图表
 function initChart(canvas, width, height, dpr){
+  var timestamp = Date.parse(new Date());
+  var date = new Date(timestamp);
+  var year = date.getFullYear();
    chart = echarts.init(canvas, null, {
     width: width,
     height: height,
     devicePixelRatio: dpr //解决小程序视图模糊的问题
   });
   canvas.setChart(chart);
-  var data = [Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
-              Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100];
+  var data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   refreshChart(data);
+  requestAchieveChatData(year);
   return chart;
 }
 // 刷新图表数据
 function refreshChart(data){
+  if(app.globalData.debug_mode){
+    data=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+      Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100];
+  }
   if(data != null && data.length>0){
     for(var i=0; i<data.length; i++){
       data[i] = parseInt(data[i]);

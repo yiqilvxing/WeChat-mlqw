@@ -1,1 +1,38 @@
 /* pages/service/achieve/detail.wxss */
+.main{
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.item-detail{
+  margin: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
+}
+.item-detail-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.item-detail-date{
+  font-size: 12px;
+  color: #999999;
+}
+.item-detail-content{
+  margin-top: 5px;
+  font-size: 14px;
+  color: #2A2A2A;
+}
+.item-detail-price{
+  font-size: 16px;
+  color: #FFB11C;
+}

@@ -9,7 +9,7 @@ Page({
    */
   data: {
     code: null,
-    salesEntiy: null,
+    salesEntiy: {},
   },
 
   /**
@@ -29,6 +29,28 @@ Page({
    * 获取订单信息
    */
   requestOrderMessage: function(code){
+    if(app.globalData.debug_mode){
+      var items = {
+        "level": 0,
+        "name": "Timi",
+        "expire_time": "2020-07-09 16:03:02",
+        "levelName": "普通会员",
+        "avatar": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/app/1594431389-ios-lifeapp.png",
+        "orderGoodId": 10825230026715136,
+        "orderGoodItemList": [
+            {
+              "title": "陈酱九八七 | 天禧酱香型白酒 498元/瓶 6瓶/箱  整箱发货",
+              "cover": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1601285065370.png",
+              "num": 1,
+              "spec": "498元/瓶 6瓶/箱  整箱发货"
+            }
+        ]
+      }
+      this.setData({
+        salesEntiy: items
+      });
+      return;
+    }
     if(code == null || code == ''){
       return;
     }
@@ -73,6 +95,12 @@ Page({
    * 订单核销
    */
   requestWriteOff: function(){
+    if(app.globalData.debug_mode){
+      wx.redirectTo({
+        url: '../sales/record',
+      });
+      return;
+    }
     var _this = this;
     if(_this.data.salesEntiy == null){
       return;
