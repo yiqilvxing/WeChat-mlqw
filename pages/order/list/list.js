@@ -11,6 +11,9 @@ Page({
     scrollLeft: 0,
     tabItem: ['全部', '待支付', '待发货', '待收货', '已收货', '已完成', '已失效'],
     tabItemState: [-1, 0, 1, 2, 3, 4, 5],
+    currentPage: 1,
+    maxPage: 1,
+    previousTab: 0,
     currentTab: 0,
     orderState: -1,
     goodsStoreItem: [],
@@ -29,7 +32,7 @@ Page({
     for(var i=0; i < tabItemState.length; i++){
       if(parseInt(orderState) == tabItemState[i]){
         let index = i;
-        let scrollLeft = index>_this.data.currentTab ? 50*index : -50*index;
+        let scrollLeft = index>_this.data.currentTab ? 20*index : -20*index;
         _this.setData({
           scrollLeft: scrollLeft,
           currentTab: index,
@@ -42,6 +45,7 @@ Page({
       requestGetOrderList(_this, orderState);
     }
   },
+
   /**
    * Tab滑动切换
    */
@@ -49,8 +53,14 @@ Page({
     var _this = this;
     let index = e.detail.current;
     let orderState = _this.data.tabItemState[index];
-    let scrollLeft = index>_this.data.currentTab ? 50*index : -50*index;
+    let scrollLeft = 0;
+    if(index>_this.data.currentTab){
+      scrollLeft = index>_this.data.currentTab ? 20*index : -20*index;
+    }else{
+      scrollLeft = index>_this.data.previousTab ? 20*index : -20*index;
+    }
     _this.setData({
+      currentPage: 1,
       scrollLeft: scrollLeft,
       currentTab: index,
       orderState: orderState
@@ -66,12 +76,28 @@ Page({
     var _this = this;
     let index = e.currentTarget.dataset.index;
     let orderState = _this.data.tabItemState[index];
-    let scrollLeft = index>_this.data.currentTab ? 50*index : -50*index;
     _this.setData({
-      scrollLeft: scrollLeft,
+      previousTab: _this.data.currentTab
+    });
+    _this.setData({
+      currentPage: 1,
       currentTab: index,
       orderState: orderState
     });
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    var page = this.data.currentPage;
+    if(page < this.data.maxPage){
+      page++;
+      this.setData({
+        currentPage: page,
+      });
+      requestGetOrderList(this,this.data.orderState);
+    }
   },
 
   /**
@@ -122,16 +148,24 @@ Page({
  */
 function requestGetOrderList(_this,orderState){
   wx.request({
-    url: app.globalData.http_base + '/order/good/orderGoodList?type=1&pageNo=1&length=100' + '&orderState=' + orderState,
+    url: app.globalData.http_base + '/order/good/orderGoodList?type=1&length=100'+ '&pageNo=' + _this.data.currentPage + '&orderState=' + orderState,
     method: 'GET',
     header: app.globalData.http_header,
     success: function(res) {
       if (res != null && res.data != null) {
         var result = res.data;
         if (result != null && result.code == app.globalData.http_ok) {
-          _this.setData({
-            goodsStoreItem: result.data.rows
-          });
+          if(_this.data.currentPage == 1){
+            _this.setData({
+              maxPage: result.data.pageSize,
+              goodsStoreItem: result.data.rows
+            });
+          }else{
+            _this.setData({
+              maxPage: result.data.pageSize,
+              goodsStoreItem: _this.data.goodsStoreItem.concat(result.data.rows)
+            });
+          }
         }
       }
     },

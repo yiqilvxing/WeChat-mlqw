@@ -27,8 +27,8 @@
   <view class="grid">
     <view class="gridTop">
       <text class="menuTitle">我的订单</text>
-      <view class="orderMore">
-        <text class="menuMore" bindtap="startOrderList" data-state="-1">全部订单</text>
+      <view class="orderMore" bindtap="startOrderList" data-state="-1">
+        <text class="menuMore">全部订单</text>
         <image src="../../image/img_arrow_right_mini.png" mode="aspectFill" style="width:15px; height:15px"></image>
       </view>
     </view>

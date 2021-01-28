@@ -1,4 +1,6 @@
 <!--pages/service/invite/poster.wxml-->
+<import src="/pages/template/loading.wxml"/>
+<template is="loading" wx:if="{{showLoading}}"></template>
 <view class="main" wx:if="{{!showPoster}}">
   <view class="item" wx:if="{{items.length>0}}">
     <view class='item-tab' wx:for="{{items}}" wx:key='items' bindtap="showPoster" data-url="{{item.url}}">

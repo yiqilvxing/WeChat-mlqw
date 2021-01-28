@@ -13,6 +13,7 @@ Page({
     items: [],
     currentUrl: '',
     userInfo: {},
+    showLoading: true,
   },
 
   /**
@@ -47,16 +48,15 @@ Page({
    * 获取海报背景图
    */
   requestPoster: function(){
-    wx.showLoading({
-      title: app.globalData.loading
-    })
     var _this = this;
     wx.request({
       url: app.globalData.http_base + '/member/storePoster?pageNo=1&length=20',
       method: 'GET',
       header: app.globalData.http_header,
       success: function(res) {
-        wx.hideLoading();
+        _this.setData({
+          showLoading: false
+        })
         if (res != null && res.data != null) {
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
@@ -71,7 +71,9 @@ Page({
         }
       },
       fail: function(res){
-        wx.hideLoading();
+        _this.setData({
+          showLoading: false
+        })
       },
     });
   },
