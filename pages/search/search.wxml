@@ -1,9 +1,9 @@
 <!--pages/search/search.wxml-->
 <view class="main">
   <view class="search">
-    <input placeholder="请输入搜索关键词" confirm-type="search" bindinput="bindKeywordInput" bindconfirm="bindKeywordSearch" value="{{keyword}}" focus="true"></input>
+    <input class="searchText" placeholder="请输入搜索关键词" confirm-type="search" bindinput="bindKeywordInput" bindconfirm="bindKeywordSearch" value="{{keyword}}" focus="true"></input>
   </view>
-  <block wx:if="{{goodsItem.length>0}}">
+  <view wx:if="{{goodsItem.length>0}}" style="margin-top:40px">
     <view class="item" wx:for="{{goodsItem}}" wx:key="goodsItem" bindtap="startGoodsDetail" data-id="{{item.id}}">
       <view class="goodsItem">
         <image class='item-cover' src="{{item.cover}}" mode="aspectFill"></image>
@@ -23,7 +23,7 @@
       </view>
       <view class="line"></view>
     </view>
-  </block>
+  </view>
 </view>
 <block wx:if="{{goodsItem.length<=0}}">
   <view class="no-data">

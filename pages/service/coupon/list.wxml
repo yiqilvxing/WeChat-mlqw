@@ -1,11 +1,11 @@
 <!--pages/service/coupon/list.wxml-->
 <view class="main">
-  <view class="swiper-tab" style="scroll-x:true">
+  <scroll-view class="swiper-tab" scroll-x="true">
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
       <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
     </block>
-  </view>
-  <swiper class="swiper-box" style="min-height:{{winHeight}}px" bindchange="onSwiperChange">
+  </scroll-view>
+  <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
       <swiper-item data-id="{{item.id}}">
         <block wx:if="{{couponItems.length<=0}}">

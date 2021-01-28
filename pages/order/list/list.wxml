@@ -5,7 +5,7 @@
       <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
     </block>
   </scroll-view>
-  <swiper class="swiper-box" style="min-height:{{winHeight}}px" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
+  <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
       <swiper-item data-id="{{item.id}}">
         <view wx:if="{{goodsStoreItem.length>0}}" class="goodsStoreItem" wx:for="{{goodsStoreItem}}" wx:key='goodsStoreItem' bindtap="startDetail" data-id="{{item.id}}">

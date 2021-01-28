@@ -38,6 +38,13 @@ Page({
     }
   },
 
+  // 跳转到店铺
+  startStore: function(e){
+    wx.navigateTo({
+      url: '../store/store?storeId='+e.currentTarget.dataset.id
+    })
+  },
+
   /**
    * 跳转到首页
    */

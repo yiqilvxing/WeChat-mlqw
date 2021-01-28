@@ -1,4 +1,7 @@
 /* pages/service/invite/invite.wxss */
+page{
+  background-color: white;
+}
 .main{
   height: 100%;
   display: flex;

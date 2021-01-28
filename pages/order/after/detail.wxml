@@ -27,9 +27,9 @@
     </view>
     <text class="item-dec">订单描述：</text>
     <text class="item-dec-detail">{{item.resultDesc==null?'7天无理由退货':item.resultDesc}}</text>
-    <view class="images">
-      <image class="item-images" src="{{item3}}" mode="aspectFill" wx:for="{{item.images}}" wx:key="images" wx:for-item="item3"></image>
-    </view>
+    <scroll-view class="images" scroll-x="true">
+      <image class="item-images" src="{{item3}}" mode="aspectFill" wx:for="{{item.images}}" wx:key="images" wx:for-item="item3" catchtap="previewBanner" data-urls="{{item.images}}"></image>
+    </scroll-view>
     <view class="line"></view>
     <text class="item-service">联系客服</text>
   </view>

@@ -1,16 +1,18 @@
 <!--pages/service/upgrade/upgrade.wxml-->
 <view class="main">
-  <view class="swiper-tab">
-    <block wx:for="{{tabTitle}}" wx:key="tabTitle">
+  <scroll-view class="swiper-tab" scroll-x="true">
+    <block wx:for="{{tabItem}}" wx:key='tabItem'>
       <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
     </block>
-  </view>
+  </scroll-view>
   <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
-    <block wx:for="{{tabTitle}}" wx:key="tabTitle">
-      <swiper-item>
-        <view class="no-data">
-          <text>暂无记录</text>
-        </view>
+    <block wx:for="{{tabItem}}" wx:key='tabItem'>
+      <swiper-item data-id="{{item.id}}">
+        <block>
+          <view class="no-data">
+            <text>暂无记录</text>
+          </view>
+        </block>
       </swiper-item>
     </block>
   </swiper>

@@ -12,8 +12,6 @@ Page({
     tabItem: ['待使用','已使用','已过期'],
     currentTab: 0,
     couponItems: [],
-    winWidth: 0,
-    winHeight: 0,
     currentPage: 1,
     maxPage: 1,
   },
@@ -22,15 +20,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
-    wx.getSystemInfo({
-      success: function(res) {
-        _this.setData( {
-           winWidth: res.windowWidth,
-           winHeight: res.windowHeight
-        });
-      }
-    });
     this.requestCoupon(this.data.currentPage);
   },
 

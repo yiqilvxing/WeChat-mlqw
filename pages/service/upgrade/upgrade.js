@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabTitle: ['金卡','铂金卡','黑金卡','钻石卡'],
+    tabItem: ['金卡','铂金卡','黑金卡','钻石卡'],
     currentTab: 0,
     items: [],
   },
@@ -32,7 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
   
 })

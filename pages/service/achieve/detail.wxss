@@ -1,7 +1,7 @@
 /* pages/service/achieve/detail.wxss */
 .main{
   height: 100%;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   background-color: white;

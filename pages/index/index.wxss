@@ -17,6 +17,7 @@ page{
   justify-content: start;
   text-align: center;
   align-items: center;
+  border-radius: 2px;
 }
 .searchText{
   font-size: 14px;

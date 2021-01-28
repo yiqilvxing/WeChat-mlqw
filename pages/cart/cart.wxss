@@ -11,17 +11,17 @@ page{
 .storeItem{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  justify-items: center;
+  justify-content: start;
+  align-items: center;
   padding: 12px;
+  text-align: center;
 }
 .storeImage{
   width: 20px;
   height: 20px;
 }
 .storeText{
-  flex: 1;
-  font-size: 15px;
+  font-size: 14px;
   color: black;
   margin-left: 5px;
   margin-right: 5px;

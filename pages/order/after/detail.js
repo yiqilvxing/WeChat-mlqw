@@ -21,4 +21,15 @@ Page({
     })
   },
 
+  // 预览图片，放大预览
+  previewBanner: function(e) {
+    var _this = this;
+    let current = e.currentTarget.dataset.src;
+    let urls = e.currentTarget.dataset.urls;
+    wx.previewImage({
+      current: current, 
+      urls: urls 
+    })
+  },
+
 })

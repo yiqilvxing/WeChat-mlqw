@@ -37,6 +37,18 @@ page{
   color: #FF8500;
   margin-left: 22px;
 }
+.item-row{
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
 .bottom{
   margin: 15px;
   display: flex;
@@ -109,11 +121,11 @@ page{
   color: #999999;
 }
 .images{
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
+  white-space: nowrap;
+  padding: 10px;
 }
 .item-images{
+  display: inline-block;
   width: 60px;
   height: 60px;
   margin-left: 5px;

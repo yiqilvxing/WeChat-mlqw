@@ -28,7 +28,7 @@ Page({
   pageBack: function(){
     wx.navigateBack();
   },
-  //预览图片，放大预览
+  // 预览图片，放大预览
   previewBanner: function(e) {
     let currentUrl = e.currentTarget.dataset.src
     wx.previewImage({

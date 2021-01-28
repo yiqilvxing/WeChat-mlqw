@@ -3,47 +3,45 @@ page{
   background-color: #F9F9F9;
 }
 .main{
-  display: flex;
-  flex-direction: column;
-  background-color: #F6F6F6;
-}
-::-webkit-scrollbar{
-width: 0;
-height: 0;
-color: transparent;
-display: none;
+  background-color: #F9F9F9;
+  height: 100%;
 }
 .swiper-tab{
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-  white-space: nowrap;
-  overflow: hidden;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1024;
+  text-align: center;
   background-color: white;
+  white-space: nowrap;
+  box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
 }
-.swiper-tab-text{
-  margin-left: 10px;
-  margin-right: 10px; 
-  height: 30px;
+::-webkit-scrollbar {
+	display: none;
+}
+.swiper-tab-text{  
+  height: 90rpx;
+	display: inline-block;
+	line-height: 90rpx;
+	margin: 0 10rpx;
+	padding: 0 20rpx;
   color: #666666;
   font-size: 14px;
   font-weight: normal;
-  display: inline-block;
-  white-space: normal;
 }
 .swiper-tab-text-on{
-  margin-left: 10px;
-  margin-right: 10px; 
-  height: 30px;
-  color: #ffb11c;
-  font-size: 15px;
-  font-weight: bold;
-  border-bottom: 2px solid #ffb11c;
-  border-radius: 1px;
-  display: inline-block;
-  white-space: normal;
+  height: 90rpx;
+	display: inline-block;
+	line-height: 90rpx;
+	margin: 0 10rpx;
+	padding: 0 20rpx;
+  color: #FF8500;
+  font-size: 14px;
+  border-bottom: 4rpx solid;
 }
 .swiper-box{
+  flex: 1;
+  margin-top: 90rpx;
   width: 100%;
   display: block; 
 }
@@ -58,15 +56,15 @@ display: none;
   display: flex;
   flex-direction: row;
   padding: 12px;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 .storeImage{
   width: 20px;
   height: 20px;
 }
 .storeText{
-  font-size: 15px;
+  font-size: 14px;
   color: black;
   margin-left: 5px;
   margin-right: 5px;

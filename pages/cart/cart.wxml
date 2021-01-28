@@ -6,9 +6,10 @@
     <view class="main" style="margin-bottom:100px;">
       <view class="goodsStoreItem" wx:for="{{goodsStoreItem}}" wx:key='goodsStoreItem'>
         <view class="space"></view>
-        <view class="storeItem">
+        <view class="storeItem" catchtap="startStore" data-id="{{item.id}}">
           <image class="storeImage" data-index="{{index}}" src="../../image/img_cart_store.png" mode="aspectFit"></image>
           <text class="storeText" data-index="{{index}}">{{item.name}}</text>
+          <image src="../../image/img_arrow_right_mini.png" mode="aspectFill" style="width:15px; height:15px;"/>
         </view>
         <view class="line"></view>
         <view class="goodsCartItem {{item2.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" data-index2="{{index2}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{item.items}}" wx:key='goodsItems' wx:for-item="item2" wx:for-index="index2">

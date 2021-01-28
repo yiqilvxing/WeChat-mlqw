@@ -1,10 +1,9 @@
 /* pages/service/achieve/achieve.wxss */
 page{
-  background-color: #F9F9F9;
+  background-color: white;
 }
 .main{
-  display: flex;
-  flex-direction: column;
+  background-color: white;
   height: 100%;
 }
 .basic{

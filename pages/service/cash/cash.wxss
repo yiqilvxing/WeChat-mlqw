@@ -90,7 +90,7 @@ page{
   color: white;
   text-align: center;
   background-color: #FFB11C;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
 }
 .commit-off{
@@ -101,6 +101,6 @@ page{
   color: white;
   text-align: center;
   background-color: #999999;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 0rpx 10rpx 50rpx 10rpx #5555551A;
 }

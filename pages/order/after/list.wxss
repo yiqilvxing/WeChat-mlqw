@@ -81,11 +81,11 @@ page{
   color: #999999;
 }
 .images{
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
+  white-space: nowrap;
+  padding: 10px;
 }
 .item-images{
+  display: inline-block;
   width: 60px;
   height: 60px;
   margin-left: 5px;

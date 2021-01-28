@@ -1,4 +1,7 @@
 /* pages/service/invite/poster.wxss */
+page{
+  background-color: white;
+}
 .item{
   padding: 10px;
   min-height: 50px;

@@ -8,8 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    winWidth: 0,
-    winHeight: 0,
     scrollLeft: 0,
     tabItem: ['全部', '待支付', '待发货', '待收货', '已收货', '已完成', '已失效'],
     tabItemState: [-1, 0, 1, 2, 3, 4, 5],
@@ -24,14 +22,6 @@ Page({
   onLoad: function (options) {
     var _this = this;
     var tabItemState = _this.data.tabItemState;
-    wx.getSystemInfo({
-      success: function(res) {
-        _this.setData( {
-            winWidth: res.windowWidth,
-            winHeight: res.windowHeight
-        });
-      }
-    });
     let orderState = options.orderState;
     if(orderState == null){
       orderState = -1;
@@ -39,7 +29,7 @@ Page({
     for(var i=0; i < tabItemState.length; i++){
       if(parseInt(orderState) == tabItemState[i]){
         let index = i;
-        let scrollLeft = index>_this.data.currentTab ? 10*index : -10*index;
+        let scrollLeft = index>_this.data.currentTab ? 50*index : -50*index;
         _this.setData({
           scrollLeft: scrollLeft,
           currentTab: index,
@@ -59,7 +49,7 @@ Page({
     var _this = this;
     let index = e.detail.current;
     let orderState = _this.data.tabItemState[index];
-    let scrollLeft = index>_this.data.currentTab ? 10*index : -10*index;
+    let scrollLeft = index>_this.data.currentTab ? 50*index : -50*index;
     _this.setData({
       scrollLeft: scrollLeft,
       currentTab: index,
@@ -76,7 +66,7 @@ Page({
     var _this = this;
     let index = e.currentTarget.dataset.index;
     let orderState = _this.data.tabItemState[index];
-    let scrollLeft = index>_this.data.currentTab ? 10*index : -10*index;
+    let scrollLeft = index>_this.data.currentTab ? 50*index : -50*index;
     _this.setData({
       scrollLeft: scrollLeft,
       currentTab: index,
