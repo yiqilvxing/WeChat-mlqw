@@ -41,7 +41,7 @@ page{
 }
 .swiper-box{
   flex: 1;
-  margin-top: 90rpx;
+  padding-top: 90rpx;
   width: 100%;
   display: block; 
 }

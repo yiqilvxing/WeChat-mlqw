@@ -9,7 +9,7 @@ Page({
    */
   data: {
     keyword: '',
-    goodsItem: [],
+    goodsItem: null,
     currentPage: 1,
     maxPage: 1,
   },

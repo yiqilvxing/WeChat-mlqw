@@ -37,9 +37,7 @@ Page({
     })
   },
   previewRichImage: function(e) {
-    let currentUrl = e.currentTarget.dataset.src
     wx.previewImage({
-      current: currentUrl, 
       urls: this.data.richImages 
     })
   },

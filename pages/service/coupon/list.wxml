@@ -7,7 +7,7 @@
   </scroll-view>
   <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
-      <swiper-item data-id="{{item.id}}">
+      <swiper-item style="overflow: auto;" data-id="{{item.id}}">
         <block wx:if="{{couponItems.length<=0}}">
           <view class="no-data">
             <text>暂无记录</text>

@@ -203,21 +203,23 @@
 .goodsTabItem-buy{
   background-color: #FFB11C;
   border-radius: 2px;
-  display: flex;
-  justify-content: center;
-  padding: 2px;
+  text-align: center;
   width: 40px;
+  height: 20px;
+  line-height: 20px;
   font-size: 12px;
+  font-weight: lighter;
   color: white;
 }
 .goodsTabItem-buy-off{
   background-color: #CCCCCC;
   border-radius: 2px;
-  display: flex;
-  justify-content: center;
-  padding: 2px;
+  text-align: center;
   width: 40px;
+  height: 20px;
+  line-height: 20px;
   font-size: 12px;
+  font-weight: lighter;
   color: white;
 }
 ::-webkit-scrollbar {

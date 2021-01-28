@@ -7,7 +7,7 @@
   </scroll-view>
   <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
-      <swiper-item data-id="{{item.id}}">
+      <swiper-item style="overflow: auto;" data-id="{{item.id}}">
         <view wx:if="{{detailItem.length>0}}" class="item-detail" wx:for="{{detailItem}}" wx:key='detailItem' bindtap="startDetail" data-index="{{index}}">
           <view class="item-detail-column">
             <text class="item-detail-date">{{item.createTime}}</text>

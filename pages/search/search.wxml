@@ -3,7 +3,7 @@
   <view class="search">
     <input class="searchText" placeholder="请输入搜索关键词" confirm-type="search" bindinput="bindKeywordInput" bindconfirm="bindKeywordSearch" value="{{keyword}}" focus="true"></input>
   </view>
-  <view wx:if="{{goodsItem.length>0}}" style="margin-top:40px">
+  <view wx:if="{{goodsItem!=null}}" style="margin-top:40px">
     <view class="item" wx:for="{{goodsItem}}" wx:key="goodsItem" bindtap="startGoodsDetail" data-id="{{item.id}}">
       <view class="goodsItem">
         <image class='item-cover' src="{{item.cover}}" mode="aspectFill"></image>
@@ -25,7 +25,7 @@
     </view>
   </view>
 </view>
-<block wx:if="{{goodsItem.length<=0}}">
+<block wx:if="{{goodsItem==null}}">
   <view class="no-data">
     <text>暂无记录</text>
   </view>

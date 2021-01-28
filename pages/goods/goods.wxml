@@ -7,7 +7,7 @@
   <swiper class="banner" indicator-dots="true" indicator-active-color="#fff" autoplay="true" duration="500">
     <block wx:for="{{bannerItem}}" wx:key='bannerItem'>
       <swiper-item>
-        <image class="bannerImg" src="{{item}}" mode="aspectFill" bindtap="previewBanner"></image>
+        <image class="bannerImg" src="{{item}}" data-src="{{item}}" mode="aspectFill" bindtap="previewBanner"></image>
       </swiper-item>
     </block>
   </swiper>

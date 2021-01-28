@@ -7,7 +7,7 @@
   </scroll-view>
   <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
     <block wx:for="{{tabItem}}" wx:key='tabItem'>
-      <swiper-item data-id="{{item.id}}">
+      <swiper-item style="overflow: auto;" data-id="{{item.id}}">
         <view wx:if="{{goodsStoreItem.length>0}}" class="goodsStoreItem" wx:for="{{goodsStoreItem}}" wx:key='goodsStoreItem' bindtap="startDetail" data-id="{{item.id}}">
           <view class="space"></view>
           <view class="storeItem">
