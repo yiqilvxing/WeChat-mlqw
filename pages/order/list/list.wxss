@@ -36,7 +36,7 @@ page{
 	margin: 0 10rpx;
 	padding: 0 20rpx;
   color: #FF8500;
-  font-size: 14px;
+  font-size: 15px;
   border-bottom: 4rpx solid;
 }
 .swiper-box{
@@ -91,22 +91,22 @@ page{
 .goodsStoreItem .storeItem .right .orderState-0, .goodsStoreItem .storeItem .right .orderState-1,.goodsStoreItem .storeItem .right .orderState-2{
   width: 55px;
   height: 22px;
+  line-height: 21px;
   font-size: 11px;
   color: #ffb11c;
   border-radius: 2px;
   border: 1px solid #ffb11c;
   text-align: center;
-  line-height: 22px;
 }
 .goodsStoreItem .storeItem .right .orderState-3, .goodsStoreItem .storeItem .right .orderState-4, .goodsStoreItem .storeItem .right .orderState-5{
   width: 55px;
   height: 22px;
+  line-height: 21px;
   font-size: 11px;
   color: #999999;
   border-radius: 2px;
   border: 1px solid #999999;
   text-align: center;
-  line-height: 22px;
 }
 .goodsCartItem{
   background-color: white;
