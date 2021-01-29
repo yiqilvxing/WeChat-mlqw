@@ -276,6 +276,7 @@ function requestGetShopHot(_this){
       if (res != null && res.data != null) {
         var result = res.data;
         if (result != null && result.code == app.globalData.http_ok) {
+          console.log(result.data);
           _this.setData({
             swiperList: result.data.concat(result.data)
           });

@@ -1,21 +1,47 @@
 <!--pages/service/upgrade/upgrade.wxml-->
 <view class="main">
-  <scroll-view class="swiper-tab" scroll-x="true">
-    <block wx:for="{{tabItem}}" wx:key='tabItem'>
-      <text class="{{currentTab==index ? 'swiper-tab-text-on' : 'swiper-tab-text'}}" bindtap="onTabClick" data-index="{{index}}">{{item}}</text>
-    </block>
-  </scroll-view>
-  <swiper class="swiper-box" bindchange="onSwiperChange" current="{{currentTab}}" duration="0">
-    <block wx:for="{{tabItem}}" wx:key='tabItem'>
-      <swiper-item style="overflow: auto;" data-id="{{item.id}}">
-        <block>
-          <view class="no-data">
-            <text>暂无记录</text>
-          </view>
-        </block>
-      </swiper-item>
-    </block>
-  </swiper>
+  <view style="width:100%;display:flex; flex-direction:row; justify-content: center; align-items: center; position:fixed; top:{{statusBarHeight+8}}px;">
+    <image catchtap="pageBack" style="width:20px; height:20px; padding-left:10px;" src="../../../image/img_back_white.png" mode="aspectFill"></image>
+    <text style="color:white; font-size:14px; flex:1; text-align: center; margin-right:30px">升级会员</text>
+  </view>
+  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_me_bg.png');">
+    <view class="top-user" bindtap="startMeData">
+      <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
+      <view class="user">
+        <text class="userName">{{userEntity.name}}</text>
+        <text class="userCode">邀请码：{{userEntity.mobile}}</text>
+        <view class="userItem">
+          <text class="userTag">积分:{{userEntity.point}}</text>
+          <text class="userTag">{{userEntity.levelStore}}</text>
+          <text class="userTag">{{userEntity.levelName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class="vip-level">会员等级</text>
+  <view class="level-item">
+    <view class="{{currentTab==index?'item-bg-on':'item-bg'}}" style="width:{{cardViewSize}}px;" wx:for="{{levelItem}}" wx:key="levelItem" data-index="{{index}}" bindtap="selectVipLevel">
+      <item class="item-row">
+        <text class="item-name">{{item.className}}</text>
+        <view class="item-row">
+          <text class="item-rmb">¥</text>
+          <text class="item-price">{{item.levelupDirect/100}}</text>
+        </view>
+      </item>
+      <item class="item-row-d">
+        <text class="item-discount">专享{{item.discount/10}}折</text>
+        <image wx:if="{{currentTab==index}}" class="item-dot" src="../../../image/img_vip_select.png" mode="aspectFill"></image>
+      </item>
+    </view>
+  </view>
+  <text class="vip-level">会员权益</text>
+  <text class="vip-level-dec">{{currentDec}}</text>
 </view>
+<view class="bottom">
+  <view class="bottom-confirm">去结算</view>
+</view>
+
+
+
 
 

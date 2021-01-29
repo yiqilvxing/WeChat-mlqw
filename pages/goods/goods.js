@@ -399,7 +399,7 @@ Page({
           bus_x: bezier_points[index]['x'],
           bus_y: bezier_points[index]['y']
         })
-        if (index >= 28) {
+        if (index >= 25) {
           let newCount = that.data.goodsCount + that.data.goodsNum;
           clearInterval(that.timer);
           that.setData({
@@ -408,7 +408,7 @@ Page({
           });
           that.toggleShake();
         }
-    }, 33);
+    }, 25);
   },
 
   // 贝塞尔曲线

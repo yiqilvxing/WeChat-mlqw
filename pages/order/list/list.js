@@ -13,7 +13,6 @@ Page({
     tabItemState: [-1, 0, 1, 2, 3, 4, 5],
     currentPage: 1,
     maxPage: 1,
-    previousTab: 0,
     currentTab: 0,
     orderState: -1,
     goodsStoreItem: [],
@@ -32,7 +31,7 @@ Page({
     for(var i=0; i < tabItemState.length; i++){
       if(parseInt(orderState) == tabItemState[i]){
         let index = i;
-        let scrollLeft = index>_this.data.currentTab ? 20*index : -20*index;
+        let scrollLeft = (index-2) * 50;
         _this.setData({
           scrollLeft: scrollLeft,
           currentTab: index,
@@ -53,12 +52,7 @@ Page({
     var _this = this;
     let index = e.detail.current;
     let orderState = _this.data.tabItemState[index];
-    let scrollLeft = 0;
-    if(index>_this.data.currentTab){
-      scrollLeft = index>_this.data.currentTab ? 20*index : -20*index;
-    }else{
-      scrollLeft = index>_this.data.previousTab ? 20*index : -20*index;
-    }
+    let scrollLeft = (index-2) * 50;
     _this.setData({
       currentPage: 1,
       scrollLeft: scrollLeft,
@@ -76,9 +70,6 @@ Page({
     var _this = this;
     let index = e.currentTarget.dataset.index;
     let orderState = _this.data.tabItemState[index];
-    _this.setData({
-      previousTab: _this.data.currentTab
-    });
     _this.setData({
       currentPage: 1,
       currentTab: index,

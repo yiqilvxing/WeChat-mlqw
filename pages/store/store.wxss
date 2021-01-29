@@ -145,7 +145,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin-top: 2px;
+  margin-top: 5px;
 }
 .goodsTab{
   padding: 10px;

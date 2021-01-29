@@ -1,9 +1,12 @@
 /* pages/service/integral/mall.wxss */
+page{
+  background-color: white;
+}
 .main{
-  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;
+  height: 100%;
 }
 .header{
   display: flex;
