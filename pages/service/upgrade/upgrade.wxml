@@ -1,21 +1,11 @@
 <!--pages/service/upgrade/upgrade.wxml-->
 <view class="main">
-  <view style="width:100%;display:flex; flex-direction:row; justify-content: center; align-items: center; position:fixed; top:{{statusBarHeight+8}}px;">
-    <image catchtap="pageBack" style="width:20px; height:20px; padding-left:10px;" src="../../../image/img_back_white.png" mode="aspectFill"></image>
-    <text style="color:white; font-size:14px; flex:1; text-align: center; margin-right:30px">升级会员</text>
-  </view>
-  <view class="header" style="background-image:url('https://quanzinw.oss-cn-shenzhen.aliyuncs.com/apk/img_me_bg.png');">
-    <view class="top-user" bindtap="startMeData">
-      <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
-      <view class="user">
-        <text class="userName">{{userEntity.name}}</text>
-        <text class="userCode">邀请码：{{userEntity.mobile}}</text>
-        <view class="userItem">
-          <text class="userTag">积分:{{userEntity.point}}</text>
-          <text class="userTag">{{userEntity.levelStore}}</text>
-          <text class="userTag">{{userEntity.levelName}}</text>
-        </view>
-      </view>
+  <view class="top-user">
+    <image class="imgHeader" src="{{userEntity.avatar}}" mode="aspectFill"></image>
+    <view class="user">
+      <text class="userName">{{userEntity.name}}</text>
+      <text class="userTag">所属店铺：{{userEntity.levelStore}}</text>
+      <text class="userTag">会员等级：{{userEntity.levelName}}</text>
     </view>
   </view>
   <text class="vip-level">会员等级</text>
@@ -35,13 +25,8 @@
     </view>
   </view>
   <text class="vip-level">会员权益</text>
-  <text class="vip-level-dec">{{currentDec}}</text>
+  <text class="vip-level-dec">{{currentItem.interests}}</text>
 </view>
 <view class="bottom">
-  <view class="bottom-confirm">去结算</view>
+  <view class="bottom-confirm" bindtap="submit">去结算</view>
 </view>
-
-
-
-
-

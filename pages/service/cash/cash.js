@@ -60,7 +60,10 @@ Page({
     if(value>this.data.enableCash){
       return;
     }
-    wx.navigateBack();
+    wx.showModal({
+      title: '功能开发中',
+      content: '请耐心等待更新哦~',
+    })
   }
   
 })

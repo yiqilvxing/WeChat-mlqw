@@ -14,7 +14,7 @@ page{
   text-align: center;
   background-color: white;
   white-space: nowrap;
-  box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.02);
 }
 ::-webkit-scrollbar {
 	display: none;

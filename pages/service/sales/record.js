@@ -65,6 +65,21 @@ Page({
               "spec": "498元/瓶 6瓶/箱  整箱发货"
             }
         ]
+      },{
+        "level": 0,
+        "name": "Timi",
+        "expire_time": "2020-07-07 10:26:56",
+        "levelName": "普通会员",
+        "avatar": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/app/1594431389-ios-lifeapp.png",
+        "orderGoodId": 10825230026715134,
+        "orderGoodItemList": [
+            {
+              "title": "陈酱九八七 | 天禧酱香型白酒 498元/瓶 6瓶/箱  整箱发货",
+              "cover": "https://quanzinw.oss-cn-shenzhen.aliyuncs.com/web/1601285065370.png",
+              "num": 2,
+              "spec": "498元/瓶 6瓶/箱  整箱发货"
+            }
+        ]
       }]
       this.setData({
         items: items

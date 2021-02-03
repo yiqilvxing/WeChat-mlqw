@@ -10,7 +10,7 @@ Page({
   data: {
     statusBarHeight: 20,
     currentTab: 0,
-    currentDec: '',
+    currentItem: {},
     cardViewSize: 160,
     levelItem: [],
     userEntity: {},
@@ -41,10 +41,17 @@ Page({
   // 会员选择
   selectVipLevel: function(e){
     var index = e.currentTarget.dataset.index;
-    var dec = this.data.levelItem[index].interests.replace(/\/enter/g,'\n');
     this.setData({
       currentTab: index,
-      currentDec: dec
+      currentItem: this.data.levelItem[index]
+    })
+  },
+
+  // 去结算
+  submit: function(){
+    wx.showModal({
+      title: '功能开发中',
+      content: '请耐心等待更新哦~',
     })
   },
 
@@ -59,10 +66,15 @@ Page({
         if (res != null && res.data != null) {
           var result = res.data;
           if (result != null && result.code == app.globalData.http_ok) {
+            if(result.data!=null){
+              for(var i=0; i< result.data.length; i++){
+                result.data[i].interests = result.data[i].interests.replace(/\/enter/g,'\n');
+              }
+            }
             _this.setData({
               levelItem: result.data,
               currentTab: 0,
-              currentDec: result.data[0].interests.replace(/\/enter/g,'\n')
+              currentItem: result.data[0]
             })  
           }
         }

@@ -1,5 +1,13 @@
 <!--pages/service/integral/detail.wxml-->
 <view class="main">
+  <view wx:if="{{items.length>0}}" class="item-detail"wx:for="{{items}}" wx:key='items'>
+    <view class="item-detail-column">
+      <text class="item-detail-date">{{item.createTime}}</text>
+      <text class="item-detail-content">{{item.mark}}</text>
+    </view>
+    <text class="item-detail-price" wx:if="{{item.isIncome==true}}">+{{item.num}}</text>
+    <text class="item-detail-price-g" wx:if="{{item.isIncome==false}}">-{{item.num}}</text>
+  </view>
 </view>
 <block wx:if="{{items.length<=0}}">
   <view class="no-data">
